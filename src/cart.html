@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/cart.css" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <header>
+      <iframe src="./partials/header.html" frameborder="0"></iframe>
+    </header>
+    <main>
+      <section>
+        <h1 class="visually-hidden">Section</h1>
+        <div class="cart-container">
+          <span>
+            <svg class="shopping-cart-icon" width="18" height="18">
+              <use href="./img/icons.svg#shopping-cart-icon"></use>
+            </svg>
+          </span>
+          <h2 class="cart-title" id="cart-id">CART (0)</h2>
+        </div>
+
+        <div class="cart-products-order-container"></div>
+      </section>
+    </main>
+    <footer>
+      <iframe src="./partials/footer.html" frameborder="0"></iframe>
+    </footer>
+
+    <script type="module" src="./"></script>
+  </body>
+</html>
