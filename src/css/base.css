@@ -1,13 +1,13 @@
 
 @font-face {
     font-family: 'NeueMontreal';
-    src: url('../fonts/NeueMontreal-Bold.otf')
-         url('../fonts/NeueMontreal-BoldItalic.otf') 
-         url('../fonts/NeueMontreal-Italic.otf') 
-         url('../fonts/NeueMontreal-Light.otf') 
-         url('../fonts/NeueMontreal-LightItalic.otf') 
-         url('../fonts/NeueMontreal-Medium.otf') 
-         url('../fonts/NeueMontreal-MediumItalic.otf') 
+    src: url('../fonts/NeueMontreal-Bold.otf'),
+         url('../fonts/NeueMontreal-BoldItalic.otf'),
+         url('../fonts/NeueMontreal-Italic.otf'),
+         url('../fonts/NeueMontreal-Light.otf'), 
+         url('../fonts/NeueMontreal-LightItalic.otf'), 
+         url('../fonts/NeueMontreal-Medium.otf'),
+         url('../fonts/NeueMontreal-MediumItalic.otf'), 
          url('../fonts/NeueMontreal-Regular.otf');
     font-weight: normal;
     font-style: normal;
