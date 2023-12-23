@@ -3,6 +3,7 @@
     --primary-green-color:#6D8434;
     --secondary-white-color:#FAFAFA;
     --primary-black-color:#010101;
+    --transition-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* 
     Білий колір --primary-white-color:#E8E8E2;
