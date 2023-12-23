@@ -8,7 +8,8 @@
          url('../fonts/NeueMontreal-LightItalic.otf'), 
          url('../fonts/NeueMontreal-Medium.otf'),
          url('../fonts/NeueMontreal-MediumItalic.otf'), 
-         url('../fonts/NeueMontreal-Regular.otf');
+         url('../fonts/NeueMontreal-Regular.otf'),
+         url('../fonts/Fontspring-DEMO-quincycf-text.otf');
     font-weight: normal;
     font-style: normal;
   }
