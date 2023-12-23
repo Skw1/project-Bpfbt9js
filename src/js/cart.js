@@ -14,7 +14,6 @@ function cartMarkup(products) {
             </button>
             </div>
 
-
             <ul class="cart-products-list">
             <li class="cart-product" id="${_id}">
             <div class="cart-product-img">
@@ -47,7 +46,6 @@ function cartMarkup(products) {
           </li>
           </div>
 
-
           <div class="cart-order-container">
             <h2 class="order-title">Your order</h2>
 
@@ -77,7 +75,7 @@ function cartMarkup(products) {
     return `
           <div class="cart-empty-product">
             <img
-              src="......................"
+              src="..........."
               alt="empty cart"
               class="cart-epmpty-img"
             />
