@@ -83,7 +83,7 @@
 	}
 
 	.hero-big-image{
-		border-radius: 30px;
+		border-radius: 60px;
 		width: 704px;
 		height: 580px;
 	
@@ -100,13 +100,13 @@
 	}
 
 	.hero-info{
-		margin-bottom: 40px;
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-		align-items: center;
-		padding-left: 22px;
-		padding-right: 22px;
+		padding-left: 99px;
+		padding-right: 99px;
 	}
 	
+	.hero-big-image{
+		border-radius: 60px;
+		width: 1240px;
+		height: 350px;
+	}
 }
