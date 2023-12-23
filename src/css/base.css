@@ -17,6 +17,7 @@ body{
     margin:0;
     padding:0;
     background-color: var(--primary-white-color);
+    color: var(--primary-black-color);
 }
 .container{
     margin: 0 auto;
