@@ -5,3 +5,26 @@
 	padding-top: 72px;
 	padding-left: 20px;
 }
+
+.hero-title{
+	max-width: 335px;
+	color: #010101;
+	text-align: center;
+	font-size: 44px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 48px; /* 109.091% */
+}
+
+.hero-title-special{
+	color: #6D8434;
+}
+
+.hero-text{
+	max-width: 296px;
+	color: rgba(1, 1, 1, 0.80);
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px; /* 128.571% */
+}
