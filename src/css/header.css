@@ -76,10 +76,8 @@
   color: var(--primary-black-color);
   font-family: 'NeueMontreal';
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.33;
-  text-transform: uppercase;
   padding-right: 5px;
   transition: color var(--transition-function);
 }
