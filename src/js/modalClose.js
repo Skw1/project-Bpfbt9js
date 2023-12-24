@@ -2,6 +2,7 @@
 // та querySelector - селектор для кнопки закриття модального вікна
 
 import basicLightbox from 'basiclightbox';
+// сюди потрібно імпортувати стилі basicLightbox!!!
 
 export function onBasicLightbox(markup, querySelector) {
   const instance = basicLightbox.create(markup, {
