@@ -1,8 +1,6 @@
 /* Modul-Product */
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+body .basicLightbox {
+  background: rgba(1, 1, 1, 0.4);
 }
 
 .modal-product {
@@ -16,12 +14,6 @@
   min-height: 535px;
   border-radius: 20px;
   background-color: var(--secondary-white-color);
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop.is-hidden .modal-product {
-  transform: translateX(-50%) translateY(-70%);
 }
 
 .modal-button {
@@ -55,8 +47,6 @@
 }
 
 .modal-product-title {
-  /* color: #010101;
-  font-family: "PP Neue Montreal", sans-serif; */
   font-size: 18px;
   font-weight: 500;
   line-height: 1.11;
@@ -73,15 +63,12 @@
 
 .modal-product-prop {
   color: rgba(1, 1, 1, 0.3);
-  /* font-family: "PP Neue Montreal", sans-serif; */
   font-size: 12px;
   font-weight: 400;
   line-height: 1.17;
 }
 
 .modal-product-prop-span {
-  /* color: #010101;
-  font-family: "PP Neue Montreal", sans-serif; */
   font-size: 12px;
   font-weight: 400;
   line-height: 1.17;
@@ -89,7 +76,6 @@
 
 .modal-product-prop-dscr {
   color: rgba(1, 1, 1, 0.7);
-  /* font-family: "PP Neue Montreal", sans-serif; */
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
@@ -101,8 +87,6 @@
 }
 
 .modal-product-price {
-  /* color: #010101;
-  font-family: "PP Neue Montreal", sans-serif; */
   font-size: 28px;
   font-weight: 500;
   line-height: 1.11;
@@ -118,10 +102,8 @@
 
   background-color: var(--primary-green-color);
   border-radius: 30px;
-  /* border: none; */
 
   color: var(--primary-white-color);
-  /* font-family: "PP Neue Montreal", sans-serif; */
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
@@ -129,7 +111,11 @@
 
 .modal-product-cart:hover,
 .modal-product-cart:focus {
-  background-color: #586f1f;
+  background-color: var(--hover-button-green-color);
+}
+
+.modal-product-icon-basket {
+  fill: currentColor;
 }
 
 @media screen and (min-width: 768px) {
