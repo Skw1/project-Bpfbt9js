@@ -1,0 +1,186 @@
+/* Modul-Product */
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 40px 20px;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 335px;
+  min-height: 535px;
+  border-radius: 20px;
+  background-color: var(--secondary-white-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal-product {
+  transform: translateX(-50%) translateY(-70%);
+}
+
+.modal-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+
+  background-color: transparent;
+  border: none;
+}
+
+.modal-product-top {
+  margin-bottom: 40px;
+}
+
+.modal-image-wrapper {
+  background-color: var(--primary-white-color);
+  border-radius: 10px;
+  padding: 26px 67px;
+  margin-bottom: 20px;
+}
+
+.modal-product-image {
+  max-width: 160px;
+}
+
+.modal-product-title {
+  /* color: #010101;
+  font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+
+  margin-bottom: 10px;
+}
+
+.modal-product-prop-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 8px;
+  margin-bottom: 20px;
+}
+
+.modal-product-prop {
+  color: rgba(1, 1, 1, 0.3);
+  /* font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+}
+
+.modal-product-prop-span {
+  /* color: #010101;
+  font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+}
+
+.modal-product-prop-dscr {
+  color: rgba(1, 1, 1, 0.7);
+  /* font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+.modal-product-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal-product-price {
+  /* color: #010101;
+  font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.modal-product-cart {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  margin-left: auto;
+
+  background-color: var(--primary-green-color);
+  border-radius: 30px;
+  /* border: none; */
+
+  color: var(--primary-white-color);
+  /* font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28;
+}
+
+.modal-product-cart:hover,
+.modal-product-cart:focus {
+  background-color: #586f1f;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-product {
+    padding: 40px;
+    width: 600px;
+    min-height: 380px;
+  }
+
+  .modal-button {
+    top: 24px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-product-top {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+
+  .modal-image-wrapper {
+    padding: 26px 40px;
+    margin-bottom: 0px;
+  }
+
+  .modal-product-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .modal-product-prop-wrap {
+    margin-bottom: 24px;
+  }
+
+  .modal-product-prop-dscr {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .modal-product-price {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .modal-product-cart {
+    padding: 10px 28px;
+
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
