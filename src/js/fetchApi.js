@@ -2,17 +2,16 @@ import axios from "axios";
 import Notiflix from 'notiflix';
 
 export class FetchProducts {
-  BASE_URL = 'https://food-boutique.b.goit.study/api/products';
+  BASE_URL = 'https://food-boutique.b.goit.study/api';
   page = 1;
   perPage = 9;
   query = null;
   inputQuery = null;
 
   async  getCategories() {
-  const CATEGORY_URL = 'https://food-boutique.b.goit.study/api/products/categories';
   
   try {
-    const resp =await axios(`${CATEGORY_URL}`)
+    const resp =await axios(`${this.BASE_URL}/products/categories`)
   return await resp.data;
   } catch (err) {
     Notiflix.Notify.failure(err)
@@ -27,7 +26,7 @@ export class FetchProducts {
     });
 
     try {
-      const resp = await axios(`${this.BASE_URL}?${params}`)
+      const resp = await axios(`${this.BASE_URL}/products?${params}`)
       return await resp.data;
     } catch (err) {
       Notiflix.Notify.failure(err)
@@ -42,7 +41,7 @@ export class FetchProducts {
     });
 
     try {
-      const resp = await axios(`${this.BASE_URL}?${params}`)
+      const resp = await axios(`${this.BASE_URL}/products?${params}`)
       return await resp.data;
     } catch (err) {
       Notiflix.Notify.failure(err)
@@ -57,7 +56,7 @@ export class FetchProducts {
     });
 
     try {
-      const resp = await axios(`${this.BASE_URL}?${params}`)
+      const resp = await axios(`${this.BASE_URL}/products?${params}`)
       return await resp.data;
     } catch (err) {
       Notiflix.Notify.failure(err)
