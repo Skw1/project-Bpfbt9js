@@ -1,28 +1,44 @@
 /*
-setFilter(filter)
-getFilter() - повертає filter
-// обʼєкт filter {
-    //може містити властивості:
-    "keyword" : "string",
-    "category" : "рядок",
-    "byABC" : "true/false",
-    "page" : "число",
-    "limit" : "число",
-    }
-setCart(cart)
-getCart() - повертає cart
-//обʼєкт cart {
-    email = "test@gmail.com",
-    масив обʼєктів products = [
-    {
-      "productId": "640c2dd963a319ea671e383b",
-      "amount": 2
-    }]
-    }
+ Simple localStorageApi to save/loade Filter and Cart
+
+
+using example:
+
+import localStorageApi from './js/localStorageApi.js';
+
+localStorageApi.saveFilter({ keyA: 'A', KeyB: 'B' });
+const test = localStorageApi.loadFilter();
+console.log('test: ', test);
+
+methods:
+
+localStorageApi.saveFilter(filter) - saves filter
+    all properties of filter are optional:
+    filter {
+        keyword : "string",
+        category : "string",
+        byABC : "boolean",
+        page : "number",
+        limit : "number",}
+
+localStorageApi.loadFilter() - returns filter
+
+localStorageApi.deleteFilter() - removes filter from storage
+
+localStorageApi.saveCart(cart) - saves cart
+  cart {
+    "email": "test@gmail.com",
+    "products": [{"productId": "640c2dd963a319ea671e383b",
+    "amount": 2},...]}
+
+localStorageApi.loadCart() - returns cart
+
+localStorageApi.deleteCart() - removes cart from storage
+
+
+
 
 */
-
-// Simple localStorageApi to save/loade Filter and Cart
 
 export default {
   _filterID: 'filter-project-Bpfbt9js',
@@ -48,21 +64,31 @@ export default {
       throw error;
     }
   },
+  _delete: function _delete(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch (error) {
+      throw error;
+    }
+  },
   saveFilter: function saveFilter(filter) {
     this._save(this._filterID, filter);
   },
   loadFilter: function loadFilter() {
     let filter = this._load(this._filterID);
-    if (filter === undefined) {
-      filter = {};
-    }
     return filter;
   },
+  deleteFilter: function deleteFilter() {
+    this._delete(this._filterID);
+  },
   saveCart: function saveCart(cart) {
-    this._save(this._filterID, cart);
+    this._save(this._cartID, cart);
   },
   loadCart: function loadCart() {
-    const cart = this._load(this._filterID);
+    let cart = this._load(this._cartID);
     return cart;
+  },
+  deleteCart: function deleteCart() {
+    this._delete(this._cartID);
   },
 };
