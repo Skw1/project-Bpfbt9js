@@ -40,7 +40,7 @@ optional parametr filter:
 fetchAPI.subscribe(email) - returns welcome message (string)
 email -  'test@test.com'
 
-fetchAPI.oder(cart) - returns confirmation message (string)
+fetchAPI.order(cart) - returns confirmation message (string)
 cart 
     {
   "email": "test@gmail.com",
@@ -58,7 +58,7 @@ export default {
   _popularURL: '/products/popular',
   _discountURL: '/products/discount',
   _subscriptionURL: '/subscription',
-  _oderURL: '/orders',
+  _orderURL: '/orders',
 
   categories: async function categories() {
     try {
@@ -125,10 +125,10 @@ export default {
     }
   },
 
-  oder: async function oder(cart) {
+  order: async function order(cart) {
     try {
       console.log(cart);
-      const result = await axios.post(this._baseURL + this._oderURL, cart);
+      const result = await axios.post(this._baseURL + this._orderURL, cart);
       return result.data;
     } catch (error) {
       throw error;
