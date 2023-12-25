@@ -31,11 +31,10 @@
   margin-bottom: 40px;
 }
 .footer-logo-link {
-  font-family: 'NeueMontreal';
+  font-family: 'Quincycf';
   font-size: 18px;
   font-weight: 900;
-  line-height: 1.11;
-  letter-spacing: -0.02em;
+  letter-spacing: 1.2px;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -84,7 +83,7 @@
 }
 
 .text-block {
-  font-family: 'NeueMontreal';
+  font-family: 'NeueMontreal-medium';
   margin-bottom: 80px;
 }
 .footer-slogan-title {
@@ -95,7 +94,7 @@
   margin-bottom: 14px;
 }
 .footer-slogan {
-  font-family: 'NeueMontreal';
+  font-family: 'NeueMontreal-regular';
   color: rgba(232, 232, 226, 0.7);
   font-size: 14px;
   line-height: 1.29;
@@ -104,16 +103,18 @@
 /* Форма */
 
 .subscription-wrap {
-  font-family: 'NeueMontreal';
+  font-family: 'NeueMontreal-medium';
   max-width: 335px;
 }
 .suscription-text {
+  font-family: 'NeueMontreal-regular';
   margin-bottom: 20px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.29;
 }
 .contact-form-input {
+  font-family: 'NeueMontreal-regular';
   padding: 12px 18px;
   width: 100%;
   font-size: 14px;
@@ -130,7 +131,7 @@
   color: rgba(232, 232, 226, 0.6);
 }
 .footer-form-btn {
-  font-family: 'NeueMontreal';
+  font-family: 'NeueMontreal-medium';
   width: 100%;
   padding-top: 12px;
   color: var(--primary-black-color);
@@ -151,14 +152,13 @@
 /* Політика конфіденсійності */
 
 .footer-policy-wrap {
-  font-family: 'NeueMontreal';
+  font-family: 'NeueMontreal-regular';
   color: var(--primary-white-colort);
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.29;
 }
 .footer-copywriting-text {
-  opacity: 0.9;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 .footer-terms-wrap {
