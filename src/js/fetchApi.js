@@ -127,7 +127,6 @@ export default {
 
   order: async function order(cart) {
     try {
-      console.log(cart);
       const result = await axios.post(this._baseURL + this._orderURL, cart);
       return result.data;
     } catch (error) {
