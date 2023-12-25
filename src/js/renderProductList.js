@@ -1,93 +1,46 @@
 import { FetchProducts } from "./fetchApi";
-import Notiflix from 'notiflix';
+import '../css/cards.css'
 
-const categoriesEl = document.querySelector('.js-category');
-const productsList = document.querySelector('.card-container');
-const searchFormEl = document.querySelector('.js-search-form');
 
+const productsList = document.querySelector('.product-card-list');
 const fetchProducts = new FetchProducts();
-
-categoriesEl.addEventListener('change', onSelect);
-searchFormEl.addEventListener('submit', onSearch);
-
-function onSearch(e) {
-  e.preventDefault();
-  productsList.innerHTML = '';
-
-  fetchProducts.inputQuery = e.target.elements.searchQuery.value.trim();
-
-  fetchProducts.getProductsBySearch()
-    .then(({ results }) => {
-
-      if (results.length === 0) {
-         searchFormEl.reset();
-        
-        window.alert('Oops test')
-      }
-      
-      return results.map(item => {
-     
-    productsList.insertAdjacentHTML('beforeend', handleMarkup(item))
-  })})
-  .catch(err => {
-      if (!err) {
-        return
-      }
-      window.alert('Oops test')
-    });
-}
 
 function handleMarkup(prop) {
   const { category, img, name, popularity, price, size } = prop;
   return `
-      <li>
-    <img src="${img}" alt="${name}">
-    <h2>${name}</h2>
-    <div>
-        <p>Category: ${category}</p>
-        <p>Size: ${size}</p>
-        <p>Popularity: ${popularity}</p>
-      </div>
-      <p>$${price}</p>
-  </li>
+       <li class="product-card-item">
+      
+       <div class="product-card-wrapper">
+        <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product-card-image"></div>
+        <h2 calss="product-card-name">${name}</h2>
+        <div class="product-card-info">
+            <p class="info-text">
+                Category:<span class="info-span">${category}</span>
+            </p>
+            <p class="info-text">
+                Size:<span class="info-span">${size}</span>
+            </p>
+            <p class="info-text">
+                Popularity:<span class="info-span">${popularity}</span>
+            </p>
+        </div>
+        <div class="product-card-bottom">
+        <p>$${price}</p>
+        <button class="card_buy-btn">
+        <svg class="card_buy-logo-icon">
+                <use href="./img/icons.svg#logo-icon"></use>
+            </svg>
+            </button>
+        </div>
+        </div>
+    </li>
   `
-}
+};
 
-function onSelect(e) {
-  
-  fetchProducts.query = e.target.value;
-  productsList.innerHTML = '';
-  
-  fetchProducts.getProductsByCategory()
-    .then(({ results }) => results.map(item => {
-      productsList.insertAdjacentHTML('beforeend', handleMarkup(item))
-    }))
-    .catch(err => {
-      if (!err) {
-        return
-      }
-      window.alert('Oops test')
-    });
-}
-    
-  fetchProducts.getCategories()
-  .then(data =>
-  data.map(item => {
-    
-    const categoriesMurkup = `<option value="${item}">${item}</option>`;
-    return categoriesEl.insertAdjacentHTML('beforeend', categoriesMurkup)
-  }))
-   .catch(err => {
-    if (!err) {
-      return
-    }
-   window.alert('Oops test')
-  })
 
 fetchProducts.getProducts()
   .then(({ results }) => {
     results.map(item => {
-      
       productsList.insertAdjacentHTML('beforeend', handleMarkup(item))
     })
   })
@@ -97,4 +50,67 @@ fetchProducts.getProducts()
     }
    window.alert('Oops test')
   });
+
+
+//   function onSearch(e) {
+//   e.preventDefault();
+//   productsList.innerHTML = '';
+
+//   fetchProducts.inputQuery = e.target.elements.searchQuery.value.trim();
+
+//   fetchProducts.getProductsBySearch()
+//     .then(({ results }) => {
+
+//       if (results.length === 0) {
+//          searchFormEl.reset();
+
+//         window.alert('Oops test')
+//       }
+
+//       return results.map(item => {
+
+//     productsList.insertAdjacentHTML('beforeend', handleMarkup(item))
+//   })})
+//   .catch(err => {
+//       if (!err) {
+//         return
+//       }
+//       window.alert('Oops test')
+//     });
+// }
+
+
+
+// function onSelect(e) {
+  
+//   fetchProducts.query = e.target.value;
+//   productsList.innerHTML = '';
+  
+//   fetchProducts.getProductsByCategory()
+//     .then(({ results }) => results.map(item => {
+//       productsList.insertAdjacentHTML('beforeend', handleMarkup(item))
+//     }))
+//     .catch(err => {
+//       if (!err) {
+//         return
+//       }
+//       window.alert('Oops test')
+//     });
+// }
+    
+//   fetchProducts.getCategories()
+//   .then(data =>
+//   data.map(item => {
+    
+//     const categoriesMurkup = `<option value="${item}">${item}</option>`;
+//     return categoriesEl.insertAdjacentHTML('beforeend', categoriesMurkup)
+//   }))
+//    .catch(err => {
+//     if (!err) {
+//       return
+//     }
+//    window.alert('Oops test')
+//   })
+
+
 
