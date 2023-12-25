@@ -49,7 +49,7 @@ async function drawDiscount() {
       icon = DISCOUNTCECKED;
     }
     productsList.push(`
-        <li class="discount-list-item">
+        <li class="discount-list-item" data-product-id="${product._id}" data-action-type="showProduct">
             <svg width="60" height="60" class="discount-icon">
               <use href="../img/icons.svg#discount-icon"></use>
             </svg>
@@ -66,7 +66,7 @@ async function drawDiscount() {
               <p class="discount-title">${product.name}</p>
               <div class="discount-description-price">
                 <span class="discount-price">$${product.price}</span>
-                <div class="discount-icon-box">
+                <div class="discount-icon-box" data-product-id="${product._id}" data-action-type="buyProduct">
                   <svg width="18" height="18" class="discount-cart">
                     <use href="${icon}"></use>
                   </svg>
