@@ -69,7 +69,7 @@ async function drawDiscount() {
                 <span class="discount-price discount-show"  data-productId="${product._id}">$${product.price}</span>
                 <button type="button" class="discount-icon-box discount-buy" data-productId="${product._id}">
                   <svg width="18" height="18" class="discount-cart discount-buy" data-productId="${product._id}">
-                    <use href="${icon}" class="js-object discount-buy" data-jsname="cartIcon${product._id}" data-productId="${product._id}"></use>
+                    <use href="${icon}" class="js-object discount-buy" data-jsname="discountIcon${product._id}" data-productId="${product._id}"></use>
                   </svg>
                 </button>
               </div>
@@ -111,17 +111,17 @@ function buyProduct(id) {
   }
 }
 
-function changeCartIcon(id) {
+function changeCartIcon(id, prefix) {
   const frontEnd = new refsAPI();
-  if (frontEnd[`cartIcon${id}`].href.baseVal === DISCOUNTCART) {
-    frontEnd[`cartIcon${id}`].href.baseVal = DISCOUNTCECKED;
+  if (frontEnd[`${prefix}${id}`].href.baseVal === DISCOUNTCART) {
+    frontEnd[`${prefix}${id}`].href.baseVal = DISCOUNTCECKED;
   }
 }
 
 function discountOnClick(event) {
   if (event.target.classList.contains('discount-buy')) {
     buyProduct(event.target.dataset.productid);
-    changeCartIcon(event.target.dataset.productid);
+    changeCartIcon(event.target.dataset.productid, 'discountIcon');
   } else if (event.target.classList.contains('discount-show')) {
     // open modal window with product info
   }
