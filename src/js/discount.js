@@ -68,7 +68,7 @@ async function drawDiscount() {
                 <span class="discount-price">$${product.price}</span>
                 <div class="discount-icon-box" data-product-id="${product._id}" data-action-type="buyProduct">
                   <svg width="18" height="18" class="discount-cart">
-                    <use href="${icon}"></use>
+                    <use href="${icon}" class="js-object" data-jsname="discount${product._id}"></use>
                   </svg>
                 </div>
               </div>
@@ -79,4 +79,6 @@ async function drawDiscount() {
   frontEnd.discountList.insertAdjacentHTML('beforeend', productsList.join(''));
 }
 
-export { drawDiscount };
+function buyDiscount(product) {}
+
+export { drawDiscount, buyDiscount };

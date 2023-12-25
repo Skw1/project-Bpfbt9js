@@ -1,3 +1,3 @@
-import { drawDiscount } from './js/discount.js';
+import { drawDiscount, buyDiscount } from './js/discount.js';
 
 drawDiscount();
