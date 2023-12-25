@@ -2,8 +2,8 @@ import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import refsAPI from './refs.js';
 //product icons
-const DISCOUNTCART = '../img/icons.svg#discount-cart';
-const DISCOUNTCECKED = '../img/icons.svg#discount-checked';
+const DISCOUNTCART = './img/icons.svg#discount-cart';
+const DISCOUNTCECKED = './img/icons.svg#discount-checked';
 
 // function to draw discount products section
 async function drawDiscount() {
@@ -51,7 +51,7 @@ async function drawDiscount() {
     productsList.push(`
         <li class="discount-list-item discount-show" data-productId="${product._id}">
             <svg width="60" height="60" class="discount-icon discount-show"  data-productId="${product._id}">
-              <use href="../img/icons.svg#discount-icon" class="discount-show"  data-productId="${product._id}"></use>
+              <use href="./img/icons.svg#discount-icon" class="discount-show"  data-productId="${product._id}"></use>
             </svg>
             <div class="discount-image-box discount-show"  data-productId="${product._id}">
               <img
