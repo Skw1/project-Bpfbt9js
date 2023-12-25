@@ -2,8 +2,8 @@ import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import refsAPI from './refs.js';
 //product icons
-const DISCOUNTCART = './img/icons.svg#discount-cart';
-const DISCOUNTCECKED = './img/icons.svg#discount-checked';
+const DISCOUNTCART = '../img/icons.svg#discount-cart';
+const DISCOUNTCECKED = '../img/icons.svg#discount-checked';
 
 // function to draw discount products section
 async function drawDiscount() {
@@ -51,7 +51,7 @@ async function drawDiscount() {
     productsList.push(`
         <li class="discount-list-item discount-show" data-productId="${product._id}">
             <svg width="60" height="60" class="discount-icon discount-show"  data-productId="${product._id}">
-              <use href="./img/icons.svg#discount-icon" class="discount-show"  data-productId="${product._id}"></use>
+              <use href="../img/icons.svg#discount-icon" class="discount-show"  data-productId="${product._id}"></use>
             </svg>
             <div class="discount-image-box discount-show"  data-productId="${product._id}">
               <img
@@ -67,11 +67,11 @@ async function drawDiscount() {
               <p class="discount-title discount-show"  data-productId="${product._id}">${product.name}</p>
               <div class="discount-description-price discount-show"  data-productId="${product._id}">
                 <span class="discount-price discount-show"  data-productId="${product._id}">$${product.price}</span>
-                <div class="discount-icon-box discount-buy" data-productId="${product._id}">
+                <button type="button" class="discount-icon-box discount-buy" data-productId="${product._id}">
                   <svg width="18" height="18" class="discount-cart discount-buy" data-productId="${product._id}">
-                    <use href="${icon}" class="js-object discount-buy" data-jsname="disIcon${product._id}" data-productId="${product._id}"></use>
+                    <use href="${icon}" class="js-object discount-buy" data-jsname="cartIcon${product._id}" data-productId="${product._id}"></use>
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
          </li>
@@ -80,7 +80,7 @@ async function drawDiscount() {
   frontEnd.discountList.insertAdjacentHTML('beforeend', productsList.join(''));
 }
 
-function buyDiscount(id) {
+function buyProduct(id) {
   //read saved Cart
   let cart = localStorageApi.loadCart();
   //check if product in cart
@@ -108,19 +108,23 @@ function buyDiscount(id) {
     }
     //save cart and change icon
     localStorageApi.saveCart(cart);
-    const frontEnd = new refsAPI();
-    if (frontEnd[`disIcon${id}`].href.baseVal === DISCOUNTCART) {
-      frontEnd[`disIcon${id}`].href.baseVal = DISCOUNTCECKED;
-    }
+  }
+}
+
+function changeCartIcon(id) {
+  const frontEnd = new refsAPI();
+  if (frontEnd[`cartIcon${id}`].href.baseVal === DISCOUNTCART) {
+    frontEnd[`cartIcon${id}`].href.baseVal = DISCOUNTCECKED;
   }
 }
 
 function discountOnClick(event) {
   if (event.target.classList.contains('discount-buy')) {
-    buyDiscount(event.target.dataset.productid);
+    buyProduct(event.target.dataset.productid);
+    changeCartIcon(event.target.dataset.productid);
   } else if (event.target.classList.contains('discount-show')) {
     // open modal window with product info
   }
 }
 
-export { drawDiscount, discountOnClick };
+export { drawDiscount, discountOnClick, buyProduct, changeCartIcon };
