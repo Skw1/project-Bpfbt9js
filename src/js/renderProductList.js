@@ -1,14 +1,35 @@
 import { FetchProducts } from "./fetchApi";
-import '../css/cards.css'
+import '../css/productCard.css'
 
 
 const productsList = document.querySelector('.product-card-list');
 const fetchProducts = new FetchProducts();
 
+
+productsList.addEventListener('click', onCardClick);
+
+function onCardClick(e) {
+  const cardId = e.target.closest('.product-card-item').id;
+
+  if (e.target.classList.contains('product-card-item') || e.target !== e.currentTarget) {
+    if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
+      console.log('Buy prod')
+      // buyProduct(cardId)
+     
+   return
+    }
+    console.log('Open modal')
+    console.log(cardId)
+    return
+  }
+  
+}
+
 function handleMarkup(prop) {
-  const { category, img, name, popularity, price, size } = prop;
+  const { category, img, name, popularity, price, size, _id } = prop;
+
   return `
-       <li class="product-card-item">
+       <li class="product-card-item" id=${_id}>
       
        <div class="product-card-wrapper">
         <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product-card-image"></div>
@@ -25,12 +46,12 @@ function handleMarkup(prop) {
             </p>
         </div>
         <div class="product-card-bottom">
-        <p>$${price}</p>
+        <p class="product-curd-price">$${price}</p>
         <button class="card_buy-btn">
-        <svg class="card_buy-logo-icon">
-                <use href="./img/icons.svg#logo-icon"></use>
-            </svg>
-            </button>
+          <svg class="card_buy-logo-icon">
+                <use href="./img/icons.svg#shopping-cart-icon"></use>
+          </svg>
+        </button>
         </div>
         </div>
     </li>
@@ -41,6 +62,7 @@ function handleMarkup(prop) {
 fetchProducts.getProducts()
   .then(({ results }) => {
     results.map(item => {
+
       productsList.insertAdjacentHTML('beforeend', handleMarkup(item))
     })
   })

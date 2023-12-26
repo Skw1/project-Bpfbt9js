@@ -1,4 +1,10 @@
+
 .product-card-item {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
   width: 335px;
   height: 356px;
   border-radius: 10px;
@@ -8,6 +14,7 @@
 
 
 .product-card-wrapper {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   width: 295px;
@@ -27,14 +34,15 @@
 .product-card-image {
   width: 140px;
   height: 140px;
+  
   margin-left: auto;
   margin-right: auto;
 }
 
 .card_buy-logo-icon {
   fill: var(--primary-green-color);
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
 }
 
 .card_buy-btn {
@@ -44,10 +52,66 @@
 .product-card-info {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 
 .product-card-bottom {
   display: flex;
   justify-content: space-between;
+}
+
+.product-curd-price{
+  color: var(--primary-black-color);
+  
+    font-family: 'Neue Montreal';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.discount-list-item {
+  position: relative;
+}
+
+.discount-icon {
+  position: absolute;
+  right: 10px;
+  top: 3px;
+}
+
+
+@media screen and (min-width:768px) {
+  .product-card-list{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+.product-card-item{
+  width: 336px;
+  height: 360px;
+  
+  margin: 0;
+}
+}
+
+@media screen and (min-width:1440px) {
+ 
+  .product-card-item {
+      width: 295px;
+      height: 363px;
+
+      flex-basis: calc((100% - 20px * 3) / 4);
+    }
+  .product-card-wrapper{
+    width: 255px;
+  }
+
+    .product-card-info{
+      flex-wrap: wrap;
+    }
 }
