@@ -1,0 +1,186 @@
+/* Шапка */
+
+.header-logo-icon {
+  width: 14px;
+  height: 14px;
+  fill: var(--primary-white-color);
+  transition: background-color var(--transition-function);
+}
+
+.header-logo-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--primary-green-color);
+  margin-right: 8px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navig-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav {
+  padding-top: 24px;
+}
+.hero-container {
+  position: relative;
+}
+
+.logo-link {
+  font-family: 'Quincycf';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 24px;
+
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition-function);
+}
+
+.header-besket-wrapper {
+  gap: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-basket-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary-green-color);
+  padding: 10px;
+  transition: background-color var(--transition-function);
+}
+.icon-basket-wrap:hover,
+.icon-basket-wrap:focus {
+  background: #586f1f;
+}
+.icon-basket-header {
+  fill: var(--primary-white-color);
+  width: 14px;
+  height: 14px;
+}
+.cart-amount {
+  color: var(--primary-black-color);
+  font-family: 'NeueMontreal-medium';
+  font-size: 18px;
+  font-weight: 400;
+  padding: 1px 5px 0 0;
+  transition: color var(--transition-function);
+}
+.cart-amount:hover,
+.cart-amount:focus {
+  color: var(--primary-green-color);
+}
+
+/* Максимальна широта 767px */
+@media (max-width: 767px) {
+  .page-header-container {
+    margin-bottom: 72px;
+  }
+  .main-nav {
+    padding-top: 18px;
+  }
+  .header-logo-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .logo-link {
+    font-size: 18px;
+    line-height: 1.11;
+    letter-spacing: -0.36px;
+  }
+  .link-home {
+    border-radius: 30px;
+    background: var(--primary-green-color);
+    padding: 10px 20px;
+    color: var(--primary-white-color);
+    font-family: 'NeueMontreal-medium';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    border: none;
+    transition: background-color var(--transition-function);
+  }
+  .link-home:hover,
+  .link-home:focus {
+    background: #586f1f;
+  }
+  .icon-basket-header {
+    width: 14px;
+    height: 14px;
+  }
+  .navig-wrapper {
+    gap: 6px;
+  }
+  .cart-amount {
+    display: none;
+  }
+}
+
+/* 768px */
+
+@media (min-width: 768px) {
+  .page-header-container {
+    margin-bottom: 116px;
+  }
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+  .header-logo-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .navig-wrapper {
+    gap: 16px;
+  }
+  .link-home {
+    border-radius: 30px;
+    background: var(--primary-green-color);
+    padding: 12px 28px;
+    color: var(--primary-white-color);
+    font-family: 'NeueMontreal-medium';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+    border: none;
+    transition: background-color var(--transition-function);
+  }
+  .link-home:hover,
+  .link-home:focus {
+    background: #586f1f;
+  }
+  .header-basket-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .header-logo-icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* 1440px */
+
+@media (min-width: 1440px) {
+  .page-header-container {
+    max-width: 1240px;
+    padding: 0 20px;
+  }
+}
