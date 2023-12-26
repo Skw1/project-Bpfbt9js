@@ -1,36 +1,28 @@
-/* ============================================================================= */
-/* Додаткові стилі для обгортки та root */
-/* ============================================================================= */
-
-:root {
-  --primary-white-color: #e8e8e2;
-  --primary-green-color: #6d8434;
-  --secondary-white-color: #fafafa;
-  --primary-black-color: #010101;
-  --hover-button-green-color: #586f1f;
-  --transition-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --text-color: rgba(1, 1, 1, 0.7);
-  --font-family: Neue Montreal, sans-serif;
+/* Modul-Product */
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.overlay {
-  /* Overlay */
-  position: fixed;
-  padding-top: 10px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+.modal-product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 40px 20px;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 335px;
+  min-height: 535px;
+  border-radius: 20px;
+  background-color: var(--secondary-white-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ============================================================================= */
-/* Основні стилі для модальних вікон */
-/* ============================================================================= */
+.backdrop.is-hidden .modal-product {
+  transform: translateX(-50%) translateY(-70%);
+}
 
 .modal-button {
   position: absolute;
@@ -47,208 +39,148 @@
   border: none;
 }
 
-.popup-subscribing,
-.popup-email,
-.popup-order {
-  font-family: var(--font-family);
-  font-style: normal;
-  color: var(--text-color);
-  flex-shrink: 0;
-  text-align: center;
-  word-wrap: break-word;
-  align-items: center;
-  position: relative;
-  background: var(--primary-white-color);
-  border-radius: 20px;
-  width: 335px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
+.modal-product-top {
+  margin-bottom: 40px;
 }
 
-.subscribing-text,
-.text-message,
-.order-success {
-  color: var(--primary-black-color);
-  font-weight: 500;
-  line-height: 24px;
-}
-
-.content-text {
-  margin: 0 auto;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-}
-
-.popup-subscribing .content-text {
-  top: 100px;
-}
-
-.popup-subscribing,
-.modal-image {
-  width: 335px;
-}
-
-.modal-image {
-  border-radius: 0 0 20px 20px;
-  margin-top: 256px;
-}
-
-.popup-email {
-  min-height: 276px;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.text-message,
-.additional-text {
-  width: 245px;
-}
-
-.text-message span,
-.additional-text span {
+.modal-image-wrapper {
+  background-color: var(--primary-white-color);
+  border-radius: 10px;
+  padding: 26px 67px;
   margin-bottom: 20px;
 }
 
-.text-message {
+.modal-product-image {
+  max-width: 160px;
+}
+
+.modal-product-title {
+  /* color: #010101;
+  font-family: "PP Neue Montreal", sans-serif; */
   font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+
+  margin-bottom: 10px;
 }
 
-.highlight {
-  color: var(--primary-green-color);
+.modal-product-prop-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 8px;
+  margin-bottom: 20px;
 }
 
-.popup-order {
-  min-height: 428px;
+.modal-product-prop {
+  color: rgba(1, 1, 1, 0.3);
+  /* font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
 }
 
-.order-success {
-  font-size: 18px;
-  line-height: 20px;
-  text-transform: uppercase;
-  padding-bottom: 20px;
+.modal-product-prop-span {
+  /* color: #010101;
+  font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
 }
 
-.popup-order .promise-text {
-  width: 295px;
+.modal-product-prop-dscr {
+  color: rgba(1, 1, 1, 0.7);
+  /* font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
 }
 
-.ellipse {
-  width: 145px;
-  height: 28px;
-  left: 95px;
-  top: 149px;
-  position: absolute;
-  background: rgba(1, 1, 1, 0.1);
-  box-shadow: 10px 10px 10px;
-  border-radius: 9999px;
-  fill: rgba(1, 1, 1, 0.1);
-  filter: blur(20px);
+.modal-product-bottom {
+  display: flex;
+  align-items: flex-end;
 }
 
-.popup-order .modal-image {
-  margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  width: 140px;
-  height: 140px;
+.modal-product-price {
+  /* color: #010101;
+  font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.11;
 }
 
-.subscribing-text {
-  width: 245px;
-  font-size: 20px;
+.modal-product-cart {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  margin-left: auto;
+
+  background-color: var(--primary-green-color);
+  border-radius: 30px;
+  /* border: none; */
+
+  color: var(--primary-white-color);
+  /* font-family: "PP Neue Montreal", sans-serif; */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28;
 }
 
-.subscribing-text,
-.text-message {
-  margin-bottom: 14px;
+.modal-product-cart:hover,
+.modal-product-cart:focus {
+  background-color: #586f1f;
 }
 
-.promise-text {
-  width: 245px;
-  letter-spacing: -0.3px;
-}
-
-/* Медіа-запити */
-
-@media (min-width: 768px) {
-  .popup-subscribing,
-  .modal-image {
-    width: 490px;
+@media screen and (min-width: 768px) {
+  .modal-product {
+    padding: 40px;
+    width: 600px;
+    min-height: 380px;
   }
 
   .modal-button {
+    top: 24px;
+    right: 24px;
     width: 28px;
     height: 28px;
-    right: 24px;
-    top: 24px;
   }
 
-  .popup-subscribing .content-text {
-    top: 90px;
+  .modal-product-top {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 48px;
   }
 
-  .subscribing-text,
-  .text-message {
-    font-size: 24px;
-    margin-bottom: 20px;
+  .modal-image-wrapper {
+    padding: 26px 40px;
+    margin-bottom: 0px;
   }
 
-  .promise-text,
-  .additional-text {
+  .modal-product-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .modal-product-prop-wrap {
+    margin-bottom: 24px;
+  }
+
+  .modal-product-prop-dscr {
     font-size: 16px;
-    line-height: 20px;
+    line-height: 1.25;
   }
 
-  .promise-text {
-    width: 328px;
+  .modal-product-price {
+    font-size: 20px;
+    line-height: 1.2;
   }
 
-  .modal-image {
-    margin-top: 241px;
-  }
+  .modal-product-cart {
+    padding: 10px 28px;
 
-  .popup-email {
-    width: 469px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    min-height: 308px;
-  }
-
-  .text-message,
-  .additional-text {
-    width: 349px;
-  }
-
-  .popup-order {
-    width: 560px;
-    min-height: 509px;
-  }
-
-  .popup-order .promise-text {
-    width: 480px;
-  }
-
-  .order-success {
-    font-size: 32px;
-    line-height: 32px;
-  }
-
-  .popup-order .promise-text {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  .ellipse {
-    left: 208px;
-    top: 189px;
-  }
-
-  .popup-order .modal-image {
-    margin-top: 80px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 }
