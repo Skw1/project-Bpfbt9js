@@ -10,5 +10,5 @@ const frontEnd = new refsAPI();
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
-import { render } from "./js/popularProducts";
-render ()
+import { renderPopular } from "./js/popularProducts";
+renderPopular ()
