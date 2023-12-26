@@ -1,0 +1,431 @@
+.cart-total-container {
+  padding-top: 72px;
+  padding-bottom: 80px;
+  box-sizing: content-box;
+}
+@media screen and (min-width: 768px) {
+  .cart-total-container {
+    padding-top: 99px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  box-sizing: content-box;
+  gap: 14px;
+  padding: 19px;
+}
+
+.wrapper-cart-icon {
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: var(--primary-green-color);
+}
+.shopping-cart-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-title {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.js-cart-items {
+}
+
+.cart-products-order-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1440px) {
+  .cart-products-order-container {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 100px;
+  }
+}
+
+.cart-product-container {
+  display: flex;
+  flex-direction: column;
+}
+.cart-delete-all {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 6px;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.cart-delete-button {
+  all: unset;
+  color: var(--primary-black-color);
+  cursor: pointer;
+  font-family: Neue Montreal;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  line-height: inherit;
+}
+
+.cart-close-icon {
+  margin-left: 8px;
+}
+
+.cart-icon-close {
+}
+.cart-products-list {
+}
+.cart-product {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 40px 40px 0;
+}
+
+.cart-product-img {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  padding: 18px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--secondary-white-color);
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 1440px) {
+  .cart-product-img {
+    width: 120px;
+    height: 120px;
+    padding: 24px;
+    margin-right: 40px;
+  }
+}
+
+.cart-img {
+  width: 64px;
+  height: 64px;
+}
+@media screen and (min-width: 1440px) {
+  .cart-img {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+.cart-product-card {
+  position: relative;
+}
+.cart-product-name-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.cart-product-name {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.cart-product-delete-btn {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+  left: 100%;
+}
+.cart-icon-close {
+}
+
+.cart-product-info {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 46px;
+  column-gap: 16px;
+  align-items: center;
+}
+.cart-category-title {
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.17;
+  /* margin-right: 16px; */
+}
+
+.cart-category-name {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29;
+}
+.cart-product-size {
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.17;
+  /* margin-right: 44px; */
+}
+.cart-product-size-value {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29;
+}
+.cart-product-price {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.cart-order-container {
+  display: flex;
+  padding: 80px 0;
+  flex-direction: column;
+  gap: 30px;
+}
+@media screen and (min-width: 768px) {
+  .cart-order-container {
+    padding: 100px 0;
+    gap: 40px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cart-order-container {
+    padding: 73px 0;
+  }
+}
+
+.order-title {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.order-container {
+  display: flex;
+  justify-content: space-between;
+  width: 335px;
+  border-radius: 8px;
+  background: rgba(109, 132, 52, 0.05);
+  padding: 14px 18px;
+}
+@media screen and (min-width: 768px) {
+  .order-container {
+    width: 590px;
+    padding: 14px 28px;
+  }
+}
+
+.order-text {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.order-total-sum {
+  color: var(--primary-black-color);
+  font-family: Neue Montreal;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+}
+.order-input-checkout {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .order-input-checkout {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .order-input-checkout {
+  }
+}
+.order-lable-checkout {
+  display: flex;
+  position: relative;
+}
+
+.order-email::placeholder {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+}
+.order-email {
+  padding: 12px 12px 12px 60px;
+  border-radius: 30px;
+  border: 1px solid rgba(1, 1, 1, 0.3);
+  width: 335px;
+  background-color: var(--primary-white-color);
+  margin-bottom: 14px;
+}
+@media screen and (min-width: 768px) {
+  .order-email {
+    padding: 15px 15px 15px 60px;
+    width: 359px;
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+}
+
+.static-text {
+  position: absolute;
+  pointer-events: none;
+  color: rgba(1, 1, 1, 0.5);
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  padding: 25px 0 10px 15px;
+}
+@media screen and (min-width: 768px) {
+  .static-text {
+    padding: 15px 0 10px 35px;
+  }
+}
+
+.order-checkout-button {
+  width: 335px;
+  height: 42px;
+  display: inline-flex;
+  padding: 12px 138px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: var(--primary-green-color);
+  color: var(--primary-white-color);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+}
+@media screen and (min-width: 768px) {
+  .order-checkout-button {
+    width: 215px;
+    height: 54px;
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 15px 65px;
+  }
+}
+
+.cart-empty-product {
+}
+
+.cart-epmpty-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 28px;
+}
+
+.cart-empty-title {
+  color: #010101;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 14px;
+}
+
+.cart-empty-item {
+  color: #6d8434;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.cart-empty-text {
+  color: rgba(1, 1, 1, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0 auto;
+  width: 279px;
+}
+
+@media screen and (min-width: 768px) {
+  .cart-epmpty-img {
+    margin-top: 130px;
+    margin-bottom: 40px;
+    width: 164px;
+    height: 140px;
+  }
+  .cart-empty-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .cart-empty-item {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .cart-empty-text {
+    font-size: 18px;
+    line-height: 24px;
+    width: 387px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cart-epmpty-img {
+    margin-top: 150px;
+  }
+}
