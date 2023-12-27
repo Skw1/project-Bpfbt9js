@@ -2,9 +2,9 @@
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 
-import discountIcon from './img/icons.svg#discount-icon';
-import cartIcon from './img/icons.svg#discount-cart';
-import checkedIcon from './img/icons.svg#discount-checked';
+import discountIcon from '../img/icons.svg#discount-icon';
+import cartIcon from '../img/icons.svg#discount-cart';
+import checkedIcon from '../img/icons.svg#discount-checked';
 
 const productsList = document.querySelector('.product-card-list');
 
