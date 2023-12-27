@@ -3,7 +3,7 @@ import { drawDiscount, discountOnClick } from './js/discount.js';
 
 
 // Test RenderProuctList
-import './js/renderProductList.js'
+
 
 //draw discount products
 drawDiscount();
