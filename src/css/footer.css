@@ -278,6 +278,8 @@
   }
 }
 
+/* ---------------Фон модалки------------------ */
+
 body.show-modal .backdrop {
   opacity: 1;
   visibility: visible;
@@ -296,9 +298,8 @@ body.show-modal .modal {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(1, 1, 1, 0.4);
   z-index: 999;
-
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -308,34 +309,16 @@ body.show-modal .modal {
 /* -------------------Сама модалка--------------------- */
 
 .modal {
-  padding: 24px;
-  border-radius: 4px;
-  max-width: 640px;
+  padding: 0;
+  border-radius: 20px;
+  max-width: 335px;
   width: 100%;
-  min-height: 320px;
-  background-color: #fff;
+  min-height: 276px;
+  color: var(--primary-black-color);
+  background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px 0px rgba(0, 0, 0, 0.12);
 
   transform: scale(1.1);
   transition: transform 200ms ease-in-out;
-}
-.tag__btn--active {
-  background: blue;
-}
-
-.tag__btn {
-  padding: 10px;
-}
-
-.list__item {
-  margin-bottom: 20px;
-}
-
-.btm {
-  color: aqua;
-}
-
-.js-tags {
-  border: 1px solid tomato;
 }

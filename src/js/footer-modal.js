@@ -1,21 +1,20 @@
 // -------------------Підключи цей код щоб працювало---------------------
-// import refs from './js/refs.js';
+// import { form } from './js/footer-modal.js';
 // import { postEmail } from './js/footer-modal.js';
 
-// refs.form.addEventListener('submit', postEmail);
+// form.addEventListener('submit', postEmail);
 
-export const refs = {
+const refs = {
   openModalBtn: document.querySelector('[data-action="open-modal"]'),
   closeModalBtn: document.querySelector('[data-action="close-modal"]'),
-
   backdrop: document.querySelector('.js-backdrop'),
-  modal: document.querySelector('.modal-inner'),
-  form: document.querySelector('.footer-form'),
+  modalImg: document.querySelector('.modal__food-basket'),
+  modalInner: document.querySelector('.modal-inner'),
 };
 
-const ESC_KEY_CODE = 'Escape';
+export const form = document.querySelector('.footer-form');
 
-refs.form.addEventListener('submit', postEmail);
+const ESC_KEY_CODE = 'Escape';
 
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
@@ -71,46 +70,46 @@ export async function postEmail(params) {
       console.log(responce);
       if (responce.status === 409) {
         onOpenModal();
-        refs.modal.innerHTML = `
-        <div class="content-text">
-          <div class="text-message">
-            <span>This </span>
-            <span class="highlight">email address </span>
-            <span>has already been entered</span>
-          </div>
-          <div class="additional-text">
+        refs.modalImg.style.display = 'none';
+        refs.modalInner.innerHTML = `
+        <div class="modal__title--wrap">
+          <p class="modal__title">
+            This
+            <span class="modal__accent-text">email address </span>
+            has already been entered
+          </p>
+        </div>
+        <div class="modal__description--wrap">
+          <p class="modal__description">
             You have already subscribed to our new products. Watch for offers at
             the mailing address.
-          </div>
+          </p>
         </div>`;
         return;
       }
       if (responce.status === 201) {
         onOpenModal();
-        refs.modal.innerHTML = `
-          <div class="content-text">
-            <div class="subscribing-text">
-              <span>Thanks for subscribing for </span>
-              <span class="highlight">new</span>
-              <span> products</span>
-            </div>
-            <div class="promise-text">
-              We promise you organic and high-quality products that will meet your
-              expectations. Please stay with us and we promise you many pleasant
-              surprises.
-            </div>
-          </div>
-          <img src="./Rectangle 2.png"/>
+        refs.modalImg.style.display = 'block';
+        refs.modalInner.innerHTML = `
+        <div class="modal__title--wrap">
+        <p class="modal__title">
+          Thanks for subscribing for
+          <span class="modal__accent-text">new</span>
+          products
+        </p>
+      </div>
+      <div class="modal__description--wrap">
+        <p class="modal__description">
+          We promise you organic and high-quality products that will meet your
+          expectations. Please stay with us and we promise you many pleasant
+          surprises.
+        </p>
+      </div>
           `;
+        form.reset();
         return;
       }
       onOpenModal();
-      refs.modal.innerHTML = `
-        <div class="content-text">
-          <div class="additional-text">
-            Sorry!!! Somthig going wrong:(
-          </div>
-        </div>`;
     })
 
     .catch(error => console.log(error.message));
