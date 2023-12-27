@@ -57,7 +57,7 @@ function cartMarkup(products) {
           <div class="order-container">
             <p class="order-text">Total</p>
             <p class="order-sum-text">Sum:</p>
-            <p class="order-total-sum">${products.toFixed(2)}</p>
+            <p class="order-total-sum">${price.toFixed(2)}</p>
           </div>
 
           <div class="order-input-checkout">
