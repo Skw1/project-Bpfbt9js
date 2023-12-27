@@ -8,9 +8,7 @@ import checkedIcon from '../img/icons.svg#discount-checked';
 
 const productsList = document.querySelector('.product-card-list');
 
-const productList = await fetchAPI.products();
-
-productsList.addEventListener('click', onCardClick);
+const productListApi = await fetchAPI.products();
 
 function onCardClick(e) {
   const cardId = e.target.closest('.product-card-item').id;
@@ -67,26 +65,22 @@ function handleMarkup(data) {
   
 };
 
-function renderCards(arr) {
-  arr.map(item => {
+function renderCards() {
+  productListApi.results.map(item => {
     return productsList.insertAdjacentHTML('beforeend', handleMarkup(item));
   }
   )
 };
-
-renderCards(productList.results);
 
 function shownDiscIcon(arr) {
   arr.map(el => {
     const icon = document.querySelector('.discount-icon')
     
     console.log(icon)
-      
-    
     
   })
 };
-shownDiscIcon(productList.results)
+// shownDiscIcon(productListApi.results)
 
 
 
@@ -104,6 +98,9 @@ function renderSearchedCards(category, search) {
     return search.map(item => productsList.insertAdjacentHTML('beforeend', handleMarkup(item)))
   }
 };
+
+export{onCardClick, renderCards, renderSearchedCards, productsList}
+
 
 
 
