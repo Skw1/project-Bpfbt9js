@@ -9,8 +9,6 @@ import checkedIcon from '../img/icons.svg#discount-checked';
 const productsList = document.querySelector('.product-card-list');
 const productListApi = await fetchAPI.products();
 
-export{onCardClick, renderCards, renderSearchedCards, productsList}
-
 function onCardClick(e) {
   const cardId = e.target.closest('.product-card-item').id;
 
@@ -100,6 +98,8 @@ function renderSearchedCards(category, search) {
     return search.map(item => productsList.insertAdjacentHTML('beforeend', handleMarkup(item)))
   }
 };
+
+export{onCardClick, renderCards, renderSearchedCards, productsList}
 
 
 
