@@ -65,7 +65,7 @@
 }
 .icon-basket-wrap:hover,
 .icon-basket-wrap:focus {
-  background: #586f1f;
+  background: var(--hover-button-green-color);
 }
 .icon-basket-header {
   fill: var(--primary-white-color);
@@ -117,7 +117,7 @@
   }
   .link-home:hover,
   .link-home:focus {
-    background: #586f1f;
+    background: var(--hover-button-green-color);
   }
   .icon-basket-header {
     width: 14px;
@@ -162,7 +162,7 @@
   }
   .link-home:hover,
   .link-home:focus {
-    background: #586f1f;
+    background: var(--hover-button-green-color);
   }
   .header-basket-item {
     display: flex;

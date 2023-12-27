@@ -7,6 +7,7 @@ import cartIcon from '../img/icons.svg#discount-cart';
 import checkedIcon from '../img/icons.svg#discount-checked';
 
 const productsList = document.querySelector('.product-card-list');
+
 const productListApi = await fetchAPI.products();
 
 function onCardClick(e) {
@@ -71,8 +72,6 @@ function renderCards() {
   )
 };
 
-
-
 function shownDiscIcon(arr) {
   arr.map(el => {
     const icon = document.querySelector('.discount-icon')
@@ -82,6 +81,7 @@ function shownDiscIcon(arr) {
   })
 };
 // shownDiscIcon(productListApi.results)
+
 
 
 function renderSearchedCards(category, search) {
@@ -100,6 +100,7 @@ function renderSearchedCards(category, search) {
 };
 
 export{onCardClick, renderCards, renderSearchedCards, productsList}
+
 
 
 

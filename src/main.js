@@ -1,6 +1,10 @@
 import refsAPI from './js/refs.js';
 import { drawDiscount, discountOnClick } from './js/discount.js';
 
+
+// Test RenderProuctList
+
+
 //draw discount products
 drawDiscount();
 

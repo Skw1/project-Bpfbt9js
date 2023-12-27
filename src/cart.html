@@ -4,11 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <load ="partials/header.html" />
+
+    <main>
+      <section class="container cart-total-container">
+        <h1 class="visually-hidden">Section</h1>
+        <div class="cart-container">
+          <span class="wrapper-cart-icon">
+            <svg class="shopping-cart-icon" width="18" height="18">
+              <use href="./img/icons.svg#shopping-cart-icon"></use>
+            </svg>
+          </span>
+          <h2 class="cart-title" id="cart-id">CART (0)</h2>
+        </div>
+        <div class="cart-products-order-container"></div>
+      </section>
+    </main>
+
     <load ="partials/footer.html" />
 
     <script type="module" src="/main.js"></script>

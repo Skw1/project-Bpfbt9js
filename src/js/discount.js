@@ -113,20 +113,35 @@ function buyProduct(id) {
   }
 }
 
-function changeCartIcon(id, prefix) {
+//change icon after adding product to cart
+function setCheckedIcon(id, prefix) {
   const frontEnd = new refsAPI();
   if (frontEnd[`${prefix}${id}`].href.baseVal === `${cartIcon}`) {
     frontEnd[`${prefix}${id}`].href.baseVal = `${checkedIcon}`;
   }
 }
 
+//change icon after deleting product from cart
+function setCartIcon(id, prefix) {
+  const frontEnd = new refsAPI();
+  if (frontEnd[`${prefix}${id}`].href.baseVal === `${checkedIcon}`) {
+    frontEnd[`${prefix}${id}`].href.baseVal = `${cartIcon}`;
+  }
+}
+
 function discountOnClick(event) {
   if (event.target.classList.contains('discount-buy')) {
     buyProduct(event.target.dataset.productid);
-    changeCartIcon(event.target.dataset.productid, 'discountIcon');
+    setCheckedIcon(event.target.dataset.productid, 'discountIcon');
   } else if (event.target.classList.contains('discount-show')) {
     // open modal window with product info
   }
 }
 
-export { drawDiscount, discountOnClick, buyProduct, changeCartIcon };
+export {
+  drawDiscount,
+  discountOnClick,
+  buyProduct,
+  setCheckedIcon,
+  setCartIcon,
+};
