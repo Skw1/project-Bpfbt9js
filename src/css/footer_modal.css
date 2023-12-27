@@ -1,299 +1,40 @@
-/* ============================================================================= */
-/* Додаткові стилі для обгортки та root */
-/* ============================================================================= */
-
-:root {
-  --primary-white-color: #e8e8e2;
-  --primary-green-color: #6d8434;
-  --secondary-white-color: #fafafa;
-  --primary-black-color: #010101;
-  --hover-button-green-color: #586f1f;
-  --transition-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --text-color: rgba(1, 1, 1, 0.7);
-  --font-family: Neue Montreal, sans-serif;
-}
-
-.overlay {
-  /* Overlay */
-  position: fixed;
-  padding-top: 10px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* ============================================================================= */
-/* Основні стилі для модальних вікон */
-/* ============================================================================= */
-
-.modal-button {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.modal-btn-box {
+  position: relative;
   width: 22px;
   height: 22px;
-
-  background-color: transparent;
-  border: none;
-}
-
-.popup-subscribing,
-.popup-email,
-.popup-order {
-  font-family: var(--font-family);
-  font-style: normal;
-  color: var(--text-color);
-  flex-shrink: 0;
-  text-align: center;
-  word-wrap: break-word;
-  align-items: center;
-  position: relative;
-  background: var(--primary-white-color);
-  border-radius: 20px;
-  width: 335px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-}
-
-.subscribing-text,
-.text-message,
-.order-success {
-  color: var(--primary-black-color);
-  font-weight: 500;
-  line-height: 24px;
-}
-
-.content-text {
-  margin: 0 auto;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-}
-
-.popup-subscribing .content-text {
-  top: 100px;
-}
-
-.popup-subscribing,
-.modal-image {
-  width: 335px;
-}
-
-.modal-image {
-  border-radius: 0 0 20px 20px;
-  margin-top: 256px;
-}
-
-.popup-email {
-  min-height: 276px;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.text-message,
-.additional-text {
-  width: 245px;
-}
-
-.text-message span,
-.additional-text span {
-  margin-bottom: 20px;
-}
-
-.text-message {
-  font-size: 18px;
-}
-
-.highlight {
-  color: var(--primary-green-color);
-}
-
-.popup-order {
-  min-height: 428px;
-}
-
-.order-success {
-  font-size: 18px;
-  line-height: 20px;
-  text-transform: uppercase;
-  padding-bottom: 20px;
-}
-
-.popup-order .promise-text {
-  width: 295px;
-}
-
-.ellipse {
-  width: 145px;
-  height: 28px;
-  left: 95px;
-  top: 149px;
-  position: absolute;
-  background: rgba(1, 1, 1, 0.1);
-  box-shadow: 10px 10px 10px;
-  border-radius: 9999px;
-  fill: rgba(1, 1, 1, 0.1);
-  filter: blur(20px);
-}
-
-.popup-order .modal-image {
-  margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  width: 140px;
-  height: 140px;
-}
-
-.subscribing-text {
-  width: 245px;
-  font-size: 20px;
-}
-
-.subscribing-text,
-.text-message {
-  margin-bottom: 14px;
-}
-
-.promise-text {
-  width: 245px;
-  letter-spacing: -0.3px;
-}
-
-/* Медіа-запити */
-
-@media (min-width: 768px) {
-  .popup-subscribing,
-  .modal-image {
-    width: 490px;
-  }
-
-  .modal-button {
-    width: 28px;
-    height: 28px;
-    right: 24px;
-    top: 24px;
-  }
-
-  .popup-subscribing .content-text {
-    top: 90px;
-  }
-
-  .subscribing-text,
-  .text-message {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .promise-text,
-  .additional-text {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .promise-text {
-    width: 328px;
-  }
-
-  .modal-image {
-    margin-top: 241px;
-  }
-
-  .popup-email {
-    width: 469px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    min-height: 308px;
-  }
-
-  .text-message,
-  .additional-text {
-    width: 349px;
-  }
-
-  .popup-order {
-    width: 560px;
-    min-height: 509px;
-  }
-
-  .popup-order .promise-text {
-    width: 480px;
-  }
-
-  .order-success {
-    font-size: 32px;
-    line-height: 32px;
-  }
-
-  .popup-order .promise-text {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  .ellipse {
-    left: 208px;
-    top: 189px;
-  }
-
-  .popup-order .modal-image {
-    margin-top: 80px;
-  }
-}
-
-body.show-modal .backdrop {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: initial;
-}
-
-body.show-modal .modal {
-  transform: scale(1);
-}
-.backdrop {
+  top: 14px;
+  left: calc(100% - 34px);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 999;
-
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
 
-.modal {
-  padding: 24px;
-  border-radius: 4px;
-  max-width: 640px;
-  width: 100%;
-  min-height: 320px;
-  background-color: #fff;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px 0px rgba(0, 0, 0, 0.12);
-
-  transform: scale(1.1);
-  transition: transform 200ms ease-in-out;
+.modal-btn {
+  width: 14px;
+  height: 14px;
 }
 
-.js-tags {
-  border: 1px solid tomato;
+.modal-inner {
+  font-family: 'NeueMontreal-medium';
+  padding: 18px 43px 0 44px;
+}
+.modal__title--wrap {
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+.modal__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+.modal__accent-text {
+  color: var(--primary-green-color);
+}
+.modal__description--wrap {
+  text-align: center;
+}
+.modal__description {
+  font-family: 'NeueMontreal-regular';
+  font-size: 14px;
+  font-weight: 400;
 }
