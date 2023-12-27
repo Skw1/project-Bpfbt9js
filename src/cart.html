@@ -21,7 +21,47 @@
           </span>
           <h2 class="cart-title" id="cart-id">CART (0)</h2>
         </div>
-        <div class="cart-products-order-container"></div>
+        <div class="cart-products-order-container">
+          <div class="cart-empty-product">
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  ./img/empty-basket@1x.png 1x,
+                  ./img/empty-basket@2x.png 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./img/empty-basket@1x.png 1x,
+                  ./img/empty-basket@1x.png 2x
+                "
+              />
+
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  ./img/empty-basket@1x.png 1x,
+                  ./img/empty-basket@1x.png 2x
+                "
+              />
+              <img
+                src="./img/empty-basket@1x.png"
+                alt="empty cart"
+                class="cart-epmpty-img"
+              />
+            </picture>
+
+            <p class="cart-empty-title">
+              Your basket is <span class="cart-empty-item"> empty...</span>
+            </p>
+            <p class="cart-empty-text">
+              Go to the main page to select your favorite products and add them
+              to the cart.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
