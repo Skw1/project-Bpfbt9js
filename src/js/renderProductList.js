@@ -2,9 +2,9 @@
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 
-import discountIcon from '../img/icons.svg#discount-icon';
-import cartIcon from '../img/icons.svg#discount-cart';
-import checkedIcon from '../img/icons.svg#discount-checked';
+import discountIcon from './img/icons.svg#discount-icon';
+import cartIcon from './img/icons.svg#discount-cart';
+import checkedIcon from './img/icons.svg#discount-checked';
 
 const productsList = document.querySelector('.product-card-list');
 
@@ -37,7 +37,7 @@ function handleMarkup(data) {
  </svg>
        <div class="product-card-wrapper">
         <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product-card-image"></div>
-        <h2 calss="product-card-name">${name}</h2>
+        <h2 class="product-card-name">${name}</h2>
         <div class="product-card-info">
             <p class="info-text">
                 Category:<span class="info-span">${category}</span>
