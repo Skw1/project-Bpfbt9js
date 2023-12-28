@@ -1,9 +1,7 @@
 .hero-section{
 	background-color: #E8E8E2;
 	padding-top: 81px;
-	padding-left: 20px;
-	padding-right: 20px;
-	max-width: 335px;
+	/* max-width: 335px; */
 }
 
 .hero-info{
@@ -36,6 +34,8 @@
 	line-height: 18px; /* 128.571% */
 }
 
+/* old version */
+
 .hero-big-image{
 	border-radius: 30px;
 
@@ -46,8 +46,28 @@
 	object-fit: cover;
 }
 
-/* label settings */
+/* new version */
 
+/* .hero-big-image-div{
+	width: 335px;
+	height: 480px;
+	
+	background-image: url('../img/hero-tablet@2x.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 30px;
+
+	margin-bottom: 64px;
+}
+
+.hero-big-image{
+	display: none;
+} */
+
+
+
+/* label settings */
 
 .hero-big-image-div {
 	position: relative;
