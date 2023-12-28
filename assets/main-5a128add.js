@@ -187,4 +187,4 @@ import{a as f,b as H}from"./vendor-0363fca5.js";(function(){const t=document.cre
         </div>
     </li>
   `}async function nt(){(await v.products()).results.map(t=>B.insertAdjacentHTML("beforeend",rt(t)))}const q=new u;R();nt();B.addEventListener("click",ct);X();q.PopularList.addEventListener("click",tt);K();q.discountList.addEventListener("click",Q);P.addEventListener("submit",at);
-//# sourceMappingURL=main-c00472a2.js.map
+//# sourceMappingURL=main-5a128add.js.map
