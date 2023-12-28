@@ -1,6 +1,7 @@
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import refsAPI from './refs.js';
+import { getProductModal } from './modalProduct.js';
 
 // icons
 import discountIcon from '../img/icons.svg#discount-icon';
@@ -134,7 +135,7 @@ function discountOnClick(event) {
     buyProduct(event.target.dataset.productid);
     setCheckedIcon(event.target.dataset.productid, 'discountIcon');
   } else if (event.target.classList.contains('discount-show')) {
-    // open modal window with product info
+    getProductModal(event, '.discount-show');
   }
 }
 

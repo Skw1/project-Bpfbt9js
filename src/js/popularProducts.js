@@ -2,19 +2,20 @@ import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import refsAPI from './refs.js';
 
+import { getProductModal } from './modalProduct.js';
 import { buyProduct } from './discount.js';
 let frontEndPopular;
 let popularProducts;
 let product_Id;
 let checkBtn;
 
- async function renderPopular() {
-    frontEndPopular = new refsAPI();
-    frontEndPopular.PopularList.innerHTML = '';
-    popularProducts = await fetchAPI.popular();
-    // console.log("popularProducts",popularProducts);
+async function renderPopular() {
+  frontEndPopular = new refsAPI();
+  frontEndPopular.PopularList.innerHTML = '';
+  popularProducts = await fetchAPI.popular();
+  // console.log("popularProducts",popularProducts);
   // ----------------
-  render()
+  render();
 }
 function addProduct(event) {
   const product = event.target.closest('.cards-item');
@@ -24,20 +25,20 @@ function addProduct(event) {
   checkBtn[`check${product_Id}`].style.display = 'flex';
   buyProduct(product_Id);
 
-//   console.log(product_Id);
-  }
+  //   console.log(product_Id);
+}
 // -----------------------------------------------------------------------
- function handleModall(event) {
+function handleModall(event) {
   if (event.target.classList.contains('js-btn')) {
     addProduct(event);
     return;
   }
   if (!event.target.classList.contains('js-btn')) {
-    const product = event.target.closest('.cards-item');
-    product_Id = product.dataset.id;
+    // const product = event.target.closest('.cards-item');
+    // product_Id = product.dataset.id;
     // console.log(product_Id);
-    // -------------- тут потрібно вставити функцію відкриття модального вікна і передати product_Id--------------------------------
-    
+    getProductModal(event, '.cards-item');
+
     // alert();
     return;
   }
@@ -85,7 +86,7 @@ export function createMarcup(arr) {
     .join('');
 }
 // // ---------------------------------------------------------------------
- async function render() {
+async function render() {
   try {
     const data = popularProducts;
     //   console.log('render', data);
@@ -117,7 +118,9 @@ export function createMarcup(arr) {
   }
 }
 //   ---------------------------------------------------------
-export {renderPopular,handleModall}
+export { renderPopular, handleModall };
 // ----------------------------для main.js---------------
-
+//         import { renderPopular,handleModall } from './js/popularProducts.js';
+// renderPopular()
+//  frontEnd.PopularList.addEventListener('click', handleModall)
 
