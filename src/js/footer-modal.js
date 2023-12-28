@@ -1,8 +1,8 @@
 // -------------------Підключи цей код щоб працювало---------------------
-// import { form } from './js/footer-modal.js';
-// import { postEmail } from './js/footer-modal.js';
+import { form } from './js/footer-modal.js';
+import { postEmail } from './js/footer-modal.js';
 
-// form.addEventListener('submit', postEmail);
+form.addEventListener('submit', postEmail);
 
 const refs = {
   openModalBtn: document.querySelector('[data-action="open-modal"]'),
