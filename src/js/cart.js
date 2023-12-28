@@ -4,11 +4,33 @@ import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import { icon } from './img/icons.svg';
 
+async function drawProductCart() {
+  let cart = localStorageApi.loadCart();
+  console.log(cart);
+
+  const productsInCart = [];
+  if ('products' in cart) {
+    cart.products.forEach(({ productId }) =>
+      getProductApi(productId).then(resp => productsInCart.push(resp))
+    );
+  }
+  // console.log(productsInCart);
+
+  const cartContainer = document.querySelector(
+    '.cart-products-order-container'
+  );
+  cartContainer.innerHTML = cartMarkup(productsInCart);
+}
+
+async function getProductApi(id) {
+  const product = await fetchAPI.product(id);
+  return product;
+}
+
 function cartMarkup(products) {
-  if (products.length !== 0) {
-    return products
-      .map(({ _id, name, img, category, price, size }) => {
-        return `
+  return products
+    .map(({ _id, name, img, category, price, size }) => {
+      return `
              <div class="cart-product-container">
             <div class="cart-delete-all">
             <button type="button" class="cart-delete-button"> Delete All
@@ -32,7 +54,7 @@ function cartMarkup(products) {
             <div class="cart-product-card">
             <div class="cart-product-name-container">
               <h3 class="cart-product-name">${name}</h3>
-              <button type="button" class="cart-product-delete-btn">
+              <button data-productId="${_id}" type="button" class="cart-product-delete-btn">
               <svg class="cart-icon-close" width="18" height="18">
                     <use href="${icon}#close-icon"></use>
                     </svg>
@@ -59,7 +81,7 @@ function cartMarkup(products) {
           <div class="order-container">
             <p class="order-text">Total</p>
             <p class="order-sum-text">Sum:</p>
-            <p class="order-total-sum">${products.toFixed(2)}</p>
+            <p class="order-total-sum">${price.toFixed(2)}</p>
           </div>
 
           <div class="order-input-checkout">
@@ -77,37 +99,8 @@ function cartMarkup(products) {
           </div>
 
           </div>`;
-      })
-      .join('');
-  }
-}
-
-async function drawProductCart() {
-  let cart = localStorageApi.loadCart();
-  console.log(cart);
-
-  const productsInCart = [];
-  if ('products' in cart) {
-    cart.products.forEach(({ productId }) =>
-      getProductApi(productId).then(resp => productsInCart.push(resp))
-    );
-  }
-  // console.log(productsInCart);
-
-  const cartHtml = cartMarkup(productsInCart);
-  const cartContainer = document.getElementById(
-    '.cart-products-order-container'
-  );
-  if (cartContainer) {
-    cartContainer.innerHTML = cartHtml;
-  } else {
-    console.error;
-  }
-}
-
-async function getProductApi(id) {
-  const product = await fetchAPI.product(id);
-  return product;
+    })
+    .join('');
 }
 
 drawProductCart();
