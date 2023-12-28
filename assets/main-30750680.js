@@ -91,12 +91,12 @@ import{a as h,b as z}from"./vendor-0363fca5.js";(function(){const t=document.cre
                </div>
                <button id="${t}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${t}"  type="button">
                     <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
-                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                        <use class="js-btn" href="../img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
                 <div id="${t}" class="check-btn js-object" data-jsname="check${t}" >
                 <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
-                        <use href="./img/icons.svg#check-mark-icon"></use>
+                        <use href="../img/icons.svg#check-mark-icon"></use>
                     </svg></div>
                </li>    
                
@@ -196,4 +196,4 @@ import{a as h,b as z}from"./vendor-0363fca5.js";(function(){const t=document.cre
         </div>
     </li>
   `}async function rt(){(await v.products()).results.map(t=>q.insertAdjacentHTML("beforeend",nt(t)))}const D=new u;P();rt();q.addEventListener("click",at);X();D.PopularList.addEventListener("click",tt);W();D.discountList.addEventListener("click",Q);T.addEventListener("submit",ct);
-//# sourceMappingURL=main-2561d507.js.map
+//# sourceMappingURL=main-30750680.js.map
