@@ -101,6 +101,7 @@ function handleMarkup(data) {
 
 async function renderCards() {
   const productListApi = await fetchAPI.products();
+
   productListApi.results.map(item => {
     return productsList.insertAdjacentHTML('beforeend', handleMarkup(item));
   }
@@ -109,11 +110,9 @@ async function renderCards() {
 
 function renderSearchedCards(category, search) {
   productsList.innerHTML = '';
-
   if (category) {
     return category.map(item => productsList.insertAdjacentHTML('beforeend', handleMarkup(item)));
   }
-
   if (search) {
     if (search.length === 0) {
         window.alert('Oops something went wrong')

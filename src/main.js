@@ -1,17 +1,11 @@
 
-
-
-
-
-
-
 import refsAPI from './js/refs.js';
 import {drawDiscount, discountOnClick, drawHeaderCartNumber} from './js/discount.js';
 import { renderPopular,handleModall } from './js/popularProducts.js';
 import { form } from './js/footer-modal.js';
 import { postEmail } from './js/footer-modal.js';
 import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js';
-
+import {checkAndFillFormFields, createDropdownList, cardsCreate, inputPush, toggleDropdown,  buttonCategory, inputText, buttonForm} from './js/filter.js';
 
 //get DOM tree
 const frontEnd = new refsAPI();
@@ -40,10 +34,19 @@ frontEnd.PopularList.addEventListener('click', handleModall);
 // Draw discount products
 drawDiscount();
 
+//draw discount products
+createDropdownList();
+checkAndFillFormFields();
+renderSearchedCards();
+
 
 // Add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
+// filter
+buttonCategory.addEventListener('click', toggleDropdown)
+inputText.addEventListener('input', inputPush)
+buttonForm.addEventListener('click', cardsCreate)
 
 // Modal footer
 form.addEventListener('submit', postEmail);
