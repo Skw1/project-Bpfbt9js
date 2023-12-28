@@ -4,9 +4,9 @@ import { drawDiscount, discountOnClick } from './js/discount.js';
 
 
 //  RenderProuctList
-import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js'
-renderCards()
-productsList.addEventListener('click', onCardClick)
+//import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js'
+//renderCards()
+//productsList.addEventListener('click', onCardClick)
 
 //Modal footer
 
@@ -35,9 +35,9 @@ drawDiscount();
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
 // Modal
-// import { renderPopular,handleModall } from './js/popularProducts.js';
+//import { renderPopular,handleModall } from './js/popularProducts.js';
 
-// renderPopular()
+//renderPopular()
 
-// frontEnd.PopularList.addEventListener('click', handleModall)
+//frontEnd.PopularList.addEventListener('click', handleModall)
 
