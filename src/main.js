@@ -33,8 +33,8 @@ const frontEnd = new refsAPI();
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
 // Modal
-import { renderPopular,handleModall } from './js/popularProducts.js';
+//import { renderPopular,handleModall } from './js/popularProducts.js';
 
-renderPopular()
+//renderPopular()
 
-frontEnd.PopularList.addEventListener('click', handleModall)
+//frontEnd.PopularList.addEventListener('click', handleModall)
