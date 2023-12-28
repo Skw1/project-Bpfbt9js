@@ -25,7 +25,7 @@ renderCards()
 productsList.addEventListener('click', onCardClick)
 
 
-// DrawPopular products 
+// Draw Popular products 
 
 renderPopular();
 
@@ -38,7 +38,6 @@ frontEnd.PopularList.addEventListener('click', handleModall)
 // Draw discount products
 
 drawDiscount();
-
 
 
 // Add event listener for discount products
