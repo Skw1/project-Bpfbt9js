@@ -20,6 +20,3 @@ const frontEnd = new refsAPI();
 
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
-
-
-
