@@ -38,6 +38,7 @@
   font-size: 14px;
   font-weight: 400;
 }
+
 @media screen and (min-width: 768px) {
   .modal-inner {
     padding: 18px 20px 0 20px;
@@ -53,3 +54,4 @@
     padding: 0 20px;
   }
 }
+
