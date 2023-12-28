@@ -3,6 +3,8 @@ import { drawDiscount, discountOnClick } from './js/discount.js';
 
 
 //  RenderProuctList
+import { onCardClick, productsList, renderCards } from './js/renderProductList.js';
+renderCards()
 
 
 
@@ -18,9 +20,9 @@ form.addEventListener('submit', postEmail);
 
 import { renderPopular,handleModall } from './js/popularProducts.js';
 
-renderPopular()
+renderPopular();
 
- frontEnd.PopularList.addEventListener('click', handleModall)
+
 
 
 //draw discount products
@@ -32,4 +34,7 @@ const frontEnd = new refsAPI();
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
+
+frontEnd.PopularList.addEventListener('click', handleModall);
+productsList.addEventListener('click', onCardClick);
 
