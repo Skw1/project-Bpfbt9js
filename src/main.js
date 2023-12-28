@@ -2,8 +2,8 @@ import refsAPI from './js/refs.js';
 import { drawDiscount, discountOnClick } from './js/discount.js';
 
 
-
 //  RenderProuctList
+
 
 
 //Modal footer
@@ -18,9 +18,9 @@ form.addEventListener('submit', postEmail);
 
 import { renderPopular,handleModall } from './js/popularProducts.js';
 
-renderPopular()
+renderPopular();
 
- frontEnd.PopularList.addEventListener('click', handleModall)
+
 
 
 //draw discount products
@@ -32,4 +32,8 @@ const frontEnd = new refsAPI();
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
+
+renderPopular()
+
+frontEnd.PopularList.addEventListener('click', handleModall)
 
