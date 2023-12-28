@@ -1,8 +1,8 @@
 import fetchAPI from './fetchApi.js';
-import localStorageApi from './js/localStorageApi.js';
-import { onBasicLightbox } from './js/modal.Close';
-import closeIcon from './img/icons.svg#close-icon';
-import shoppingCartIcon from './img/icons.svg#shopping-cart-icon';
+import localStorageApi from './localStorageApi.js';
+import { onBasicLightbox } from './modalClose.js';
+import closeIcon from '../img/icons.svg#close-icon';
+import shoppingCartIcon from '../img/icons.svg#shopping-cart-icon';
 
 // функція getProductModal(event, jsClass) викликається при кліку на картку
 // event - івент колбек функції при кліку на картку
@@ -27,7 +27,7 @@ import shoppingCartIcon from './img/icons.svg#shopping-cart-icon';
 
 async function getProductModal(event, jsClass) {
   const currentProduct = event.target.closest(jsClass);
-  const id = currentProduct.dataset.productId;
+  const id = currentProduct.dataset.productid;
   const { name, desc, img, category, price, size, popularity } =
     await fetchAPI.product(id);
 
@@ -41,7 +41,8 @@ async function getProductModal(event, jsClass) {
     }
   }
 
-  const productModalMarkup = `<div class="modal-product">
+  const productModalMarkup = `<div class="container">
+  <div class="modal-product">
       <button class="modal-button js-modal-close" type="button" >
         <svg class="modal-form-icon" width="28" height="28">
               <use href="${closeIcon}"></use>
@@ -68,10 +69,10 @@ async function getProductModal(event, jsClass) {
               Size:
               <span class="modal-product-prop-span">${size}</span>
             </p>
+            </div>
             <p class="modal-product-prop">
               Popularity: <span class="modal-product-prop-span">${popularity}</span>
-            </p>
-          </div>
+            </p>       
           <p class="modal-product-prop-dscr">${desc}</p>
         </div>
       </div>
@@ -83,6 +84,7 @@ async function getProductModal(event, jsClass) {
             </svg>
         </button>
       </div>
+    </div>
     </div>`;
 
   onBasicLightbox(productModalMarkup, '.js-modal-close');
