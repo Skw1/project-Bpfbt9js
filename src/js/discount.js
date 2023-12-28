@@ -83,21 +83,26 @@ async function drawDiscount() {
   frontEnd.discountList.insertAdjacentHTML('beforeend', productsList.join(''));
 }
 
-function buyProduct(id) {
+function productInCart(id) {
   //read saved Cart
   let cart = localStorageApi.loadCart();
   //check if product in cart
-  let notInCart = true;
+  let inCart = false;
   if ('products' in cart) {
     cart.products.forEach(product => {
       if (product.productId === id) {
-        notInCart = false;
+        inCart = true;
         return;
       }
     });
   }
+  return inCart;
+}
+
+function buyProduct(id) {
+  let cart = localStorageApi.loadCart();
   //if not in cart then add
-  if (notInCart) {
+  if (!productInCart(id)) {
     if ('products' in cart) {
       cart.products.push({
         productId: id,
@@ -130,10 +135,23 @@ function setCartIcon(id, prefix) {
   }
 }
 
+function refreshIcons(prefix) {
+  const frontEnd = new refsAPI();
+  for (var key in frontEnd) {
+    if (key.indexOf(prefix) === 0) {
+      let id = frontEnd[key].dataset.productid;
+      if (productInCart(id)) {
+        setCheckedIcon(id, prefix);
+      } else {
+        setCartIcon(id, prefix);
+      }
+    }
+  }
+}
+
 function discountOnClick(event) {
   if (event.target.classList.contains('discount-buy')) {
     buyProduct(event.target.dataset.productid);
-    setCheckedIcon(event.target.dataset.productid, 'discountIcon');
   } else if (event.target.classList.contains('discount-show')) {
     getProductModal(event, '.discount-show');
   }
@@ -145,4 +163,5 @@ export {
   buyProduct,
   setCheckedIcon,
   setCartIcon,
+  refreshIcons,
 };

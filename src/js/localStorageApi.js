@@ -40,6 +40,8 @@ localStorageApi.deleteCart() - removes cart from storage
 
 */
 
+import { refreshIcons } from './discount';
+
 export default {
   _filterID: 'filter-project-Bpfbt9js',
   _cartID: 'cart-project-Bpfbt9js',
@@ -83,6 +85,7 @@ export default {
   },
   saveCart: function saveCart(cart) {
     this._save(this._cartID, cart);
+    refreshIcons('discountIcon');
   },
   loadCart: function loadCart() {
     let cart = this._load(this._cartID);
