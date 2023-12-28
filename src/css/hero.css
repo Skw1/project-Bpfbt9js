@@ -36,18 +36,20 @@
 	line-height: 18px; /* 128.571% */
 }
 
-.hero-big-image-div{
-	width: 335px;
-	height: 480px;
-
+.hero-image{
 }
 
 .hero-big-image{
 	border-radius: 30px;
+	display: flex;
+	width: 335px;
+	height: 480px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 	margin-bottom: 64px;
 }
-
 
 @media screen and (min-width: 768px) { 
 	.hero-section{
