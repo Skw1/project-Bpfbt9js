@@ -7,8 +7,8 @@
     <title>FoodBoutique 🥦🍓</title>
     
     <script type="module" crossorigin src="/project-Bpfbt9js/assets/vendor-a61d8330.js"></script>
-    <script type="module" crossorigin src="/project-Bpfbt9js/assets/main-aa908632.js"></script>
-    <link rel="stylesheet" href="/project-Bpfbt9js/assets/main-639451f4.css">
+    <script type="module" crossorigin src="/project-Bpfbt9js/assets/main-075ac169.js"></script>
+    <link rel="stylesheet" href="/project-Bpfbt9js/assets/main-4fe07483.css">
   </head>
   <body>
     <header class="page-header-container container">
@@ -66,6 +66,31 @@
     </div>
 </section>
 
+    <div class="options-holder">
+  <form class="filter-form">
+    <label class="filter-txt">Filter:</label>
+    <div class="total">
+      <div class="filter-div">
+        <input
+          class="input-filter"
+          type="text"
+          placeholder="Search for anything"
+          id="input-filter"
+        />
+        <button class="submit-filter" type="submit" id="filterButt">
+          <svg class="search-svg"><use href="../img/icons.svg#search-icon"></use></svg>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="dropdown" id="myDropdown">
+    <div class="dropdown-toggle" onclick="toggleDropdown()">
+      <p class="category-content"></p>
+      <svg class="search-svg"><use href="../img/icons.svg#categories-icon"></use></svg>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu"></div>
+  </div>
+</div>
 
     <div class="product-card-container">
     <ul class="product-card-list">
