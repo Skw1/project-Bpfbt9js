@@ -36,7 +36,9 @@ function addProduct(event) {
     const product = event.target.closest('.cards-item');
     product_Id = product.dataset.id;
     // console.log(product_Id);
-    alert();
+    // -------------- тут потрібно вставити функцію відкриття модального вікна і передати product_Id--------------------------------
+    
+    // alert();
     return;
   }
 }
