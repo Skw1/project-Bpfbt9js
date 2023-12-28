@@ -31,7 +31,7 @@ drawDiscount();
 drawHeaderCartNumber();
 
 //get DOM tree
-const frontEnd = new refsAPI();
+//const frontEnd = new refsAPI();
 
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
