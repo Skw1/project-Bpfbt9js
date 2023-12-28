@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'NeueMontreal-regular';
-    src:  url('../fonts/NeueMontreal-Regular.otf');       
+    src:  url('../fonts/NeueMontreal-Regular.otf') ;       
     font-weight: normal;
     font-style: normal;
   }
@@ -19,6 +19,7 @@
   }
 
 body{
+    font-family: 'NeueMontreal-medium', sans-serif;
     margin:0;
     padding:0;
     background-color: var(--primary-white-color);

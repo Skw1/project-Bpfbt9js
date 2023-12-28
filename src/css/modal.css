@@ -57,8 +57,8 @@ body .basicLightbox {
 .modal-product-prop-wrap {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px 8px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 9px;
 }
 
 .modal-product-prop {
@@ -69,12 +69,16 @@ body .basicLightbox {
 }
 
 .modal-product-prop-span {
+  color: var(--primary-black-color);
   font-size: 12px;
   font-weight: 400;
   line-height: 1.17;
 }
 
 .modal-product-prop-dscr {
+  margin-top: 20px;
+  height: 92px;
+  overflow-y: auto;
   color: rgba(1, 1, 1, 0.7);
   font-size: 14px;
   font-weight: 400;
@@ -150,10 +154,12 @@ body .basicLightbox {
   }
 
   .modal-product-prop-wrap {
-    margin-bottom: 24px;
+    margin-bottom: 9px;
   }
 
   .modal-product-prop-dscr {
+    margin-top: 24px;
+    height: 116px;
     font-size: 16px;
     line-height: 1.25;
   }
