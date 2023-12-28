@@ -18,10 +18,6 @@ productsList.addEventListener('click', onCardClick)
 form.addEventListener('submit', postEmail);
 
 
-import { form } from './js/footer-modal.js';
-import { postEmail } from './js/footer-modal.js';
-
-form.addEventListener('submit', postEmail);
 
 //Popular products imports
 
@@ -39,9 +35,3 @@ drawHeaderCartNumber();
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
-// Modal
-//import { renderPopular,handleModall } from './js/popularProducts.js';
-
-//renderPopular()
-
-//frontEnd.PopularList.addEventListener('click', handleModall)
