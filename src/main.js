@@ -3,11 +3,8 @@ import {drawDiscount, discountOnClick, drawHeaderCartNumber} from './js/discount
 import { renderPopular,handleModall } from './js/popularProducts.js';
 import { form } from './js/footer-modal.js';
 import { postEmail } from './js/footer-modal.js';
-import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js';
 
-
-//get DOM tree
-const frontEnd = new refsAPI();
+import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js'
 
 
 // Draw Header Cart Number
@@ -15,7 +12,9 @@ const frontEnd = new refsAPI();
 drawHeaderCartNumber();
 
 
-// RenderProuctList
+renderCards()
+
+productsList.addEventListener('click', onCardClick)
 
 renderCards()
 

@@ -1,17 +1,20 @@
+import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
 import { getProductModal } from './modalProduct.js';
 
 const productsList = document.querySelector('.product-card-list');
 
 function onCardClick(e) {
-  // const cardId = e.target.closest('.product-card-item').id;
-
+  const cardId = e.target.closest('.product-card-item').dataset.productid;
+  
   if (e.target.classList.contains('product-card-item') || e.target !== e.currentTarget) {
     if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
   
-      console.log('add prod')
-     
-   return;
+      console.log(cardId)
+      buyProduct(cardId)
+      setCheckedIcon(cardId, 'shoppingCartIcon')
+  
+      return;
     }
   
     getProductModal(e, '.product-card-item');
@@ -45,11 +48,15 @@ function handleMarkup(data) {
         </div>
         <div class="product-card-bottom">
         <p class="product-curd-price">$${price}</p>
-        <button class="card_buy-btn">
-          <svg class="card_buy-logo-icon">
-                <use href="./img/icons.svg#shopping-cart-icon"></use>
-          </svg>
-        </button>
+         <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
+                    <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                    </svg>
+                </button>
+                <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
+                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
+                        <use href="./img/icons.svg#check-mark-icon"></use>
+                    </svg></div>
         </div>
         </div>
     </li>
@@ -75,11 +82,16 @@ function handleMarkup(data) {
         </div>
         <div class="product-card-bottom">
         <p class="product-curd-price">$${price}</p>
-        <button class="card_buy-btn">
-          <svg class="card_buy-logo-icon">
-                <use href="./img/icons.svg#shopping-cart-icon"></use>
-          </svg>
-        </button>
+        
+        <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
+                    <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                    </svg>
+                </button>
+                <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
+                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
+                        <use href="./img/icons.svg#check-mark-icon"></use>
+                    </svg></div>
         </div>
         </div>
     </li>
