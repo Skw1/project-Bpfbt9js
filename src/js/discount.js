@@ -135,6 +135,7 @@ function setCartIcon(id, prefix) {
   }
 }
 
+//change product icons after change of cart
 function refreshIcons(prefix) {
   const frontEnd = new refsAPI();
   for (var key in frontEnd) {
@@ -149,12 +150,27 @@ function refreshIcons(prefix) {
   }
 }
 
+//callback for event listener
 function discountOnClick(event) {
   if (event.target.classList.contains('discount-buy')) {
     buyProduct(event.target.dataset.productid);
   } else if (event.target.classList.contains('discount-show')) {
     getProductModal(event, '.discount-show');
   }
+}
+
+//draw number of categories in cart
+
+function drawHeaderCartNumber() {
+  const frontEnd = new refsAPI();
+  let cartNumber = 0;
+  let cart = localStorageApi.loadCart();
+  //check if cart empty
+  if ('products' in cart) {
+    cartNumber = cart.products.length;
+  }
+  console.log(cartNumber);
+  frontEnd.headerCartNumber.textContent = cartNumber;
 }
 
 export {
@@ -164,4 +180,5 @@ export {
   setCheckedIcon,
   setCartIcon,
   refreshIcons,
+  drawHeaderCartNumber,
 };
