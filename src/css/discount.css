@@ -3,7 +3,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
-  margin-bottom: 80px;
 }
 
 .discount-header {
@@ -112,7 +111,6 @@
 @media (min-width: 768px) {
   .discount-section {
     max-width: 704px;
-    margin-bottom: 100px;
   }
 
   .discount-header {
@@ -143,7 +141,6 @@
 @media (min-width: 1440px) {
   .discount-section {
     width: 275px;
-    margin-bottom: 140px;
   }
 
   .discount-list {
