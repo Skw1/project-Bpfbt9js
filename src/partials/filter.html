@@ -1,0 +1,25 @@
+<div class="options-holder">
+  <form class="filter-form">
+    <label class="filter-txt">Filter:</label>
+    <div class="total">
+      <div class="filter-div">
+        <input
+          class="input-filter"
+          type="text"
+          placeholder="Search for anything"
+          id="input-filter"
+        />
+        <button class="submit-filter" type="submit" id="filterButt">
+          <svg class="search-svg"><use href="../img/icons.svg#search-icon"></use></svg>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="dropdown" id="myDropdown">
+    <div class="dropdown-toggle" onclick="toggleDropdown()">
+      <p class="category-content"></p>
+      <svg class="search-svg"><use href="../img/icons.svg#categories-icon"></use></svg>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu"></div>
+  </div>
+</div>

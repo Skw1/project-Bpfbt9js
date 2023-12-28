@@ -123,3 +123,4 @@ export { renderPopular, handleModall };
 //         import { renderPopular,handleModall } from './js/popularProducts.js';
 // renderPopular()
 //  frontEnd.PopularList.addEventListener('click', handleModall)
+
