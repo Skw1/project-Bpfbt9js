@@ -130,4 +130,4 @@ import{a as l,b as T}from"./vendor-0363fca5.js";(function(){const t=document.cre
                
     
 `).join("")}async function Y(){try{const o=_;v.PopularList.insertAdjacentHTML("beforeend",W(o)),y=new p;let t=u.loadCart();const s=[];"products"in t&&(t=t.products,t.forEach(e=>s.push(e.productId)));const a=[];return _.forEach(e=>{s.includes(e._id)&&(y[`btn1${e._id}`].style.display="none",y[`check${e._id}`].style.display="flex")}),await o}catch(o){console.log(o.message)}}const G=new p;S.addEventListener("submit",K);V();A();G.discountList.addEventListener("click",z);
-//# sourceMappingURL=main-4c303052.js.map
+//# sourceMappingURL=main-cf4afe72.js.map
