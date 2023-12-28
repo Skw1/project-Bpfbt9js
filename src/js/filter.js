@@ -80,7 +80,7 @@ async function cardsCreate(event) {
         inputTextHolder = JSON.parse(localStorage.getItem(LOCAL_SAVE_INPUT));
     }
 
-    renderSearchedCards(itemCategory, inputTextHolder);
+    console.log(itemCategory, inputTextHolder);
 }
 
 
