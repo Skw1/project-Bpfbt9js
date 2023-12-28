@@ -1,53 +1,42 @@
-import fetchAPI from './js/fetchApi.js';
-
-
+import fetchAPI from './fetchApi.js';
+import {onCardClick, renderCards, renderSearchedCards, productsList} from './renderProductList.js'
 
 const dropdownMenu = document.querySelector('#dropdownMenu');
 const inputText = document.querySelector('#input-filter')
 const buttonForm = document.querySelector('#filterButt')
+const categoryContent = document.querySelector('.category-content')
+const buttonCategory = document.querySelector('.dropdown-toggle')
 const LOCAL_SAVE_INPUT = "keyword";
 const LOCAL_SAVE_CATEGORY = "category";
-const categoryContent = document.querySelector('.category-content')
-
-inputText.addEventListener('input', inputPush)
-buttonForm.addEventListener('click', cardsCreate)
 
 let inputTextHolder = JSON.parse(localStorage.getItem(LOCAL_SAVE_INPUT));
 let itemCategory = JSON.parse(localStorage.getItem(LOCAL_SAVE_CATEGORY));
 
-
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-const data = ['Option 1', 'Option 2', 'Option 3', 'Option 3'];
 
 function checkAndFillFormFields() {
     if (inputTextHolder || itemCategory) {
       inputText.value = inputTextHolder;
       categoryContent.textContent = itemCategory;
     }
-  }
-
+}
 
 async function createDropdownList() {
-
     const data = await fetchAPI.categories();
 
-    if(itemCategory !== null){
+    if (itemCategory !== null) {
         categoryContent.textContent = itemCategory;
-   }
-   else{
+    } else {
         categoryContent.textContent = "Categories"
-   }
+    }
 
     dropdownMenu.innerHTML = '';
 
-    
-
-    data.forEach((item) => {
+    data.forEach(async (item) => {
         const listItem = document.createElement('div');
         listItem.className = 'dropdown-item';
         listItem.textContent = item;
-        listItem.onclick = function () {
+        listItem.onclick = async function () {
             itemCategory = item;
             localStorage.setItem(LOCAL_SAVE_CATEGORY, JSON.stringify(itemCategory));
             toggleDropdown();
@@ -56,18 +45,14 @@ async function createDropdownList() {
     });
 }
 
-
-
-function toggleDropdown() {
-
+async function toggleDropdown() {
     dropdownMenu.style.display = (dropdownMenu.style.display === 'flex') ? 'none' : 'flex';
-    
-    if(itemCategory !== null){
+
+    if (itemCategory !== null) {
         categoryContent.textContent = itemCategory;
-   }
-   else{
+    } else {
         categoryContent.textContent = "Categories"
-   }
+    }
 
     setTimeout(function () {
         dropdownMenu.style.opacity = (dropdownMenu.style.opacity === '1') ? '0' : '1';
@@ -78,28 +63,40 @@ function toggleDropdown() {
 
 function inputPush(e) {
     const value = e.target.value;
-    if(value){
+    if (value) {
         localStorage.setItem(LOCAL_SAVE_INPUT, JSON.stringify(value));
-    }
-    else{
+    } else {
         localStorage.setItem(LOCAL_SAVE_INPUT, JSON.stringify(null));
     }
-    
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function cardsCreate (event) {
+async function cardsCreate(event) {
     event.preventDefault();
-    if(inputTextHolder == ""){
+    if (inputTextHolder == "") {
         inputTextHolder = null;
-    }
-    else{
+    } else {
         inputTextHolder = JSON.parse(localStorage.getItem(LOCAL_SAVE_INPUT));
     }
 
-    console.log(inputTextHolder, itemCategory)
+    renderSearchedCards(itemCategory, inputTextHolder);
 }
+
 
 checkAndFillFormFields();
 createDropdownList();
+
+
+
+
+export {
+    checkAndFillFormFields,
+    createDropdownList,
+    cardsCreate,
+    inputPush,
+    toggleDropdown,
+    buttonCategory,
+    inputText,
+    buttonForm
+}
