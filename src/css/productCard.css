@@ -116,6 +116,7 @@
     max-height: 363px;
     gap: 20px;
     flex-shrink: 0;
+    flex-basis: calc((100% - 20px * 3) / 4);
 } 
 
   .product-card-info {

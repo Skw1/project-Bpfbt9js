@@ -1,12 +1,12 @@
 import refsAPI from './js/refs.js';
+const frontEnd = new refsAPI();
 import { drawDiscount, discountOnClick } from './js/discount.js';
 
 
 //  RenderProuctList
-import { onCardClick, productsList, renderCards } from './js/renderProductList.js';
+import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js'
 renderCards()
-
-
+productsList.addEventListener('click', onCardClick)
 
 //Modal footer
 
@@ -29,12 +29,15 @@ renderPopular();
 drawDiscount();
 
 //get DOM tree
-const frontEnd = new refsAPI();
+// const frontEnd = new refsAPI();
 
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
+// Modal
+// import { renderPopular,handleModall } from './js/popularProducts.js';
 
-frontEnd.PopularList.addEventListener('click', handleModall);
-productsList.addEventListener('click', onCardClick);
+// renderPopular()
+
+// frontEnd.PopularList.addEventListener('click', handleModall)
 
