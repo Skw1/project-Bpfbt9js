@@ -1,5 +1,7 @@
 /* Шапка */
-
+.page-header-container {
+  margin: 0 auto;
+}
 .header-logo-icon {
   width: 14px;
   height: 14px;
@@ -30,9 +32,6 @@
 }
 .main-nav {
   padding-top: 24px;
-}
-.hero-container {
-  position: relative;
 }
 
 .logo-link {
@@ -181,6 +180,5 @@
 @media (min-width: 1440px) {
   .page-header-container {
     max-width: 1240px;
-    padding: 0 20px;
   }
 }
