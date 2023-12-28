@@ -21,7 +21,6 @@ form.addEventListener('submit', postEmail);
 
 //Popular products imports
 
-import { renderPopular, handleModall } from './js/popularProducts.js';
 
 renderPopular();
 
