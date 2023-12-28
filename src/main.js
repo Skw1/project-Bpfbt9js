@@ -8,6 +8,12 @@ import { postEmail } from './js/footer-modal.js';
 
 form.addEventListener('submit', postEmail);
 
+//Popular products imports
+
+import { renderPopular,handleModall } from './js/popularProducts.js';
+renderPopular()
+ frontEnd.PopularList.addEventListener('click', handleModall)
+
 
 // Test RenderProuctList
 

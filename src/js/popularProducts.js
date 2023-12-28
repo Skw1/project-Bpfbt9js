@@ -119,7 +119,5 @@ export function createMarcup(arr) {
 //   ---------------------------------------------------------
 export {renderPopular,handleModall}
 // ----------------------------для main.js---------------
-//         import { renderPopular,handleModall } from './js/popularProducts.js';
-// renderPopular()
-//  frontEnd.PopularList.addEventListener('click', handleModall)
+
 
