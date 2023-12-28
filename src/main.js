@@ -3,11 +3,7 @@ import { drawDiscount, discountOnClick } from './js/discount.js';
 
 
 //  RenderProuctList
-import { onCardClick, productsList, renderCards } from './js/renderProductList.js';
 
-renderCards()
-
-productsList.addEventListener('click', onCardClick)
 
 
 //Modal footer
