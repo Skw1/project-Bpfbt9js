@@ -1,19 +1,19 @@
 
 @font-face {
     font-family: 'NeueMontreal-regular';
-    src:  url('../fonts/NeueMontreal-Regular.otf');       
+    src:  url('./fonts/NeueMontreal-Regular.otf');       
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'NeueMontreal-medium';
-    src:  url('../fonts/NeueMontreal-Medium.otf');
+    src:  url('./fonts/NeueMontreal-Medium.otf');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'Quincycf';
-    src: url('../fonts/Fontspring-DEMO-quincycf-text.otf');
+    src: url('./fonts/Fontspring-DEMO-quincycf-text.otf');
     font-weight: normal;
     font-style: normal;
   }
