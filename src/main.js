@@ -1,4 +1,5 @@
 import refsAPI from './js/refs.js';
+
 const frontEnd = new refsAPI();
 import {drawDiscount, discountOnClick, drawHeaderCartNumber} from './js/discount.js';
 
@@ -9,6 +10,7 @@ import { postEmail } from './js/footer-modal.js';
 
 
 //  RenderProuctList
+
 
 //renderCards()
 
@@ -29,8 +31,15 @@ drawDiscount();
 drawHeaderCartNumber();
 
 //get DOM tree
-// const frontEnd = new refsAPI();
+const frontEnd = new refsAPI();
 
 //add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
+
+
+
+renderPopular()
+
+frontEnd.PopularList.addEventListener('click', handleModall)
+
 
