@@ -1,9 +1,8 @@
-
-
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import { icon } from './img/icons.svg';
 
+// відмалювання карток
 async function drawProductCart() {
   let cart = localStorageApi.loadCart();
   console.log(cart);
@@ -105,6 +104,7 @@ function cartMarkup(products) {
 
 drawProductCart();
 
+//видалення продукту у кошику
 document
   .querySelector('.cart-product-delete-btn')
   .addEventListener('click', event => {
@@ -120,3 +120,20 @@ document
     }
     localStorageApi.saveCart(cart);
   });
+
+// підрахунок суми товарів у кошику
+
+const cart = localStorageApi.loadCart();
+function calculateTotalSum(cart) {
+  let totalSum = 0;
+  if ('products' in cart) {
+    totalSum = cart.products.reduce((sum, product) => {
+      return sum + product.price;
+    }, 0);
+  }
+  return totalSum;
+}
+
+const totalSumElement = document.querySelector('.order-total-sum');
+const totalSum = calculateTotalSum(cart);
+totalSumElement.textContent = `$${totalSum.toFixed(2)}`;

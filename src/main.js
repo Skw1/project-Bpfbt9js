@@ -1,30 +1,34 @@
 import refsAPI from './js/refs.js';
-import { drawDiscount, discountOnClick } from './js/discount.js';
+
+const frontEnd = new refsAPI();
+import {drawDiscount, discountOnClick, drawHeaderCartNumber} from './js/discount.js';
+
+import { renderPopular,handleModall } from './js/popularProducts.js';
+import { form } from './js/footer-modal.js';
+import { postEmail } from './js/footer-modal.js';
+//import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js'
 
 
 //  RenderProuctList
 
 
+//renderCards()
+
+//productsList.addEventListener('click', onCardClick)
 
 //Modal footer
-
-import { form } from './js/footer-modal.js';
-import { postEmail } from './js/footer-modal.js';
-
 form.addEventListener('submit', postEmail);
+
 
 
 //Popular products imports
 
-import { renderPopular,handleModall } from './js/popularProducts.js';
 
 renderPopular();
 
-
-
-
 //draw discount products
 drawDiscount();
+drawHeaderCartNumber();
 
 //get DOM tree
 const frontEnd = new refsAPI();
@@ -33,7 +37,9 @@ const frontEnd = new refsAPI();
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
 
+
 renderPopular()
 
 frontEnd.PopularList.addEventListener('click', handleModall)
+
 

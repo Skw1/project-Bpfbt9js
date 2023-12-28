@@ -38,3 +38,20 @@
   font-size: 14px;
   font-weight: 400;
 }
+
+@media screen and (min-width: 768px) {
+  .modal-inner {
+    padding: 18px 20px 0 20px;
+  }
+  .modal__title--wrap {
+    width: 245px;
+    margin: 0 auto 20px auto;
+  }
+  .modal__description--wrap {
+    width: 328px;
+  }
+  .modal__description {
+    padding: 0 20px;
+  }
+}
+
