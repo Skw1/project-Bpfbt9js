@@ -1,10 +1,7 @@
 import fetchAPI from './fetchApi.js';
-
 import { getProductModal } from './modalProduct.js';
 
-
 const productsList = document.querySelector('.product-card-list');
-const productListApi = await fetchAPI.products();
 
 function onCardClick(e) {
   // const cardId = e.target.closest('.product-card-item').id;
@@ -90,13 +87,13 @@ function handleMarkup(data) {
   
 };
 
-function renderCards() {
+async function renderCards() {
+  const productListApi = await fetchAPI.products();
   productListApi.results.map(item => {
     return productsList.insertAdjacentHTML('beforeend', handleMarkup(item));
   }
   )
 };
-
 
 function renderSearchedCards(category, search) {
   productsList.innerHTML = '';
