@@ -1,9 +1,9 @@
 @import url('./footer_modal.css');
 /* Дефолтний контейнер */
 
-.footer-container {
+/* .footer-container {
   width: 100%;
-}
+} */
 
 /* ---------------Фон модалки------------------ */
 
@@ -58,14 +58,14 @@ body.show-modal .modal {
 }
 
 .footer {
-  padding-top: 40px;
-  padding-bottom: 20px;
   background-color: var(--primary-green-color);
   color: var(--primary-white-color);
 }
 
 .footer-container {
-  max-width: 375px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  /* max-width: 375px; */
   margin: 0 auto;
 }
 .footer-content-wrap {
@@ -100,8 +100,8 @@ body.show-modal .modal {
 
 .footer-logo-icon {
   fill: var(--primary-green-color);
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
 }
 .footer-social-media-list {
   display: flex;
@@ -235,10 +235,7 @@ body.show-modal .modal {
 /* Медіа від 768 */
 
 @media screen and (min-width: 768px) {
-  .footer-container {
-    max-width: 768px;
-    padding: 0 32px;
-  }
+
   .footer-content-wrap {
     justify-content: space-between;
     display: flex;
@@ -249,8 +246,8 @@ body.show-modal .modal {
     height: 32px;
   }
   .footer-logo-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
   .footer-logo-social {
     margin-bottom: 0;
@@ -279,6 +276,10 @@ body.show-modal .modal {
   .footer-slogan {
     font-size: 18px;
     line-height: 1.33;
+  }
+
+  .footer-copywriting-text {
+    margin-bottom: 0px;
   }
 
   .subscription-wrap {
@@ -312,13 +313,9 @@ body.show-modal .modal {
   }
 }
 
-/* Медіа від 1280*/
+/* Медіа від 1440*/
 
 @media screen and (min-width: 1440px) {
-  .footer-container {
-    max-width: 1240px;
-    padding: 0 20px;
-  }
   .footer-content-wrap {
     margin-bottom: 128px;
   }
