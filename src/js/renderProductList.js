@@ -1,43 +1,40 @@
-
+import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
-import localStorageApi from './localStorageApi.js';
-
-import discountIcon from '../img/icons.svg#discount-icon';
-import cartIcon from '../img/icons.svg#discount-cart';
-import checkedIcon from '../img/icons.svg#discount-checked';
+import { getProductModal } from './modalProduct.js';
 
 const productsList = document.querySelector('.product-card-list');
 
-
-
 function onCardClick(e) {
-  const cardId = e.target.closest('.product-card-item').id;
-
+  const cardId = e.target.closest('.product-card-item').dataset.productid;
+  
   if (e.target.classList.contains('product-card-item') || e.target !== e.currentTarget) {
     if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
-      console.log('Buy prod', cardId)
-     
-   return
+  
+      console.log(cardId)
+      buyProduct(cardId)
+      setCheckedIcon(cardId, 'shoppingCartIcon')
+  
+      return;
     }
-    
-    console.log('Open modal', cardId)
-    
+  
+    getProductModal(e, '.product-card-item');
     return
   }
   
 }
 function handleMarkup(data) {
   const { category, img, name, popularity, price, size, _id, is10PercentOff } = data;
-  
-  const markup = `
-  <li class="product-card-item discount-list-item" id=${_id} data-discount="${is10PercentOff}">
+
+  if (is10PercentOff) {
+    return `
+  <li class="product-card-item discount-list-item" id=${_id} data-productId="${_id}" >
 
   <svg class="discount-icon" id=${_id}>
    <use href="icon.svg#discount-icon"></use>
  </svg>
        <div class="product-card-wrapper">
         <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product-card-image"></div>
-        <h2 calss="product-card-name">${name}</h2>
+        <h2 class="product-card-name">${name}</h2>
         <div class="product-card-info">
             <p class="info-text">
                 Category:<span class="info-span">${category}</span>
@@ -51,17 +48,54 @@ function handleMarkup(data) {
         </div>
         <div class="product-card-bottom">
         <p class="product-curd-price">$${price}</p>
-        <button class="card_buy-btn">
-          <svg class="card_buy-logo-icon">
-                <use href="./img/icons.svg#shopping-cart-icon"></use>
-          </svg>
-        </button>
+         <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
+                    <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                    </svg>
+                </button>
+                <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
+                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
+                        <use href="./img/icons.svg#check-mark-icon"></use>
+                    </svg></div>
+        </div>
+        </div>
+    </li>
+  `
+  }
+  
+  return `
+  <li class="product-card-item discount-list-item" id=${_id} data-productId="${_id}" >
+
+       <div class="product-card-wrapper">
+        <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product-card-image"></div>
+        <h2 class="product-card-name">${name}</h2>
+        <div class="product-card-info">
+            <p class="info-text">
+                Category:<span class="info-span">${category}</span>
+            </p>
+            <p class="info-text">
+                Size:<span class="info-span">${size}</span>
+            </p>
+            <p class="info-text">
+                Popularity:<span class="info-span">${popularity}</span>
+            </p>
+        </div>
+        <div class="product-card-bottom">
+        <p class="product-curd-price">$${price}</p>
+        
+        <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
+                    <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                    </svg>
+                </button>
+                <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
+                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
+                        <use href="./img/icons.svg#check-mark-icon"></use>
+                    </svg></div>
         </div>
         </div>
     </li>
   `;
-
-  return markup;
   
 };
 
@@ -73,18 +107,6 @@ async function renderCards() {
   }
   )
 };
-
-function shownDiscIcon(arr) {
-  arr.map(el => {
-    const icon = document.querySelector('.discount-icon')
-    
-    console.log(icon)
-    
-  })
-};
-// shownDiscIcon(productListApi.results)
-
-
 
 function renderSearchedCards(category, search) {
   productsList.innerHTML = '';
@@ -99,9 +121,5 @@ function renderSearchedCards(category, search) {
   }
 };
 
-export{onCardClick, renderCards, renderSearchedCards, productsList}
-
-
-
-
+export{onCardClick, renderCards, renderSearchedCards, productsList};
 
