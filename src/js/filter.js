@@ -11,7 +11,7 @@ const LOCAL_SAVE_CATEGORY = "category";
 
 let inputTextHolder = JSON.parse(localStorage.getItem(LOCAL_SAVE_INPUT));
 let itemCategory = JSON.parse(localStorage.getItem(LOCAL_SAVE_CATEGORY));
-
+let filter = {};
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function checkAndFillFormFields() {
@@ -88,7 +88,19 @@ async function cardsCreate(event) {
     } else {
         inputTextHolder = JSON.parse(localStorage.getItem(LOCAL_SAVE_INPUT));
     }
-    console.log(itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_'), inputTextHolder);
+
+    if(inputTextHolder == null){
+        filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_')}
+    }
+    else{
+        filter = {
+            keyword: inputTextHolder , 
+            category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_')
+        }
+    }
+    const data = await fetchAPI.products(filter);
+
+    return renderSearchedCards(data)
 }
 
 

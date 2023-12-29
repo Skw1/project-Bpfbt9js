@@ -2,11 +2,13 @@ import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
 import { getProductModal } from './modalProduct.js';
 
-async function renderSearchedCards(itemCategory, inputTextHolder) {
-  document.querySelector('.product_card-list').innerHTML = '';
-  const prodFilter = await fetchAPI.products();
+async function renderSearchedCards(data) {
+  document.querySelector('.product_card-list').innerHTML = ''; 
 
-  
+  data.results.map(item => {
+    return document.querySelector('.product_card-list').insertAdjacentHTML('beforeend', handleMarkup(item));
+  }
+  )
 };
 
 function onCardClick(e) {
