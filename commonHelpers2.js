@@ -1,91 +1,63 @@
-import{r as _,f as y,g as k,l as O,b as w,s as A,d as N,a as H,e as B}from"./assets/localStorageApi-a706a4a6.js";import"./assets/vendor-7ba42fd8.js";let v,j,g,r;async function J(){v=new _,v.PopularList.innerHTML="",j=await y.popular(),Y()}function D(t){g=t.target.closest(".cards-item").dataset.productid,r[`btn1${g}`].style.display="none",r[`check${g}`].style.display="flex",w(g)}function z(t){let e=setInterval(function(){$()},1e3);if(setTimeout(function(){clearInterval(e)},5e3),t.target.classList.contains("js-btn")){D(t);return}if(!t.target.classList.contains("js-btn")){k(t,".cards-item");return}}function F(t){return t.map(({_id:e,img:s,name:a,category:c,size:p,popularity:m})=>` 
-    <li class ="cards-item" data-productid="${e}" >
-        <div id ="${e}" class="photo-card">
-                    <img class = "cards__image" src="${s}" alt="${a}" loading="lazy" />
+import{r as h,f as m,g as v,l as I,b as j,s as E,d as P,e as T,h as A,a as N,p as M}from"./assets/footer-modal-fbfc26d5.js";import"./assets/vendor-7ba42fd8.js";let y,b,g,o;async function O(){y=new h,y.PopularList.innerHTML="",b=await m.popular(),z()}function q(t){g=t.target.closest(".cards-item").dataset.productid,o[`btn1${g}`].style.display="none",o[`check${g}`].style.display="flex",j(g)}function H(t){let s=setInterval(function(){$()},1e3);if(setTimeout(function(){clearInterval(s)},5e3),t.target.classList.contains("js-btn")){q(t);return}if(!t.target.classList.contains("js-btn")){v(t,".cards-item");return}}function J(t){return t.map(({_id:s,img:e,name:c,category:l,size:u,popularity:p})=>` 
+    <li class ="cards-item" data-productid="${s}" >
+        <div id ="${s}" class="photo-card">
+                    <img class = "cards__image" src="${e}" alt="${c}" loading="lazy" />
                  
             </div> 
             <div class=" discount-show">
-                    <h3 class="info-title">${a}</h3>      
+                    <h3 class="info-title">${c}</h3>      
                     <p class="info-text">
-                        Category:<span class="info-span">${c}</span>
+                        Category:<span class="info-span">${l}</span>
                     </p>
                     <wraper class="info-wraper">
                         <p class="info-text">
-                            Size:<span class="info-span">${p}</span>
+                            Size:<span class="info-span">${u}</span>
                         </p>
                         <p class="info-text">
-                            Popularity:<span class="info-span">${m}</span>
+                            Popularity:<span class="info-span">${p}</span>
                         </p>
                     </wraper>
                </div>
-               <button id="${e}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${e}"  type="button">
+               <button id="${s}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${s}"  type="button">
                     <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
-                <div id="${e}" class="check-btn js-object js-btn" data-jsname="check${e}" >
+                <div id="${s}" class="check-btn js-object js-btn" data-jsname="check${s}" >
                 <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object js-btn" width="12" height="12">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
                </li>    
                
     
-`).join("")}async function Y(){try{const t=j;return v.PopularList.insertAdjacentHTML("beforeend",F(t)),r=new _,$(),await t}catch(t){console.log(t.message)}}function $(){let t=O.loadCart();const e=[];"products"in t&&(t=t.products,t.forEach(s=>e.push(s.productId))),j.forEach(s=>{e.includes(s._id)?(r[`btn1${s._id}`].style.display="none",r[`check${s._id}`].style.display="flex"):(r[`check${s._id}`].style.display="none",r[`btn1${s._id}`].style.display="flex")})}const i={openModalBtn:document.querySelector('[data-action="open-modal"]'),closeModalBtn:document.querySelector('[data-action="close-modal"]'),backdrop:document.querySelector(".js-backdrop"),modalImg:document.querySelector(".modal__food-basket"),modalInner:document.querySelector(".modal-inner")},C=document.querySelector(".footer-form"),K="Escape";function h(){window.addEventListener("keydown",S),i.closeModalBtn.addEventListener("click",b),i.backdrop.addEventListener("click",L),document.body.classList.add("show-modal")}function b(){window.removeEventListener("keydown",S),i.closeModalBtn.removeEventListener("click",b),i.backdrop.removeEventListener("click",L),document.body.classList.remove("show-modal")}function L(t){t.currentTarget===t.target&&b()}function S(t){t.code===K&&b()}async function U(t){t.preventDefault();const e=t.target.elements.email.value;console.log(e);const s={email:e},a={method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(s)};await fetch("https://food-boutique.b.goit.study/api/subscription",a).then(c=>{if(c.json(),console.log(c),c.status===409){h(),i.modalImg.style.display="none",i.modalInner.innerHTML=`
-        <div class="modal__title--wrap">
-          <p class="modal__title">
-            This
-            <span class="modal__accent-text">email address </span>
-            has already been entered
-          </p>
-        </div>
-        <div class="modal__description--wrap">
-          <p class="modal__description">
-            You have already subscribed to our new products. Watch for offers at
-            the mailing address.
-          </p>
-        </div>`;return}if(c.status===201){h(),i.modalImg.style.display="block",i.modalInner.innerHTML=`
-        <div class="modal__title--wrap">
-        <p class="modal__title">
-          Thanks for subscribing for
-          <span class="modal__accent-text">new</span>
-          products
-        </p>
-      </div>
-      <div class="modal__description--wrap">
-        <p class="modal__description">
-          We promise you organic and high-quality products that will meet your
-          expectations. Please stay with us and we promise you many pleasant
-          surprises.
-        </p>
-      </div>
-          `,C.reset();return}h()}).catch(c=>console.log(c.message))}async function V(t,e){document.querySelector(".product_card-list").innerHTML="",await y.products()}function W(t){if(t.target.classList.contains("product_card-item")||t.target!==t.currentTarget){if(t.target.nodeName==="use"||t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"){const e=t.target.closest(".product_card-item").dataset.productid;console.log(e),w(e),A(e,"shoppingCartIcon");return}k(t,".product_card-item");return}}function G(t){const{category:e,img:s,name:a,popularity:c,price:p,size:m,_id:n,is10PercentOff:q}=t;return q?`
-  <li class="product_card-item" id=${n} data-productId="${n}" >
+`).join("")}async function z(){try{const t=b;return y.PopularList.insertAdjacentHTML("beforeend",J(t)),o=new h,$(),await t}catch(t){console.log(t.message)}}function $(){let t=I.loadCart();const s=[];"products"in t&&(t=t.products,t.forEach(e=>s.push(e.productId))),b.forEach(e=>{s.includes(e._id)?(o[`btn1${e._id}`].style.display="none",o[`check${e._id}`].style.display="flex"):(o[`check${e._id}`].style.display="none",o[`btn1${e._id}`].style.display="flex")})}async function D(t,s){document.querySelector(".product_card-list").innerHTML="",await m.products()}function F(t){if(t.target.classList.contains("product_card-item")||t.target!==t.currentTarget){if(t.target.nodeName==="use"||t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"){const s=t.target.closest(".product_card-item").dataset.productid;console.log(s),j(s),E(s,"shoppingCartIcon");return}v(t,".product_card-item");return}}function B(t){const{category:s,img:e,name:c,popularity:l,price:u,size:p,_id:a,is10PercentOff:x}=t;return x?`
+  <li class="product_card-item" id=${a} data-productId="${a}" >
 
-  <svg class="discount-icon" id=${n}>
+  <svg class="discount-icon" id=${a}>
    <use href="icon.svg#discount-icon"></use>
  </svg>
        <div class="product_card-wrapper">
-        <div class="card-img-wrapper"><img src="${s}" alt="${a}" class="product_card-image"></div>
-        <h2 class="product_card-name">${a}</h2>
+        <div class="card-img-wrapper"><img src="${e}" alt="${c}" class="product_card-image"></div>
+        <h2 class="product_card-name">${c}</h2>
         <div class="product_card-info">
             <p class="info-text">
-                Category:<span class="info-span">${e}</span>
+                Category:<span class="info-span">${s}</span>
             </p>
             <p class="info-text">
-                Size:<span class="info-span">${m}</span>
+                Size:<span class="info-span">${p}</span>
             </p>
             <p class="info-text">
-                Popularity:<span class="info-span">${c}</span>
+                Popularity:<span class="info-span">${l}</span>
             </p>
         </div>
         <div class="product_card-bottom">
-        <p class="product-curd-price">$${p}</p>
-         <button id="${n}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${n}"  type="button">
+        <p class="product-curd-price">$${u}</p>
+         <button id="${a}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${a}"  type="button">
                     <svg class="card_buy-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
-                <div id="${n}" class="check-btn js-object" data-jsname="check${n}" >
+                <div id="${a}" class="check-btn js-object" data-jsname="check${a}" >
                 <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
@@ -93,35 +65,35 @@ import{r as _,f as y,g as k,l as O,b as w,s as A,d as N,a as H,e as B}from"./ass
         </div>
     </li>
   `:`
-  <li class="product_card-item" id=${n} data-productId="${n}" >
+  <li class="product_card-item" id=${a} data-productId="${a}" >
 
        <div class="product_card-wrapper">
-        <div class="card-img-wrapper"><img src="${s}" alt="${a}" class="product_card-image"></div>
-        <h2 class="product_card-name">${a}</h2>
+        <div class="card-img-wrapper"><img src="${e}" alt="${c}" class="product_card-image"></div>
+        <h2 class="product_card-name">${c}</h2>
         <div class="product_card-info">
             <p class="info-text">
-                Category:<span class="info-span">${e}</span>
+                Category:<span class="info-span">${s}</span>
             </p>
             <p class="info-text">
-                Size:<span class="info-span">${m}</span>
+                Size:<span class="info-span">${p}</span>
             </p>
             <p class="info-text">
-                Popularity:<span class="info-span">${c}</span>
+                Popularity:<span class="info-span">${l}</span>
             </p>
         </div>
         <div class="product_card-bottom">
-        <p class="product-curd-price">$${p}</p>
+        <p class="product-curd-price">$${u}</p>
         
-        <button id="${n}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${n}"  type="button">
+        <button id="${a}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${a}"  type="button">
                     <svg class="card_buy-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
-                <div id="${n}" class="check-btn js-object" data-jsname="check${n}" >
+                <div id="${a}" class="check-btn js-object" data-jsname="check${a}" >
                 <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
         </div>
         </div>
-    </li>`}async function R(){(await y.products()).results.map(e=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",G(e)))}const d=document.querySelector("#dropdownMenu"),E=document.querySelector("#input-filter"),Q=document.querySelector("#filterButt"),u=document.querySelector(".category-content"),X=document.querySelector(".dropdown-toggle"),f="keyword",I="category";let l=JSON.parse(localStorage.getItem(f)),o=JSON.parse(localStorage.getItem(I));function x(){(l||o)&&(E.value=l,u.textContent=o)}async function T(){let e=(await y.categories()).map(s=>s.replace("_"," ").replace("&","/").replace("_"," "));o!==null?u.textContent=o:u.textContent="Categories",d.innerHTML="",e.forEach(async s=>{const a=document.createElement("div");a.className="dropdown-item",a.textContent=s,a.onclick=async function(){o=s,localStorage.setItem(I,JSON.stringify(o)),M()},d.appendChild(a)})}async function M(){d.style.display=d.style.display==="flex"?"none":"flex",o!==null?u.textContent=o:u.textContent="Categories",setTimeout(function(){d.style.opacity=d.style.opacity==="1"?"0":"1"},10)}function Z(t){const e=t.target.value;e?localStorage.setItem(f,JSON.stringify(e)):localStorage.setItem(f,JSON.stringify(null))}async function tt(t){t.preventDefault(),l==""?l=null:l=JSON.parse(localStorage.getItem(f)),console.log(o.replace(" ","_").replace("/","&").replace(" ","_"),l)}x();T();const P=new _;N();R();document.querySelector(".product_card-list").addEventListener("click",W);J();P.PopularList.addEventListener("click",z);H();T();x();V();P.discountList.addEventListener("click",B);X.addEventListener("click",M);E.addEventListener("input",Z);Q.addEventListener("click",tt);C.addEventListener("submit",U);
+    </li>`}async function U(){(await m.products()).results.map(s=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",B(s)))}const r=document.querySelector("#dropdownMenu"),k=document.querySelector("#input-filter"),V=document.querySelector("#filterButt"),d=document.querySelector(".category-content"),G=document.querySelector(".dropdown-toggle"),f="keyword",_="category";let i=JSON.parse(localStorage.getItem(f)),n=JSON.parse(localStorage.getItem(_));function w(){(i||n)&&(k.value=i,d.textContent=n)}async function C(){let s=(await m.categories()).map(e=>e.replace("_"," ").replace("&","/").replace("_"," "));n!==null?d.textContent=n:d.textContent="Categories",r.innerHTML="",s.forEach(async e=>{const c=document.createElement("div");c.className="dropdown-item",c.textContent=e,c.onclick=async function(){n=e,localStorage.setItem(_,JSON.stringify(n)),S()},r.appendChild(c)})}async function S(){r.style.display=r.style.display==="flex"?"none":"flex",n!==null?d.textContent=n:d.textContent="Categories",setTimeout(function(){r.style.opacity=r.style.opacity==="1"?"0":"1"},10)}function R(t){const s=t.target.value;s?localStorage.setItem(f,JSON.stringify(s)):localStorage.setItem(f,JSON.stringify(null))}async function Y(t){t.preventDefault(),i==""?i=null:i=JSON.parse(localStorage.getItem(f)),console.log(n.replace(" ","_").replace("/","&").replace(" ","_"),i)}w();C();const L=new h;P();U();document.querySelector(".product_card-list").addEventListener("click",F);O();L.PopularList.addEventListener("click",H);T();C();w();D();L.discountList.addEventListener("click",A);G.addEventListener("click",S);k.addEventListener("input",R);V.addEventListener("click",Y);N.addEventListener("submit",M);
 //# sourceMappingURL=commonHelpers2.js.map
