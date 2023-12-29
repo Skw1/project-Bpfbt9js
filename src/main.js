@@ -47,7 +47,6 @@ checkAndFillFormFields();
 
 
 // Render Searched Cards
-renderSearchedCards();
 
 
 // Add event listener for discount products
