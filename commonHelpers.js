@@ -1,4 +1,4 @@
-import{r as o,l as n,f as l,c as m,d,a as u,p as C}from"./assets/footer-modal-1e6432dd.js";import"./assets/vendor-7ba42fd8.js";async function p(){let c=!0;const a=new o;a.bigCartNumber.textContent="CART (0)";var e=[],r=0;const s=n.loadCart();if("products"in s){const i=await Promise.all(s.products.map(t=>l.product(t.productId)));i.forEach(t=>{c=!1,r=r+t.price*s.products[i.indexOf(t)].amount,e.push(`
+import{r as o,l as n,f as l,c as m,d,a as u,p as C}from"./assets/footer-modal-21aff4b3.js";import"./assets/vendor-7ba42fd8.js";async function p(){let c=!0;const a=new o;a.bigCartNumber.textContent="CART (0)";var e=[],r=0;const s=n.loadCart();if("products"in s){const i=await Promise.all(s.products.map(t=>l.product(t.productId)));i.forEach(t=>{c=!1,r=r+t.price*s.products[i.indexOf(t)].amount,e.push(`
             
             <li class="cart-product" data-productId="${t._id}">
             <div class="cart-product-img">
