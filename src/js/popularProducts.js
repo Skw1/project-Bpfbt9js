@@ -1,7 +1,7 @@
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import refsAPI from './refs.js';
-
+import { addCheckBasket } from './renderProductList.js';
 import { getProductModal } from './modalProduct.js';
 import { buyProduct } from './discount.js';
 let frontEndPopular;
@@ -11,6 +11,8 @@ let checkBtn;
 
 async function renderPopular() {
   frontEndPopular = new refsAPI();
+// console.log(frontEndPopular.PopularList);
+
   frontEndPopular.PopularList.innerHTML = '';
   popularProducts = await fetchAPI.popular();
   // console.log("popularProducts",popularProducts);
@@ -32,11 +34,12 @@ function handleModall(event) {
 
   let timerId = setInterval(function(){
   addCheck()
+  addCheckBasket()
   }, 1000);
 
 setTimeout(function(){
   clearInterval(timerId);
-  }, 5000);
+  }, 10000);
 
   if (event.target.classList.contains('js-btn')) {
     addProduct(event);   
@@ -80,12 +83,12 @@ export function createMarcup(arr) {
                     </wraper>
                </div>
                <button id="${_id}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
-                    <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+                    <svg class="basket-icon-svg js-btn "   width="12" height="12">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
                 <div id="${_id}" class="check-btn js-object js-btn" data-jsname="check${_id}" >
-                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object js-btn" width="12" height="12">
+                <svg  class="check-icon-svg  discount-buy  js-btn" width="12" height="12">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
                </li>    
