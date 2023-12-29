@@ -34,16 +34,23 @@ frontEnd.PopularList.addEventListener('click', handleModall);
 // Draw discount products
 drawDiscount();
 
-//draw discount products
+
+// Create DropDown List
 createDropdownList();
+
+
+// Check Fields
 checkAndFillFormFields();
+
+
+// Render Searched Cards
 renderSearchedCards();
 
 
 // Add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
-// filter
+// Filter
 buttonCategory.addEventListener('click', toggleDropdown);
 inputText.addEventListener('input', inputPush);
 buttonForm.addEventListener('click', cardsCreate);
