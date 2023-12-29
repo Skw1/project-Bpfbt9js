@@ -2,12 +2,12 @@ import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
 import { getProductModal } from './modalProduct.js';
 
-const productsList = document.querySelector('.product-card-list');
+const productsList = document.querySelector('.product_card-list');
 
 function onCardClick(e) {
-  const cardId = e.target.closest('.product-card-item').dataset.productid;
+  const cardId = e.target.closest('.product_card-item').dataset.productid;
   
-  if (e.target.classList.contains('product-card-item') || e.target !== e.currentTarget) {
+  if (e.target.classList.contains('product_card-item') || e.target !== e.currentTarget) {
     if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
   
       console.log(cardId)
@@ -17,7 +17,7 @@ function onCardClick(e) {
       return;
     }
   
-    getProductModal(e, '.product-card-item');
+    getProductModal(e, '.product_card-item');
     return
   }
   
@@ -27,15 +27,15 @@ function handleMarkup(data) {
 
   if (is10PercentOff) {
     return `
-  <li class="product-card-item discount-list-item" id=${_id} data-productId="${_id}" >
+  <li class="product_card-item discount-list-item" id=${_id} data-productId="${_id}" >
 
   <svg class="discount-icon" id=${_id}>
    <use href="icon.svg#discount-icon"></use>
  </svg>
-       <div class="product-card-wrapper">
-        <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product-card-image"></div>
-        <h2 class="product-card-name">${name}</h2>
-        <div class="product-card-info">
+       <div class="product_card-wrapper">
+        <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product_card-image"></div>
+        <h2 class="product_card-name">${name}</h2>
+        <div class="product_card-info">
             <p class="info-text">
                 Category:<span class="info-span">${category}</span>
             </p>
@@ -46,10 +46,10 @@ function handleMarkup(data) {
                 Popularity:<span class="info-span">${popularity}</span>
             </p>
         </div>
-        <div class="product-card-bottom">
+        <div class="product_card-bottom">
         <p class="product-curd-price">$${price}</p>
          <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
-                    <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+                    <svg class="card_buy-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
@@ -64,12 +64,12 @@ function handleMarkup(data) {
   }
   
   return `
-  <li class="product-card-item discount-list-item" id=${_id} data-productId="${_id}" >
+  <li class="product_card-item discount-list-item" id=${_id} data-productId="${_id}" >
 
-       <div class="product-card-wrapper">
-        <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product-card-image"></div>
-        <h2 class="product-card-name">${name}</h2>
-        <div class="product-card-info">
+       <div class="product_card-wrapper">
+        <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product_card-image"></div>
+        <h2 class="product_card-name">${name}</h2>
+        <div class="product_card-info">
             <p class="info-text">
                 Category:<span class="info-span">${category}</span>
             </p>
@@ -80,11 +80,11 @@ function handleMarkup(data) {
                 Popularity:<span class="info-span">${popularity}</span>
             </p>
         </div>
-        <div class="product-card-bottom">
+        <div class="product_card-bottom">
         <p class="product-curd-price">$${price}</p>
         
         <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
-                    <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+                    <svg class="card_buy-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>

@@ -1,6 +1,11 @@
-.product-card-item {
+.product_card-container{
+  display: flex;
+}
+
+.product_card-item {
   margin-left: auto;
   margin-right: auto;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
@@ -11,8 +16,8 @@
   background-color: var(--secondary-white-color);
 }
 
-.product-card-wrapper {
-  margin-top: 20px;
+.product_card-wrapper {
+  
   margin-left: auto;
   margin-right: auto;
   width: 295px;
@@ -27,7 +32,7 @@
   margin-bottom: 20px;
 }
 
-.product-card-image {
+.product_card-image {
   width: 140px;
   height: 140px;
 
@@ -45,16 +50,18 @@
   background-color: var(--secondary-white-color);
 }
 
-.product-card-info {
+.product_card-info {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  margin-bottom: 40px;
+  
 }
 
-.product-card-bottom {
+.product_card-bottom {
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .product-curd-price {
@@ -77,41 +84,55 @@
   top: 3px;
 }
 
-.discount-icon-unActive{
-  display: none;
+.card_buy-btn{
+  display: flex;
+  background-color: var(--primary-green-color);
+  padding: 8px;
+  border-radius: 50%;
 }
 
+.card_buy-icon-svg{
+  fill: var(--primary-white-color);
+  width: 18px;
+  height: 18px;
+  justify-content: center;
+}
+
+
+
 @media screen and (min-width:768px) {
-  .product-card-list {
+  .product_card-list {
     justify-content: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 32px;
     
+    
   }
 
-  .product-card-item {
+  .product_card-item {
     width: 336px;
     height: 360px;
 
     margin: 0;
     flex-shrink: 0;
 
+    flex-basis: calc((100% - 32px * 2) / 3);
   }
 }
 
 @media screen and (min-width:1440px) {
 
-  .product-card-wrapper {
+  .product_card-wrapper {
       width: 255px;
     }
 
-    .product-card-list{
+    .product_card-list{
       gap: 20px;
       
     }
-  .product-card-item {
+  .product_card-item {
     max-width: 295px;
     max-height: 363px;
     gap: 20px;
@@ -119,7 +140,7 @@
     flex-basis: calc((100% - 20px * 3) / 4);
 } 
 
-  .product-card-info {
+  .product_card-info {
     flex-wrap: wrap;
   }
 }
