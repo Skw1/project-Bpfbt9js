@@ -2,7 +2,6 @@
 	background-color: #E8E8E2;
 	padding-left: 20px;
 	padding-right: 20px;
-	max-width: 335px;
 }
 
 .hero-info{
@@ -143,13 +142,10 @@
 	}
 
 	.hero-info{
-		padding-left: 99px;
-		padding-right: 99px;
+		/* padding-left: 99px;
+		padding-right: 99px; */
 	}
 
-	.container{
-		max-width: none;
-	}
 
 
 	.hero-big-image-div{
