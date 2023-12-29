@@ -7,8 +7,8 @@
     <title>FoodBoutique 🥦🍓</title>
     
     <script type="module" crossorigin src="/project-Bpfbt9js/assets/vendor-7ba42fd8.js"></script>
-    <script type="module" crossorigin src="/project-Bpfbt9js/assets/main-edc85957.js"></script>
-    <link rel="stylesheet" href="/project-Bpfbt9js/assets/main-837a676a.css">
+    <script type="module" crossorigin src="/project-Bpfbt9js/assets/main-47039d15.js"></script>
+    <link rel="stylesheet" href="/project-Bpfbt9js/assets/main-db619d2a.css">
     <link rel="stylesheet" href="/project-Bpfbt9js/assets/vendor-b3ce9496.css">
   </head>
   <body>
@@ -67,8 +67,7 @@
 
     <main class="main">
       <div class="container">
-        <div class="options-holder">
-  <form class="filter-form">
+        <form class="filter-form">
     <label class="filter-txt">Filter:</label>
     <div class="total">
       <div class="filter-div">
@@ -82,18 +81,19 @@
           <svg class="search-svg"><use href="../img/icons.svg#search-icon"></use></svg>
         </button>
       </div>
+      <div class="dropdown" id="myDropdown">
+        <div class="dropdown-toggle">
+          <p class="category-content">Categories</p>
+          <svg xmlns="http://www.w3.org/2000/svg" class="search-svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu"></div>
+    </div>
     </div>
   </form>
-  <div class="dropdown" id="myDropdown">
-    <div class="dropdown-toggle">
-      <p class="category-content">Categories</p>
-      <svg xmlns="http://www.w3.org/2000/svg" class="search-svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M5 7.5L10 12.5L15 7.5" stroke="#010101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div class="dropdown-menu" id="dropdownMenu"></div>
-  </div>
-</div>
+  
+
 
         <div class="product_card-container">
     <ul class="product_card-list">
