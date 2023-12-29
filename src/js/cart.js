@@ -1,6 +1,9 @@
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import closeIcon from '../img/icons.svg#close-icon';
+import { form } from '/js/footer-modal.js';
+import { postEmail } from '/js/footer-modal.js';
+import { onOpenModal } from './footer-modal.js';
 
 import { totalCartSum, checkout } from './totalcartsum.js';
 import { drawHeaderCartNumber } from './discount.js';
@@ -151,3 +154,5 @@ totalCartSum();
 const frondEnd = new refsAPI();
 
 frondEnd.buttonCheckout.addEventListener('click', checkout);
+
+form.addEventListener('submit', postEmail);
