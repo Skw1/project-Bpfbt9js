@@ -140,7 +140,6 @@
 }
 
 @media screen and (min-width:1440px) {
-
   .product_card-name {
     font-size: 20px;
     font-style: normal;
@@ -150,12 +149,10 @@
 
   .card-img-wrapper {
       width: 255px;
-      
     }
     .product_card-info{
       margin-bottom: 20px;
     }
-
     .product_card-image {
       width: auto;
       height: auto;
@@ -173,10 +170,8 @@
 
     flex-basis: calc((100% - 20px * 3) / 4);
 } 
-
   .product_card-info {
     display: flex;
     flex-direction: column;
   }
-
 }
