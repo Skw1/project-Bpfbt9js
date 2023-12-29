@@ -130,7 +130,7 @@ import{a as m,b as Z}from"./vendor-7ba42fd8.js";(function(){const t=document.cre
         </p>
       </div>
           `,B.reset();return}L()}).catch(a=>console.log(a.message))}async function ht(s,t){document.querySelector(".product_card-list").innerHTML="",await y.products()}function gt(s){if(s.target.classList.contains("product_card-item")||s.target!==s.currentTarget){if(s.target.nodeName==="use"||s.target.nodeName==="BUTTON"||s.target.nodeName==="svg"){const t=s.target.closest(".product_card-item").dataset.productid;console.log(t),x(t),q(t,"shoppingCartIcon");return}k(s,".product_card-item");return}}function bt(s){const{category:t,img:e,name:o,popularity:a,price:n,size:i,_id:r,is10PercentOff:c}=s;return c?`
-  <li class="product_card-item discount-list-item" id=${r} data-productId="${r}" >
+  <li class="product_card-item" id=${r} data-productId="${r}" >
 
   <svg class="discount-icon" id=${r}>
    <use href="icon.svg#discount-icon"></use>
@@ -164,7 +164,7 @@ import{a as m,b as Z}from"./vendor-7ba42fd8.js";(function(){const t=document.cre
         </div>
     </li>
   `:`
-  <li class="product_card-item discount-list-item" id=${r} data-productId="${r}" >
+  <li class="product_card-item" id=${r} data-productId="${r}" >
 
        <div class="product_card-wrapper">
         <div class="card-img-wrapper"><img src="${e}" alt="${o}" class="product_card-image"></div>
@@ -195,4 +195,4 @@ import{a as m,b as Z}from"./vendor-7ba42fd8.js";(function(){const t=document.cre
         </div>
         </div>
     </li>`}async function yt(){(await y.products()).results.map(t=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",bt(t)))}const g=document.querySelector("#dropdownMenu"),J=document.querySelector("#input-filter"),vt=document.querySelector("#filterButt"),v=document.querySelector(".category-content"),_t=document.querySelector(".dropdown-toggle"),j="keyword",z="category";let b=JSON.parse(localStorage.getItem(j)),d=JSON.parse(localStorage.getItem(z));function V(){(b||d)&&(J.value=b,v.textContent=d)}async function K(){let t=(await y.categories()).map(e=>e.replace("_"," ").replace("&","/").replace("_"," "));d!==null?v.textContent=d:v.textContent="Categories",g.innerHTML="",t.forEach(async e=>{const o=document.createElement("div");o.className="dropdown-item",o.textContent=e,o.onclick=async function(){d=e.replace(" ","_").replace("/","&").replace(" ","_"),localStorage.setItem(z,JSON.stringify(d)),Y()},g.appendChild(o)})}async function Y(){g.style.display=g.style.display==="flex"?"none":"flex",d!==null?v.textContent=d:v.textContent="Categories",setTimeout(function(){g.style.opacity=g.style.opacity==="1"?"0":"1"},10)}function wt(s){const t=s.target.value;t?localStorage.setItem(j,JSON.stringify(t)):localStorage.setItem(j,JSON.stringify(null))}async function $t(s){s.preventDefault(),b==""?b=null:b=JSON.parse(localStorage.getItem(j)),console.log(d,b)}V();K();const W=new p;A();yt();document.querySelector(".product_card-list").addEventListener("click",gt);it();W.PopularList.addEventListener("click",lt);at();K();V();ht();W.discountList.addEventListener("click",rt);_t.addEventListener("click",Y);J.addEventListener("input",wt);vt.addEventListener("click",$t);B.addEventListener("submit",mt);
-//# sourceMappingURL=main-2d588970.js.map
+//# sourceMappingURL=main-62c3eafc.js.map
