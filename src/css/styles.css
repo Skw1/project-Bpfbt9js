@@ -12,3 +12,21 @@
 @import url('./cart.css');
 @import url('./modal.css');
 @import url('./cartmodal.css');
+
+
+.desktop-card-div{
+	display: none;
+}
+
+@media screen and (min-width: 1440px){
+	.desktop-card-div{
+		display: flex;
+		margin-bottom: 40px;
+	}
+
+	.popular-and-discount{
+		display: flex;
+		flex-direction: column;
+	}
+	
+}
