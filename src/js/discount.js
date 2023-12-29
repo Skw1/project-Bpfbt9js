@@ -169,7 +169,6 @@ function drawHeaderCartNumber() {
   if ('products' in cart) {
     cartNumber = cart.products.length;
   }
-  console.log(cartNumber);
   frontEnd.headerCartNumber.textContent = cartNumber;
 }
 

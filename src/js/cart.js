@@ -2,8 +2,12 @@ import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import closeIcon from '../img/icons.svg#close-icon';
 
-const cartContainer = document.querySelector('.cart-products-order-container');
-const cartEmpty = document.querySelector('.cart-empty-product');
+import { totalCartSum, checkout } from './totalcartsum.js';
+import { drawHeaderCartNumber } from './discount.js';
+import refsAPI from './refs.js';
+
+//const cartContainer = document.querySelector('.cart-products-order-container');
+//const cartEmpty = document.querySelector('.cart-empty-product');
 
 export async function drawProductCart() {
   let cart = localStorageApi.loadCart();
@@ -137,6 +141,13 @@ function calculateTotalSum(cart) {
   return totalSum;
 }
 
-const totalSumElement = document.querySelector('.order-total-sum');
-const totalSum = calculateTotalSum(cart);
-totalSumElement.textContent = `$${totalSum.toFixed(2)}`;
+//const totalSumElement = document.querySelector('.order-total-sum');
+//const totalSum = calculateTotalSum(cart);
+//totalSumElement.textContent = `$${totalSum.toFixed(2)}`;
+
+drawHeaderCartNumber();
+totalCartSum();
+
+const frondEnd = new refsAPI();
+
+frondEnd.buttonCheckout.addEventListener('click', checkout);
