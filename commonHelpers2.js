@@ -1,7 +1,7 @@
-import{r as h,f as m,g as v,l as I,b as j,s as E,d as P,e as T,h as A,a as N,p as M}from"./assets/footer-modal-fbfc26d5.js";import"./assets/vendor-7ba42fd8.js";let y,b,g,o;async function O(){y=new h,y.PopularList.innerHTML="",b=await m.popular(),z()}function q(t){g=t.target.closest(".cards-item").dataset.productid,o[`btn1${g}`].style.display="none",o[`check${g}`].style.display="flex",j(g)}function H(t){let s=setInterval(function(){$()},1e3);if(setTimeout(function(){clearInterval(s)},5e3),t.target.classList.contains("js-btn")){q(t);return}if(!t.target.classList.contains("js-btn")){v(t,".cards-item");return}}function J(t){return t.map(({_id:s,img:e,name:c,category:l,size:u,popularity:p})=>` 
-    <li class ="cards-item" data-productid="${s}" >
-        <div id ="${s}" class="photo-card">
-                    <img class = "cards__image" src="${e}" alt="${c}" loading="lazy" />
+import{r as h,f as m,g as j,l as P,b as $,s as A,d as T,e as M,h as N,a as O,p as q}from"./assets/footer-modal-fbfc26d5.js";import"./assets/vendor-7ba42fd8.js";let b,v,g,r;async function H(){b=new h,b.PopularList.innerHTML="",v=await m.popular(),F()}function J(t){g=t.target.closest(".cards-item").dataset.productid,r[`btn1${g}`].style.display="none",r[`check${g}`].style.display="flex",$(g)}function z(t){let e=setInterval(function(){k()},1e3);if(setTimeout(function(){clearInterval(e)},5e3),t.target.classList.contains("js-btn")){J(t);return}if(!t.target.classList.contains("js-btn")){j(t,".cards-item");return}}function D(t){return t.map(({_id:e,img:s,name:c,category:l,size:u,popularity:p})=>` 
+    <li class ="cards-item" data-productid="${e}" >
+        <div id ="${e}" class="photo-card">
+                    <img class = "cards__image" src="${s}" alt="${c}" loading="lazy" />
                  
             </div> 
             <div class=" discount-show">
@@ -18,30 +18,30 @@ import{r as h,f as m,g as v,l as I,b as j,s as E,d as P,e as T,h as A,a as N,p a
                         </p>
                     </wraper>
                </div>
-               <button id="${s}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${s}"  type="button">
+               <button id="${e}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${e}"  type="button">
                     <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
-                <div id="${s}" class="check-btn js-object js-btn" data-jsname="check${s}" >
+                <div id="${e}" class="check-btn js-object js-btn" data-jsname="check${e}" >
                 <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object js-btn" width="12" height="12">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
                </li>    
                
     
-`).join("")}async function z(){try{const t=b;return y.PopularList.insertAdjacentHTML("beforeend",J(t)),o=new h,$(),await t}catch(t){console.log(t.message)}}function $(){let t=I.loadCart();const s=[];"products"in t&&(t=t.products,t.forEach(e=>s.push(e.productId))),b.forEach(e=>{s.includes(e._id)?(o[`btn1${e._id}`].style.display="none",o[`check${e._id}`].style.display="flex"):(o[`check${e._id}`].style.display="none",o[`btn1${e._id}`].style.display="flex")})}async function D(t,s){document.querySelector(".product_card-list").innerHTML="",await m.products()}function F(t){if(t.target.classList.contains("product_card-item")||t.target!==t.currentTarget){if(t.target.nodeName==="use"||t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"){const s=t.target.closest(".product_card-item").dataset.productid;console.log(s),j(s),E(s,"shoppingCartIcon");return}v(t,".product_card-item");return}}function B(t){const{category:s,img:e,name:c,popularity:l,price:u,size:p,_id:a,is10PercentOff:x}=t;return x?`
+`).join("")}async function F(){try{const t=v;return b.PopularList.insertAdjacentHTML("beforeend",D(t)),r=new h,k(),await t}catch(t){console.log(t.message)}}function k(){let t=P.loadCart();const e=[];"products"in t&&(t=t.products,t.forEach(s=>e.push(s.productId))),v.forEach(s=>{e.includes(s._id)?(r[`btn1${s._id}`].style.display="none",r[`check${s._id}`].style.display="flex"):(r[`check${s._id}`].style.display="none",r[`btn1${s._id}`].style.display="flex")})}async function B(t){document.querySelector(".product_card-list").innerHTML="",t.results.map(e=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",_(e)))}function U(t){if(t.target.classList.contains("product_card-item")||t.target!==t.currentTarget){if(t.target.nodeName==="use"||t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"){const e=t.target.closest(".product_card-item").dataset.productid;console.log(e),$(e),A(e,"shoppingCartIcon");return}j(t,".product_card-item");return}}function _(t){const{category:e,img:s,name:c,popularity:l,price:u,size:p,_id:a,is10PercentOff:E}=t;return E?`
   <li class="product_card-item" id=${a} data-productId="${a}" >
 
   <svg class="discount-icon" id=${a}>
    <use href="icon.svg#discount-icon"></use>
  </svg>
        <div class="product_card-wrapper">
-        <div class="card-img-wrapper"><img src="${e}" alt="${c}" class="product_card-image"></div>
+        <div class="card-img-wrapper"><img src="${s}" alt="${c}" class="product_card-image"></div>
         <h2 class="product_card-name">${c}</h2>
         <div class="product_card-info">
             <p class="info-text">
-                Category:<span class="info-span">${s}</span>
+                Category:<span class="info-span">${e}</span>
             </p>
             <p class="info-text">
                 Size:<span class="info-span">${p}</span>
@@ -68,11 +68,11 @@ import{r as h,f as m,g as v,l as I,b as j,s as E,d as P,e as T,h as A,a as N,p a
   <li class="product_card-item" id=${a} data-productId="${a}" >
 
        <div class="product_card-wrapper">
-        <div class="card-img-wrapper"><img src="${e}" alt="${c}" class="product_card-image"></div>
+        <div class="card-img-wrapper"><img src="${s}" alt="${c}" class="product_card-image"></div>
         <h2 class="product_card-name">${c}</h2>
         <div class="product_card-info">
             <p class="info-text">
-                Category:<span class="info-span">${s}</span>
+                Category:<span class="info-span">${e}</span>
             </p>
             <p class="info-text">
                 Size:<span class="info-span">${p}</span>
@@ -95,5 +95,5 @@ import{r as h,f as m,g as v,l as I,b as j,s as E,d as P,e as T,h as A,a as N,p a
                     </svg></div>
         </div>
         </div>
-    </li>`}async function U(){(await m.products()).results.map(s=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",B(s)))}const r=document.querySelector("#dropdownMenu"),k=document.querySelector("#input-filter"),V=document.querySelector("#filterButt"),d=document.querySelector(".category-content"),G=document.querySelector(".dropdown-toggle"),f="keyword",_="category";let i=JSON.parse(localStorage.getItem(f)),n=JSON.parse(localStorage.getItem(_));function w(){(i||n)&&(k.value=i,d.textContent=n)}async function C(){let s=(await m.categories()).map(e=>e.replace("_"," ").replace("&","/").replace("_"," "));n!==null?d.textContent=n:d.textContent="Categories",r.innerHTML="",s.forEach(async e=>{const c=document.createElement("div");c.className="dropdown-item",c.textContent=e,c.onclick=async function(){n=e,localStorage.setItem(_,JSON.stringify(n)),S()},r.appendChild(c)})}async function S(){r.style.display=r.style.display==="flex"?"none":"flex",n!==null?d.textContent=n:d.textContent="Categories",setTimeout(function(){r.style.opacity=r.style.opacity==="1"?"0":"1"},10)}function R(t){const s=t.target.value;s?localStorage.setItem(f,JSON.stringify(s)):localStorage.setItem(f,JSON.stringify(null))}async function Y(t){t.preventDefault(),i==""?i=null:i=JSON.parse(localStorage.getItem(f)),console.log(n.replace(" ","_").replace("/","&").replace(" ","_"),i)}w();C();const L=new h;P();U();document.querySelector(".product_card-list").addEventListener("click",F);O();L.PopularList.addEventListener("click",H);T();C();w();D();L.discountList.addEventListener("click",A);G.addEventListener("click",S);k.addEventListener("input",R);V.addEventListener("click",Y);N.addEventListener("submit",M);
+    </li>`}async function V(){(await m.products()).results.map(e=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",_(e)))}const i=document.querySelector("#dropdownMenu"),w=document.querySelector("#input-filter"),G=document.querySelector("#filterButt"),d=document.querySelector(".category-content"),R=document.querySelector(".dropdown-toggle"),f="keyword",C="category";let o=JSON.parse(localStorage.getItem(f)),n=JSON.parse(localStorage.getItem(C)),y={};function S(){(o||n)&&(w.value=o,d.textContent=n)}async function L(){let e=(await m.categories()).map(s=>s.replace("_"," ").replace("&","/").replace("_"," "));n!==null?d.textContent=n:d.textContent="Categories",i.innerHTML="",e.forEach(async s=>{const c=document.createElement("div");c.className="dropdown-item",c.textContent=s,c.onclick=async function(){n=s,localStorage.setItem(C,JSON.stringify(n)),x()},i.appendChild(c)})}async function x(){i.style.display=i.style.display==="flex"?"none":"flex",n!==null?d.textContent=n:d.textContent="Categories",setTimeout(function(){i.style.opacity=i.style.opacity==="1"?"0":"1"},10)}function Y(t){const e=t.target.value;e?localStorage.setItem(f,JSON.stringify(e)):localStorage.setItem(f,JSON.stringify(null))}async function K(t){t.preventDefault(),o==""?o=null:o=JSON.parse(localStorage.getItem(f)),o==null?y={category:n.replace(" ","_").replace("/","&").replace(" ","_")}:y={keyword:o,category:n.replace(" ","_").replace("/","&").replace(" ","_")};const e=await m.products(y);return B(e)}S();L();const I=new h;T();V();document.querySelector(".product_card-list").addEventListener("click",U);H();I.PopularList.addEventListener("click",z);M();L();S();I.discountList.addEventListener("click",N);R.addEventListener("click",x);w.addEventListener("input",Y);G.addEventListener("click",K);O.addEventListener("submit",q);
 //# sourceMappingURL=commonHelpers2.js.map
