@@ -1,6 +1,15 @@
 import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
 import { getProductModal } from './modalProduct.js';
+import refsAPI from './refs.js';
+import localStorageApi from './localStorageApi.js';
+import { addCheck } from './popularProducts.js';
+
+let frontEndPop = new refsAPI();
+let checkBtn
+let productListApi
+// console.log(frontEndPop.cardsList);
+// console.log(frontEndPop.PopularList);
 
 async function renderSearchedCards(data) {
   document.querySelector('.product_card-list').innerHTML = ''; 
@@ -14,13 +23,22 @@ async function renderSearchedCards(data) {
 function onCardClick(e) {
   
   if (e.target.classList.contains('product_card-item') || e.target !== e.currentTarget) {
+    let timerId = setInterval(function(){
+      addCheckBasket()
+      addCheck()
+      }, 1000);
+    
+    setTimeout(function(){
+      clearInterval(timerId);
+      }, 10000);
     if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
   
       const cardId = e.target.closest('.product_card-item').dataset.productid;
-      console.log(cardId)
+      // console.log(cardId)
       buyProduct(cardId)
-      setCheckedIcon(cardId, 'shoppingCartIcon')
-  
+      // setCheckedIcon(cardId, 'shoppingCartIcon')
+      checkBtn[`btn2${cardId}`].style.display = 'none';
+      checkBtn[`check1${cardId}`].style.display = 'flex';
       return;
     }
   
@@ -35,7 +53,7 @@ function handleMarkup(data) {
 
   if (is10PercentOff) {
     return `
-  <li class="product_card-item" id=${_id} data-productId="${_id}" >
+  <li class="product_card-item js-object" id=${_id} data-productId="${_id}" >
 
   <svg class="discount-icon" id=${_id}>
    <use href="icon.svg#discount-icon"></use>
@@ -56,13 +74,13 @@ function handleMarkup(data) {
         </div>
         <div class="product_card-bottom">
         <p class="product-curd-price">$${price}</p>
-         <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
-                    <svg class="card_buy-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+         <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn2${_id}"  type="button">
+                    <svg class="card_buy-icon-svg js-btn "   width="18" height="18">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
-                <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
-                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
+                <div id="${_id}" class="check js-object" data-jsname="check1${_id}" >
+                <svg  class="check-icon-svg  discount-buy " width="18" height="18">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
         </div>
@@ -72,7 +90,7 @@ function handleMarkup(data) {
   }
   
   return `
-  <li class="product_card-item" id=${_id} data-productId="${_id}" >
+  <li class="product_card-item js-object" id=${_id} data-productId="${_id}" >
 
        <div class="product_card-wrapper">
         <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product_card-image"></div>
@@ -91,13 +109,13 @@ function handleMarkup(data) {
         <div class="product_card-bottom">
         <p class="product-curd-price">$${price}</p>
         
-        <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
-                    <svg class="card_buy-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
+        <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn2${_id}"  type="button">
+                    <svg class="card_buy-icon-svg js-btn "   width="18" height="18">
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
-                <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
-                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
+                <div id="${_id}" class="check js-object" data-jsname="check1${_id}" >
+                <svg  class="check-icon-svg  discount-buy " width="18" height="18">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
         </div>
@@ -106,13 +124,38 @@ function handleMarkup(data) {
 };
 
 async function renderCards() {
-  const productListApi = await fetchAPI.products();
+   productListApi = await fetchAPI.products();
 
   productListApi.results.map(item => {
     return document.querySelector('.product_card-list').insertAdjacentHTML('beforeend', handleMarkup(item));
   }
   )
+  checkBtn = new refsAPI();
+  // console.log(checkBtn);
+  addCheckBasket()
 };
-
-export{onCardClick, renderCards, renderSearchedCards};
+function addCheckBasket(){
+  let Mycart = localStorageApi.loadCart();
+  // console.log("Mycart",Mycart.products);
+  // console.log('vvvvvvvvvv');
+  //get saved products id
+  const productsInCart = [];
+  if ('products' in Mycart) {
+    Mycart = Mycart.products;
+    Mycart.forEach(product => productsInCart.push(product.productId));
+  }
+  // console.log(productListApi.results);
+  const productsList = [];
+  productListApi.results.forEach(product => {
+    if (productsInCart.includes(product._id)) {
+      checkBtn[`btn2${product._id}`].style.display = 'none';
+      checkBtn[`check1${product._id}`].style.display = 'flex';
+    }else{
+      checkBtn[`check1${product._id}`].style.display = 'none';
+      checkBtn[`btn2${product._id}`].style.display = 'flex';
+  
+    }})
+  
+}
+export{onCardClick, renderCards, renderSearchedCards,addCheckBasket};
 

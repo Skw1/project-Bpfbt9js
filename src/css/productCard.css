@@ -175,3 +175,9 @@
     flex-direction: column;
   }
 }
+.check{
+  display: flex;
+  background-color: var(--primary-green-color);
+  padding: 8px;
+  border-radius: 50%;
+}
