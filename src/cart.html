@@ -73,11 +73,18 @@
         </div>
 
         <div class="cart-product-container">
-          <div class="cart-delete-all">
-            <button type="button" class="cart-delete-button">
+          <div
+            class="cart-delete-all js-delete-all js-object"
+            data-jsname="deleteAllBtn"
+          >
+            <button type="button" class="cart-delete-button js-delete-all">
               Delete All
-              <span class="cart-close-icon">
-                <svg class="cart-icon-close" width="24" height="24">
+              <span class="cart-close-icon js-delete-all">
+                <svg
+                  class="cart-icon-close js-delete-all"
+                  width="24"
+                  height="24"
+                >
                   <use href="${closeIcon}"></use>
                 </svg>
               </span>
