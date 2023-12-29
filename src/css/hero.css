@@ -85,6 +85,10 @@
 	.hero-section{
 		padding-left: 32px;
 		padding-right: 32px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.hero-info{
