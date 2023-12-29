@@ -23,7 +23,7 @@ renderCards();
 
 
 // Add event listener for  Product Cards
-frontEnd.productsList.saddEventListener('click', onCardClick);
+frontEnd.productsList.addEventListener('click', onCardClick);
 
 
 // Draw Popular products 
