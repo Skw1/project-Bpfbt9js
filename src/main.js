@@ -7,7 +7,7 @@ import { renderPopular,handleModall } from './js/popularProducts.js';
 
 import { form } from './js/footer-modal.js';
 import { postEmail } from './js/footer-modal.js';
-import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js';
+import {onCardClick, renderCards, renderSearchedCards} from './js/renderProductList.js';
 import {checkAndFillFormFields, createDropdownList, cardsCreate, inputPush, toggleDropdown,  buttonCategory, inputText, buttonForm} from './js/filter.js';
 
 //get DOM tree
@@ -23,7 +23,7 @@ renderCards();
 
 
 // Add event listener for  Product Cards
-productsList.addEventListener('click', onCardClick);
+frontEnd.productsList.saddEventListener('click', onCardClick);
 
 
 // Draw Popular products 
