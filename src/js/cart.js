@@ -5,7 +5,10 @@ import { closeIcon } from '../img/icons.svg#close-icon';
 const cartContainer = document.querySelector('.cart-products-order-container');
 const cartEmpty = document.querySelector('.cart-empty-product');
 
+
 export async function drawProductCart() {
+
+
   let cart = localStorageApi.loadCart();
   console.log(cart);
 
@@ -119,3 +122,4 @@ function cartMarkup(products) {
     })
     .join('');
 }
+
