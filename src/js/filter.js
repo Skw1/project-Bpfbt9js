@@ -30,8 +30,6 @@ async function createDropdownList() {
     return item.replace('_', ' ').replace('&', '/').replace('_', ' ');
     });
 
-   
-
 
    
 
@@ -48,7 +46,7 @@ async function createDropdownList() {
         listItem.className = 'dropdown-item';
         listItem.textContent = item;
         listItem.onclick = async function () {
-            itemCategory = item.replace(' ', '_').replace('/', '&').replace(' ', '_');;
+            itemCategory = item;
             localStorage.setItem(LOCAL_SAVE_CATEGORY, JSON.stringify(itemCategory));
             toggleDropdown();
         };
@@ -90,8 +88,7 @@ async function cardsCreate(event) {
     } else {
         inputTextHolder = JSON.parse(localStorage.getItem(LOCAL_SAVE_INPUT));
     }
-
-    console.log(itemCategory, inputTextHolder);
+    console.log(itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_'), inputTextHolder);
 }
 
 
