@@ -5,6 +5,8 @@ import refsAPI from './refs.js';
 import localStorageApi from './localStorageApi.js';
 import { addCheck } from './popularProducts.js';
 
+const errHide = document.querySelector('.error');
+
 let frontEndPop = new refsAPI();
 let checkBtn
 let productListApi
@@ -13,7 +15,6 @@ let productListApi
 
 async function renderSearchedCards(data) {
   document.querySelector('.product_card-list').innerHTML = ''; 
-
   data.results.map(item => {
     return document.querySelector('.product_card-list').insertAdjacentHTML('beforeend', handleMarkup(item));
   }
@@ -157,5 +158,5 @@ function addCheckBasket(){
     }})
   
 }
-export{onCardClick, renderCards, renderSearchedCards,addCheckBasket};
+export{onCardClick, renderCards, errHide, renderSearchedCards,addCheckBasket};
 

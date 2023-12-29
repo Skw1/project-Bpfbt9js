@@ -1,5 +1,5 @@
 import fetchAPI from './fetchApi.js';
-import {onCardClick, renderCards, renderSearchedCards,} from './renderProductList.js'
+import {onCardClick, renderCards, errHide, renderSearchedCards,} from './renderProductList.js'
 
 const dropdownMenu = document.querySelector('#dropdownMenu');
 const inputText = document.querySelector('#input-filter')
@@ -100,6 +100,12 @@ async function cardsCreate(event) {
     }
     const data = await fetchAPI.products(filter);
 
+    if(data.results.length === 0){
+        errHide.style.display = 'flex';
+    }
+    else{
+        errHide.style.display = 'none'
+    }
     return renderSearchedCards(data)
 }
 
