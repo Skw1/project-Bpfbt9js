@@ -8,7 +8,6 @@
 }
 
 .filter-form{
-    margin-left: 20px;
     margin-bottom: 40px;
 }
 
@@ -211,7 +210,7 @@ line-height: 18px; /* 128.571% */
     }
 
     .filter-form{
-        margin-left: 32px;
+
     }
 
     .total{
@@ -224,9 +223,16 @@ line-height: 18px; /* 128.571% */
         margin: 0;
     }
   }
+  @media screen and (min-width: 769px) and (max-width: 1439.98px) {
+    .filter-form-div{
+        display: flex;
+        justify-content: space-around;
+    }
+  }
 
-  @media screen and (min-width: 1440px) {
-    .filter-form{
-        margin-left: 100px;
+  @media screen and (min-width: 1441px) {
+    .filter-form-div{
+        display: flex;
+        justify-content: space-around;
     }
   }
