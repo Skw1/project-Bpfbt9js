@@ -4,6 +4,8 @@ import { getProductModal } from './modalProduct.js';
 import refsAPI from './refs.js';
 import localStorageApi from './localStorageApi.js';
 import { addCheck } from './popularProducts.js';
+import cartIcon from '../img/icons.svg#discount-cart';
+import checkedIcon from '../img/icons.svg#discount-checked';
 
 const errHide = document.querySelector('.error');
 
@@ -77,12 +79,12 @@ function handleMarkup(data) {
         <p class="product-curd-price">$${price}</p>
          <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn2${_id}"  type="button">
                     <svg class="card_buy-icon-svg js-btn "   width="18" height="18">
-                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                        <use class="js-btn" href="${cartIcon}"></use>
                     </svg>
                 </button>
                 <div id="${_id}" class="check js-object" data-jsname="check1${_id}" >
                 <svg  class="check-icon-svg  discount-buy " width="18" height="18">
-                        <use href="./img/icons.svg#check-mark-icon"></use>
+                        <use href="${checkedIcon}"></use>
                     </svg></div>
         </div>
         </div>
@@ -112,12 +114,12 @@ function handleMarkup(data) {
         
         <button id="${_id}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn2${_id}"  type="button">
                     <svg class="card_buy-icon-svg js-btn "   width="18" height="18">
-                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                        <use class="js-btn" href="${cartIcon}"></use>
                     </svg>
                 </button>
                 <div id="${_id}" class="check js-object" data-jsname="check1${_id}" >
                 <svg  class="check-icon-svg  discount-buy " width="18" height="18">
-                        <use href="./img/icons.svg#check-mark-icon"></use>
+                        <use href="${checkedIcon}"></use>
                     </svg></div>
         </div>
         </div>
