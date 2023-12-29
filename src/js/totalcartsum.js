@@ -2,12 +2,12 @@ import refsAPI from './refs.js';
 import fetchApi from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import closeIcon from '../img/icons.svg#close-icon';
-import { drawProductCart } from './cart.js';
 import { drawHeaderCartNumber } from './discount.js';
 
 async function totalCartSum() {
   let cartIsEmpty = true;
   const frontEnd = new refsAPI();
+  console.log(frontEnd);
   frontEnd.bigCartNumber.textContent = 'CART (0)';
   var productsToDraw = [];
   var cartSum = 0;
@@ -64,15 +64,18 @@ async function totalCartSum() {
     frontEnd.bigCartNumber.textContent = 'CART (' + cart.products.length + ')';
   }
   if (cartIsEmpty) {
+    frontEnd.deleteAllBtn.style.display = 'none';
     frontEnd.cartEmptyContainer.style.display = 'block';
     frontEnd.totalCartSum.textContent = 'Sum: $0';
     frontEnd.cartContainer.innerHTML = '';
   } else {
+    frontEnd.deleteAllBtn.style.display = 'block';
     frontEnd.cartEmptyContainer.style.display = 'none';
     frontEnd.cartContainer.innerHTML = productsToDraw.join('');
     frontEnd.totalCartSum.textContent = 'Sum: $' + cartSum.toFixed(2);
   }
 
+  // delete one product
   if ('products' in cart && cart.products.length) {
     document
       .querySelector('.js-cart-prod-del')
