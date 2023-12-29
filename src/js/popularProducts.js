@@ -4,6 +4,8 @@ import refsAPI from './refs.js';
 import { addCheckBasket } from './renderProductList.js';
 import { getProductModal } from './modalProduct.js';
 import { buyProduct } from './discount.js';
+import cartIcon from '../img/icons.svg#discount-cart';
+import checkedIcon from '../img/icons.svg#discount-checked';
 let frontEndPopular;
 let popularProducts;
 let product_Id;
@@ -84,12 +86,12 @@ export function createMarcup(arr) {
                </div>
                <button id="${_id}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
                     <svg class="basket-icon-svg js-btn "   width="12" height="12">
-                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
+                        <use class="js-btn" href="${cartIcon}"></use>
                     </svg>
                 </button>
                 <div id="${_id}" class="check-btn js-object js-btn" data-jsname="check${_id}" >
                 <svg  class="check-icon-svg  discount-buy  js-btn" width="12" height="12">
-                        <use href="./img/icons.svg#check-mark-icon"></use>
+                        <use href="${checkedIcon}"></use>
                     </svg></div>
                </li>    
                
