@@ -24,6 +24,17 @@ function checkAndFillFormFields() {
 async function createDropdownList() {
     const data = await fetchAPI.categories();
 
+   
+
+    let outputArray = data.map(item => {
+    return item.replace('_', ' ').replace('&', '/').replace('_', ' ');
+    });
+
+   
+
+
+   
+
     if (itemCategory !== null) {
         categoryContent.textContent = itemCategory;
     } else {
@@ -32,12 +43,12 @@ async function createDropdownList() {
 
     dropdownMenu.innerHTML = '';
 
-    data.forEach(async (item) => {
+    outputArray.forEach(async (item) => {
         const listItem = document.createElement('div');
         listItem.className = 'dropdown-item';
         listItem.textContent = item;
         listItem.onclick = async function () {
-            itemCategory = item;
+            itemCategory = item.replace(' ', '_').replace('/', '&').replace(' ', '_');;
             localStorage.setItem(LOCAL_SAVE_CATEGORY, JSON.stringify(itemCategory));
             toggleDropdown();
         };
