@@ -1,10 +1,9 @@
 import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
 import { getProductModal } from './modalProduct.js';
+import refsAPI from './refs.js';
 
-const productsList = document.querySelector('.product-card-list');
-const productListApi = await fetchAPI.products();
-
+const frontEnd = new refsAPI();
 
 function onCardClick(e) {
   const cardId = e.target.closest('.product_card-item').dataset.productid;
@@ -104,23 +103,23 @@ async function renderCards() {
   const productListApi = await fetchAPI.products();
 
   productListApi.results.map(item => {
-    return productsList.insertAdjacentHTML('beforeend', handleMarkup(item));
+    return frontEnd.productsList.insertAdjacentHTML('beforeend', handleMarkup(item));
   }
   )
 };
 
 function renderSearchedCards(category, search) {
-  productsList.innerHTML = '';
+  frontEnd.productsList.innerHTML = '';
   if (category) {
-    return category.map(item => productsList.insertAdjacentHTML('beforeend', handleMarkup(item)));
+    return category.map(item => frontEnd.productsList.insertAdjacentHTML('beforeend', handleMarkup(item)));
   }
   if (search) {
     if (search.length === 0) {
         window.alert('Oops something went wrong')
       }
-    return search.map(item => productsList.insertAdjacentHTML('beforeend', handleMarkup(item)));
+    return search.map(item => frontEnd.productsList.insertAdjacentHTML('beforeend', handleMarkup(item)));
   }
 };
 
-export{onCardClick, renderCards, renderSearchedCards, productsList};
+export{onCardClick, renderCards, renderSearchedCards};
 
