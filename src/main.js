@@ -44,9 +44,9 @@ renderSearchedCards();
 frontEnd.discountList.addEventListener('click', discountOnClick);
 
 // filter
-buttonCategory.addEventListener('click', toggleDropdown)
-inputText.addEventListener('input', inputPush)
-buttonForm.addEventListener('click', cardsCreate)
+buttonCategory.addEventListener('click', toggleDropdown);
+inputText.addEventListener('input', inputPush);
+buttonForm.addEventListener('click', cardsCreate);
 
 // Modal footer
 form.addEventListener('submit', postEmail);
