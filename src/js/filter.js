@@ -30,7 +30,7 @@ async function createDropdownList() {
     return item.replace('_', ' ').replace('&', '/').replace('_', ' ');
     });
 
-
+    outputArray.push('Show all');	
    
 
     if (itemCategory !== null) {
@@ -90,12 +90,20 @@ async function cardsCreate(event) {
     }
 
     if(inputTextHolder == null){
-        filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_')}
+        if(itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_') == 'Show_all'){
+            filter = {};
+        }
+        else{
+            filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_')}
+        }
+        
     }
     else{
-        filter = {
-            keyword: inputTextHolder , 
-            category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_')
+        if(itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_') == 'Show_all'){
+            filter = {keyword: inputTextHolder};
+        }
+        else{
+            filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_'), keyword: inputTextHolder}
         }
     }
     const data = await fetchAPI.products(filter);

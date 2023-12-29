@@ -6,6 +6,7 @@ import { drawProductCart } from './cart.js';
 import { drawHeaderCartNumber } from './discount.js';
 
 async function totalCartSum() {
+  let cartIsEmpty = true;
   const frontEnd = new refsAPI();
   frontEnd.bigCartNumber.textContent = 'CART (0)';
   var productsToDraw = [];
@@ -21,6 +22,7 @@ async function totalCartSum() {
       })
     );
     products.forEach(product => {
+      cartIsEmpty = false;
       //add totall product price to totall cart sum
       cartSum =
         cartSum +
@@ -61,9 +63,15 @@ async function totalCartSum() {
     });
     frontEnd.bigCartNumber.textContent = 'CART (' + cart.products.length + ')';
   }
-  frontEnd.cartEmptyContainer.style.display = 'none';
-  frontEnd.cartContainer.innerHTML = productsToDraw.join('');
-  frontEnd.totalCartSum.textContent = 'Sum: $' + cartSum.toFixed(2);
+  if (cartIsEmpty) {
+    frontEnd.cartEmptyContainer.style.display = 'block';
+    frontEnd.totalCartSum.textContent = 'Sum: $0';
+    frontEnd.cartContainer.innerHTML = '';
+  } else {
+    frontEnd.cartEmptyContainer.style.display = 'none';
+    frontEnd.cartContainer.innerHTML = productsToDraw.join('');
+    frontEnd.totalCartSum.textContent = 'Sum: $' + cartSum.toFixed(2);
+  }
 }
 
 async function checkout(event) {

@@ -157,6 +157,7 @@
 
     .product_card-list{
       gap: 20px;
+      justify-content: flex-start;
     }
 
   .product_card-item {
