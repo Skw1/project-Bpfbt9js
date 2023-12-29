@@ -1,5 +1,5 @@
 import fetchAPI from './fetchApi.js';
-import {onCardClick, renderCards, renderSearchedCards, productsList} from './renderProductList.js'
+import {onCardClick, renderCards, renderSearchedCards,} from './renderProductList.js'
 
 const dropdownMenu = document.querySelector('#dropdownMenu');
 const inputText = document.querySelector('#input-filter')
