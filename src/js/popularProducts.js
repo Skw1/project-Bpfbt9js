@@ -20,7 +20,7 @@ async function renderPopular() {
 function addProduct(event) {
   const product = event.target.closest('.cards-item');
   // console.log(product);
-  product_Id = product.dataset.id;
+  product_Id = product.dataset.productid;
   checkBtn[`btn1${product_Id}`].style.display = 'none';
   checkBtn[`check${product_Id}`].style.display = 'flex';
   buyProduct(product_Id);
@@ -50,7 +50,7 @@ export function createMarcup(arr) {
   return arr
     .map(
       ({ _id, img, name, category, size, popularity }) => ` 
-    <li class ="cards-item" data-id="${_id}" >
+    <li class ="cards-item" data-productid="${_id}" >
         <div id ="${_id}" class="photo-card">
                     <img class = "cards__image" src="${img}" alt="${name}" loading="lazy" />
                  
@@ -123,4 +123,3 @@ export { renderPopular, handleModall };
 //         import { renderPopular,handleModall } from './js/popularProducts.js';
 // renderPopular()
 //  frontEnd.PopularList.addEventListener('click', handleModall)
-

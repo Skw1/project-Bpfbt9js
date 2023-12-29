@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'NeueMontreal-regular';
-    src:  url('../fonts/NeueMontreal-Regular.otf');       
+    src:  url('../fonts/NeueMontreal-Regular.otf') ;       
     font-weight: normal;
     font-style: normal;
   }
@@ -19,6 +19,7 @@
   }
 
 body{
+    font-family: 'NeueMontreal-medium', sans-serif;
     margin:0;
     padding:0;
     background-color: var(--primary-white-color);
@@ -27,14 +28,14 @@ body{
 .container{
     margin: 0 auto;
     padding: 0 20px;
-    min-width:320px;
-    max-width: 375px;
+    min-width: 320px;
+    /* max-width: 375px; */
 }
 
 @media screen and (min-width:768px){
     .container{
         padding: 0 32px;
-        max-width: 768px; 
+        /* max-width: 768px;  */
     }
 }
 @media screen and (min-width:1440px){

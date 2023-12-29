@@ -1,25 +1,45 @@
-
-
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
-import { icon } from './img/icons.svg';
+import { closeIcon } from '../img/icons.svg#close-icon';
 
-async function drawProductCart() {
+const cartContainer = document.querySelector('.cart-products-order-container');
+const cartEmpty = document.querySelector('.cart-empty-product');
+
+
+export async function drawProductCart() {
+
+
   let cart = localStorageApi.loadCart();
   console.log(cart);
 
   const productsInCart = [];
   if ('products' in cart) {
-    cart.products.forEach(({ productId }) =>
-      getProductApi(productId).then(resp => productsInCart.push(resp))
-    );
+    if (cart.product.length) {
+      cart.products.forEach(({ productId }) =>
+        getProductApi(productId).then(resp => productsInCart.push(resp))
+      );
+      cartEmpty.style.display = 'none';
+    }
   }
   // console.log(productsInCart);
 
-  const cartContainer = document.querySelector(
-    '.cart-products-order-container'
-  );
   cartContainer.innerHTML = cartMarkup(productsInCart);
+
+  document
+    .querySelector('.cart-product-delete-btn')
+    .addEventListener('click', event => {
+      const id = event.target.dataset.productid;
+      let cart = localStorageApi.loadCart();
+      if ('products' in cart) {
+        const resalt = cart.products.findIndex(
+          product => product.productId === id
+        );
+        if (resalt !== -1) {
+          cart.products.splice(resalt, 1);
+        }
+      }
+      localStorageApi.saveCart(cart);
+    });
 }
 
 async function getProductApi(id) {
@@ -36,7 +56,7 @@ function cartMarkup(products) {
             <button type="button" class="cart-delete-button"> Delete All
                 <span class="cart-close-icon">
                     <svg class="cart-icon-close" width="24" height="24">
-                    <use href="${icon}#close-icon"></use>
+                    <use href="${closeIcon}"></use>
                     </svg>
                 </span>
             </button>
@@ -56,7 +76,7 @@ function cartMarkup(products) {
               <h3 class="cart-product-name">${name}</h3>
               <button data-productId="${_id}" type="button" class="cart-product-delete-btn">
               <svg class="cart-icon-close" width="18" height="18">
-                    <use href="${icon}#close-icon"></use>
+                    <use href="${closeIcon}"></use>
                     </svg>
               </button>
             </div>
@@ -103,20 +123,3 @@ function cartMarkup(products) {
     .join('');
 }
 
-drawProductCart();
-
-document
-  .querySelector('.cart-product-delete-btn')
-  .addEventListener('click', event => {
-    const id = event.target.dataset.productId;
-    let cart = localStorageApi.loadCart();
-    if ('products' in cart) {
-      const resalt = cart.products.findIndex(
-        product => product.productId === id
-      );
-      if (resalt !== -1) {
-        cart.products.splice(resalt, 1);
-      }
-    }
-    localStorageApi.saveCart(cart);
-  });

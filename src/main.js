@@ -1,39 +1,65 @@
-import refsAPI from './js/refs.js';
-import { drawDiscount, discountOnClick } from './js/discount.js';
 
+import refsAPI from './js/refs.js';
 const frontEnd = new refsAPI();
 
-
-//  RenderProuctList
-import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js'
-renderCards();
-
-productsList.addEventListener('click', onCardClick)
-
-//Modal footer
+import {drawDiscount, discountOnClick, drawHeaderCartNumber} from './js/discount.js';
+import { renderPopular,handleModall } from './js/popularProducts.js';
 
 import { form } from './js/footer-modal.js';
 import { postEmail } from './js/footer-modal.js';
-
-form.addEventListener('submit', postEmail);
-
-
-//Popular products imports
-
-import { renderPopular,handleModall } from './js/popularProducts.js';
-
-renderPopular()
-
- frontEnd.PopularList.addEventListener('click', handleModall)
-
-
-//draw discount products
-drawDiscount();
+import {onCardClick, renderCards, renderSearchedCards, productsList} from './js/renderProductList.js';
+import {checkAndFillFormFields, createDropdownList, cardsCreate, inputPush, toggleDropdown,  buttonCategory, inputText, buttonForm} from './js/filter.js';
 
 //get DOM tree
 // const frontEnd = new refsAPI();
 
-//add event listener for discount products
+
+// Draw Header Cart Number
+drawHeaderCartNumber();
+
+
+// RenderProuctList
+renderCards();
+
+
+// Add event listener for  Product Cards
+productsList.addEventListener('click', onCardClick);
+
+
+// Draw Popular products 
+renderPopular();
+
+
+// Add event listener for popular products
+frontEnd.PopularList.addEventListener('click', handleModall);
+
+
+// Draw discount products
+drawDiscount();
+
+
+// Create DropDown List
+createDropdownList();
+
+
+// Check Fields
+checkAndFillFormFields();
+
+
+// Render Searched Cards
+renderSearchedCards();
+
+
+// Add event listener for discount products
 frontEnd.discountList.addEventListener('click', discountOnClick);
+
+// Filter
+buttonCategory.addEventListener('click', toggleDropdown);
+inputText.addEventListener('input', inputPush);
+buttonForm.addEventListener('click', cardsCreate);
+
+// Modal footer
+form.addEventListener('submit', postEmail);
+
 
 

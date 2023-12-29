@@ -1,9 +1,29 @@
 /* Шапка */
 
-.header-logo-icon {
-  width: 14px;
-  height: 14px;
-  fill: var(--primary-white-color);
+/* .page-header-container {
+  margin: 0 auto;
+} */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 72px;
+  padding-top: 18px;
+}
+
+/* logo css */
+
+.logo-link {
+  font-family: 'Quincycf';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
   transition: background-color var(--transition-function);
 }
 
@@ -18,33 +38,38 @@
   margin-right: 8px;
 }
 
-.main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.header-logo-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--primary-white-color);
+  transition: background-color var(--transition-function);
 }
+
+
 .navig-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.main-nav {
-  padding-top: 24px;
-}
-.hero-container {
-  position: relative;
+
+  gap: 6px;
 }
 
-.logo-link {
-  font-family: 'Quincycf';
-  font-size: 24px;
+.link-home {
+  border-radius: 30px;
+  background: var(--primary-green-color);
+  padding: 10px 20px;
+  color: var(--primary-white-color);
+  font-family: 'NeueMontreal-medium';
+  font-size: 14px;
   font-style: normal;
-  font-weight: 900;
-  line-height: 24px;
-
-  display: flex;
-  align-items: center;
+  font-weight: 500;
+  line-height: 18px;
+  border: none;
   transition: background-color var(--transition-function);
+}
+.link-home:hover,
+.link-home:focus {
+  background: var(--hover-button-green-color);
 }
 
 .header-besket-wrapper {
@@ -60,7 +85,7 @@
   justify-content: center;
   border-radius: 50%;
   background: var(--primary-green-color);
-  padding: 10px;
+  padding: 12px;
   transition: background-color var(--transition-function);
 }
 .icon-basket-wrap:hover,
@@ -85,102 +110,77 @@
   color: var(--primary-green-color);
 }
 
-/* Максимальна широта 767px */
+
+/* Hiding cart div on mobile*/
+
 @media (max-width: 767px) {
-  .page-header-container {
-    margin-bottom: 72px;
-  }
-  .main-nav {
-    padding-top: 18px;
-  }
-  .header-logo-icon {
-    width: 18px;
-    height: 18px;
-  }
-  .logo-link {
-    font-size: 18px;
-    line-height: 1.11;
-    letter-spacing: -0.36px;
-  }
-  .link-home {
-    border-radius: 30px;
-    background: var(--primary-green-color);
-    padding: 10px 20px;
-    color: var(--primary-white-color);
-    font-family: 'NeueMontreal-medium';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.29;
-    border: none;
-    transition: background-color var(--transition-function);
-  }
-  .link-home:hover,
-  .link-home:focus {
-    background: var(--hover-button-green-color);
-  }
-  .icon-basket-header {
-    width: 14px;
-    height: 14px;
-  }
-  .navig-wrapper {
-    gap: 6px;
-  }
   .cart-amount {
     display: none;
   }
 }
 
+
+
 /* 768px */
 
 @media (min-width: 768px) {
-  .page-header-container {
+
+  .main-nav {
     margin-bottom: 116px;
+    padding-top: 24px;
   }
-  .container {
-    max-width: 768px;
-    padding: 0 32px;
+
+  .header-logo-icon-wrap {
+    width: 32px;
+    height: 32px;
   }
+
   .header-logo-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
+
   .navig-wrapper {
     gap: 16px;
   }
-  .link-home {
-    border-radius: 30px;
-    background: var(--primary-green-color);
+
+  .link-home{
     padding: 12px 28px;
-    color: var(--primary-white-color);
-    font-family: 'NeueMontreal-medium';
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.29;
-    border: none;
-    transition: background-color var(--transition-function);
+    font-size: 18px;
+    line-height: 24px;
   }
-  .link-home:hover,
-  .link-home:focus {
-    background: var(--hover-button-green-color);
-  }
+  
   .header-basket-item {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 14px;
   }
-  .header-logo-icon-wrap {
-    width: 32px;
-    height: 32px;
+
+  .icon-basket-wrap {
+    padding: 10px;
   }
+
+  .icon-basket-header {
+    width: 18px;
+    height: 18px;
+  }
+
 }
 
 /* 1440px */
 
 @media (min-width: 1440px) {
-  .page-header-container {
-    max-width: 1240px;
-    padding: 0 20px;
+
+  .header-container{
+    max-width: 1440px;
+  }
+
+  .main-nav {
+    margin-bottom: 77px;
+  }
+
+  .navig-wrapper {
+    gap: 24px;
   }
 }
