@@ -71,12 +71,12 @@ export function createMarcup(arr) {
                </div>
                <button id="${_id}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${_id}"  type="button">
                     <svg class="basket-icon-svg js-btn js-object"  data-jsname="btn" width="12" height="12">
-                        <use class="js-btn" href="../img/icons.svg#shopping-cart-icon"></use>
+                        <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
                 <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
                 <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
-                        <use href="../img/icons.svg#check-mark-icon"></use>
+                        <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
                </li>    
                
@@ -123,4 +123,3 @@ export { renderPopular, handleModall };
 //         import { renderPopular,handleModall } from './js/popularProducts.js';
 // renderPopular()
 //  frontEnd.PopularList.addEventListener('click', handleModall)
-
