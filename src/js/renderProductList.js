@@ -33,7 +33,7 @@ function handleMarkup(data) {
 
   if (is10PercentOff) {
     return `
-  <li class="product_card-item discount-list-item" id=${_id} data-productId="${_id}" >
+  <li class="product_card-item" id=${_id} data-productId="${_id}" >
 
   <svg class="discount-icon" id=${_id}>
    <use href="icon.svg#discount-icon"></use>
@@ -70,7 +70,7 @@ function handleMarkup(data) {
   }
   
   return `
-  <li class="product_card-item discount-list-item" id=${_id} data-productId="${_id}" >
+  <li class="product_card-item" id=${_id} data-productId="${_id}" >
 
        <div class="product_card-wrapper">
         <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product_card-image"></div>

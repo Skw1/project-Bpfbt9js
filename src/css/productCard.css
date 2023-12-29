@@ -1,35 +1,37 @@
 .product_card-container{
+}
+
+.product_card-list{
   display: flex;
-  margin-top: 40px;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
 }
 
 .product_card-item {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-  width: 335px;
-  height: 356px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 20px;
   background-color: var(--secondary-white-color);
 }
 
-.product_card-wrapper {
-  
-  margin-left: auto;
-  margin-right: auto;
-  width: 295px;
+.product_card-item:hover,
+.product_card-item:focus {
+  cursor: pointer;
 }
 
+/* .product_card-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+} */
+
 .card-img-wrapper {
+  width: 295px;
   background-color: var(--primary-white-color);
   border-radius: 10px;
-
-  height: 178px;
-  margin: auto;
+  padding: 19px 78px;
   margin-bottom: 20px;
 }
 
@@ -37,8 +39,8 @@
   width: 140px;
   height: 140px;
 
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 .card_buy-logo-icon {
@@ -51,15 +53,17 @@
   background-color: var(--secondary-white-color);
 }
 
+.product_card-name{
+  margin-bottom: 10px;
+}
+
 .product_card-info {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
-  
+  margin-bottom: 40px;
 }
 
 .product_card-bottom {
-  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,9 +79,7 @@
   line-height: 20px;
 }
 
-.discount-list-item {
-  position: relative;
-}
+
 
 .discount-icon {
   position: absolute;
@@ -97,6 +99,12 @@
   width: 18px;
   height: 18px;
   justify-content: center;
+}
+
+@media screen and (max-width: 374.99px) {
+  /* .product_card-container{
+    width: 320px;
+  } */
 }
 
 
@@ -125,18 +133,14 @@
 
 @media screen and (min-width:1440px) {
 
-  .product_card-container {
-      margin-top: 60px;
-    }
-
-  .product_card-wrapper {
+  /* .product_card-wrapper {
       width: 255px;
-    }
+    } */
 
     .product_card-list{
       gap: 20px;
-      
     }
+
   .product_card-item {
     max-width: 295px;
     max-height: 363px;
