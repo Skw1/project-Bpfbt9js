@@ -1,5 +1,6 @@
 .product_card-container{
   display: flex;
+  margin-top: 40px;
 }
 
 .product_card-item {
@@ -123,6 +124,10 @@
 }
 
 @media screen and (min-width:1440px) {
+
+  .product_card-container {
+      margin-top: 60px;
+    }
 
   .product_card-wrapper {
       width: 255px;

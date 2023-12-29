@@ -1,16 +1,20 @@
 import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
 import { getProductModal } from './modalProduct.js';
-import refsAPI from './refs.js';
 
-const frontEnd = new refsAPI();
+async function renderSearchedCards(itemCategory, inputTextHolder) {
+  document.querySelector('.product_card-list').innerHTML = '';
+  const prodFilter = await fetchAPI.products();
+
+  
+};
 
 function onCardClick(e) {
-  const cardId = e.target.closest('.product_card-item').dataset.productid;
   
   if (e.target.classList.contains('product_card-item') || e.target !== e.currentTarget) {
     if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
   
+      const cardId = e.target.closest('.product_card-item').dataset.productid;
       console.log(cardId)
       buyProduct(cardId)
       setCheckedIcon(cardId, 'shoppingCartIcon')
@@ -103,22 +107,9 @@ async function renderCards() {
   const productListApi = await fetchAPI.products();
 
   productListApi.results.map(item => {
-    return frontEnd.productsList.insertAdjacentHTML('beforeend', handleMarkup(item));
+    return document.querySelector('.product_card-list').insertAdjacentHTML('beforeend', handleMarkup(item));
   }
   )
-};
-
-function renderSearchedCards(category, search) {
-  frontEnd.productsList.innerHTML = '';
-  if (category) {
-    return category.map(item => frontEnd.productsList.insertAdjacentHTML('beforeend', handleMarkup(item)));
-  }
-  if (search) {
-    if (search.length === 0) {
-        window.alert('Oops something went wrong')
-      }
-    return search.map(item => frontEnd.productsList.insertAdjacentHTML('beforeend', handleMarkup(item)));
-  }
 };
 
 export{onCardClick, renderCards, renderSearchedCards};
