@@ -119,7 +119,7 @@ export default {
         this._baseURL + this._subscriptionURL,
         params
       );
-      return result.data;
+      return result;
     } catch (error) {
       throw error;
     }

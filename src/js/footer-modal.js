@@ -1,17 +1,19 @@
-// -------------------Підключи цей код щоб працювало---------------------
+import fetchApi from './fetchApi'; //Підключив функцію запитів на сервер
+import Icons from '/img/icons.svg#close-icon';
 
-
+// *****Змінні на модалці*****
 const refs = {
-  openModalBtn: document.querySelector('[data-action="open-modal"]'),
   closeModalBtn: document.querySelector('[data-action="close-modal"]'),
   backdrop: document.querySelector('.js-backdrop'),
   modalImg: document.querySelector('.modal__food-basket'),
-  modalInner: document.querySelector('.modal-inner'),
+  modal: document.querySelector('.modal'),
 };
 
-export const form = document.querySelector('.footer-form');
+export const form = document.querySelector('.footer-form'); //Експортую змінну для підключення у "maim.js"
 
 const ESC_KEY_CODE = 'Escape';
+
+// ---------------Функції відкриття та закриття модалки------------------
 
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
@@ -42,52 +44,23 @@ function onEscKeyPress(event) {
   }
 }
 
+// ------------Перевірка наявності імейлу на сервері та відмальовування вмісту модалки--------------
+
 export async function postEmail(params) {
   params.preventDefault();
 
   const email = params.target.elements.email.value;
 
-  console.log(email);
-
-  const obj = {
-    email: email,
-  };
-
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(obj),
-  };
-
-  await fetch('https://food-boutique.b.goit.study/api/subscription', options)
+  await fetchApi
+    .subscribe(email)
     .then(responce => {
-      responce.json();
-      console.log(responce);
-      if (responce.status === 409) {
-        onOpenModal();
-        refs.modalImg.style.display = 'none';
-        refs.modalInner.innerHTML = `
-        <div class="modal__title--wrap">
-          <p class="modal__title">
-            This
-            <span class="modal__accent-text">email address </span>
-            has already been entered
-          </p>
-        </div>
-        <div class="modal__description--wrap">
-          <p class="modal__description">
-            You have already subscribed to our new products. Watch for offers at
-            the mailing address.
-          </p>
-        </div>`;
-        return;
-      }
-      if (responce.status === 201) {
-        onOpenModal();
-        refs.modalImg.style.display = 'block';
-        refs.modalInner.innerHTML = `
+      refs.modalImg.style.display = 'block';
+      refs.modal.innerHTML = `
+      <button class="modal-btn" data-action="close-modal">
+        <svg class="modal-btn-icon" >
+          <use href="${Icons}"></use>
+        </svg>
+      </button>
         <div class="modal__title--wrap">
         <p class="modal__title">
           Thanks for subscribing for
@@ -102,12 +75,40 @@ export async function postEmail(params) {
           surprises.
         </p>
       </div>
+      <img
+        class="modal__food-basket"
+        src="./img/Rectangle 2.png"
+        alt="Кошик з фруктамі"
+      />
+    </div>
           `;
-        form.reset();
-        return;
-      }
       onOpenModal();
+      form.reset();
+      return;
     })
 
-    .catch(error => console.log(error.message));
+    .catch(error => {
+      refs.modalImg.style.display = 'none';
+      refs.modal.innerHTML = `
+      <button class="modal-btn " data-action="close-modal">
+        <svg class="modal-btn-icon" >
+          <use href="${Icons}"></use>
+        </svg>
+      </button>
+      <div class="modal__title--wrap">
+        <p class="modal__title">
+          This
+          <span class="modal__accent-text">email address </span>
+          has already been entered
+        </p>
+      </div>
+      <div class="modal__description--wrap">
+        <p class="modal__description">
+          You have already subscribed to our new products. Watch for offers at
+          the mailing address.
+        </p>
+      </div>`;
+      onOpenModal();
+      return;
+    });
 }

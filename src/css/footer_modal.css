@@ -52,6 +52,7 @@ body.show-modal .modal {
 /* -------------------Сама модалка--------------------- */
 
 .modal {
+  font-family: 'NeueMontreal-medium';
   padding: 0;
   border-radius: 20px;
   max-width: 335px;
@@ -67,30 +68,29 @@ body.show-modal .modal {
   transition: transform 200ms ease-in-out;
 }
 
-.modal-btn-box {
+.modal-btn {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   top: 14px;
   left: calc(100% - 34px);
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+  background-color: var(--primary-green-color);
 }
 
-.modal-btn {
+.modal-btn-icon {
+  fill: var(--primary-black-color);
   width: 14px;
   height: 14px;
 }
 
-.modal-inner {
-  font-family: 'NeueMontreal-medium';
-  padding: 18px 43px 0 44px;
-}
 .modal__title--wrap {
   text-align: center;
-  padding-top: 40px;
-  margin-bottom: 20px;
+  margin: 60px 0 20px 0;
+  padding: 0 15px;
 }
 .modal__title {
   font-size: 20px;
@@ -100,21 +100,20 @@ body.show-modal .modal {
   color: var(--primary-green-color);
 }
 .modal__description--wrap {
-  text-align: center;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .modal__description {
   font-family: 'NeueMontreal-regular';
   font-size: 14px;
   font-weight: 400;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-  .modal-inner {
-    padding: 18px 20px 0 20px;
-  }
   .modal__title--wrap {
     width: 245px;
-    margin: 0 auto 20px auto;
+    margin: 80px auto 20px auto;
   }
   .modal__description--wrap {
     width: 328px;
