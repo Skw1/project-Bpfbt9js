@@ -11,7 +11,7 @@ export async function drawProductCart() {
 
   const productsInCart = [];
   if ('products' in cart) {
-    if (cart.product.length) {
+    if (cart.products.length) {
       cart.products.forEach(({ productId }) =>
         getProductApi(productId).then(resp => productsInCart.push(resp))
       );
@@ -36,6 +36,13 @@ export async function drawProductCart() {
         }
       }
       localStorageApi.saveCart(cart);
+    });
+
+  document
+    .querySelector('.cart-delete-button')
+    .addEventListener('click', () => {
+      cartEmpty.style.display = 'block';
+      localStorageApi.deleteCart();
     });
 }
 
