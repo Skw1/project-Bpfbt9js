@@ -1,6 +1,6 @@
 .category-content{
     color: #010101;
-    font-family: 'NeueMontreal-regular';
+    font-family: 'NeueMontreal-thinner';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -66,7 +66,7 @@
     cursor: pointer;
     transition: color 0.3s ease;
     color: rgba(1, 1, 1, 0.50);
-font-family: 'NeueMontreal-regular';
+font-family: 'NeueMontreal-thinner';
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -89,7 +89,7 @@ line-height: 18px; /* 128.571% */
 
 .filter-txt{
     color: rgba(1, 1, 1, 0.30);
-    font-family: 'NeueMontreal-regular';
+    font-family: 'NeueMontreal-thinner';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -207,6 +207,7 @@ line-height: 18px; /* 128.571% */
         font-style: normal;
         font-weight: 400;
         line-height: 24px;
+        width: 123px;
     }
 
     .filter-form{
