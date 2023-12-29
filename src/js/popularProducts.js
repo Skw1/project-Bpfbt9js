@@ -29,8 +29,18 @@ function addProduct(event) {
 }
 // -----------------------------------------------------------------------
 function handleModall(event) {
+
+  let timerId = setInterval(function(){
+  addCheck()
+  }, 1000);
+
+setTimeout(function(){
+  clearInterval(timerId);
+  }, 5000);
+
   if (event.target.classList.contains('js-btn')) {
-    addProduct(event);
+    addProduct(event);   
+    
     return;
   }
   if (!event.target.classList.contains('js-btn')) {
@@ -74,8 +84,8 @@ export function createMarcup(arr) {
                         <use class="js-btn" href="./img/icons.svg#shopping-cart-icon"></use>
                     </svg>
                 </button>
-                <div id="${_id}" class="check-btn js-object" data-jsname="check${_id}" >
-                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object" width="12" height="12">
+                <div id="${_id}" class="check-btn js-object js-btn" data-jsname="check${_id}" >
+                <svg data-jsname="check1" class="check-icon-svg  discount-buy js-object js-btn" width="12" height="12">
                         <use href="./img/icons.svg#check-mark-icon"></use>
                     </svg></div>
                </li>    
@@ -96,29 +106,38 @@ async function render() {
     );
     checkBtn = new refsAPI();
     // console.log(checkBtn);
-    let Mycart = localStorageApi.loadCart();
-    // console.log("Mycart",Mycart.products);
-    //get saved products id
-    const productsInCart = [];
-    if ('products' in Mycart) {
-      Mycart = Mycart.products;
-      Mycart.forEach(product => productsInCart.push(product.productId));
-    }
-    //draw discount products
-    const productsList = [];
-    popularProducts.forEach(product => {
-      if (productsInCart.includes(product._id)) {
-        checkBtn[`btn1${product._id}`].style.display = 'none';
-        checkBtn[`check${product._id}`].style.display = 'flex';
-      }
-    });
+    addCheck()
     return await data;
   } catch (error) {
     console.log(error.message);
   }
 }
+function addCheck() {
+  let Mycart = localStorageApi.loadCart();
+  // console.log("Mycart",Mycart.products);
+  // console.log('vvvvvvvvvv');
+  //get saved products id
+  const productsInCart = [];
+  if ('products' in Mycart) {
+    Mycart = Mycart.products;
+    Mycart.forEach(product => productsInCart.push(product.productId));
+  }
+  
+  const productsList = [];
+  popularProducts.forEach(product => {
+    if (productsInCart.includes(product._id)) {
+      checkBtn[`btn1${product._id}`].style.display = 'none';
+      checkBtn[`check${product._id}`].style.display = 'flex';
+    }else{
+      checkBtn[`check${product._id}`].style.display = 'none';
+      checkBtn[`btn1${product._id}`].style.display = 'flex';
+
+    }
+  });
+  
+}
 //   ---------------------------------------------------------
-export { renderPopular, handleModall };
+export { renderPopular, handleModall, addCheck };
 // ----------------------------для main.js---------------
 //         import { renderPopular,handleModall } from './js/popularProducts.js';
 // renderPopular()
