@@ -79,8 +79,6 @@
   line-height: 20px;
 }
 
-
-
 .discount-icon {
   position: absolute;
   right: 10px;
@@ -101,10 +99,22 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 374.99px) {
-  /* .product_card-container{
-    width: 320px;
-  } */
+@media screen and (max-width: 374px) {
+  .product_card-wrapper{
+    width: 250px;
+  }
+  .card-img-wrapper {
+    width: auto;
+    height: auto;
+  }
+
+  .product_card-image {
+    width: auto;
+    height: auto;
+  }
+  .product_card-info{
+    display: block;
+  }
 }
 
 
@@ -116,8 +126,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 32px;
-    
-    
   }
 
   .product_card-item {
