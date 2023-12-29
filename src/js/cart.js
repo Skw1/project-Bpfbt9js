@@ -1,14 +1,11 @@
 import fetchAPI from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
-import { closeIcon } from '../img/icons.svg#close-icon';
+import closeIcon from '../img/icons.svg#close-icon';
 
 const cartContainer = document.querySelector('.cart-products-order-container');
 const cartEmpty = document.querySelector('.cart-empty-product');
 
-
 export async function drawProductCart() {
-
-
   let cart = localStorageApi.loadCart();
   console.log(cart);
 
@@ -122,4 +119,17 @@ function cartMarkup(products) {
     })
     .join('');
 }
+const cart = localStorageApi.loadCart();
+function calculateTotalSum(cart) {
+  let totalSum = 0;
+  if ('products' in cart) {
+    totalSum = cart.products.reduce((sum, product) => {
+      return sum + product.price;
+    }, 0);
+  }
+  return totalSum;
+}
 
+const totalSumElement = document.querySelector('.order-total-sum');
+const totalSum = calculateTotalSum(cart);
+totalSumElement.textContent = `$${totalSum.toFixed(2)}`;
