@@ -64,7 +64,7 @@
   align-items: center;
 }
 
-.product-curd-price {
+.product_card-price {
   color: var(--primary-black-color);
 
   font-family: 'Neue Montreal';

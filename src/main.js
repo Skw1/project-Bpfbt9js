@@ -31,7 +31,7 @@ renderPopular();
 
 // Add event listener for popular products
 
-// frontEnd.PopularList.addEventListener('click', handleModall)
+frontEnd.PopularList.addEventListener('click', handleModall)
 
 
 // Draw discount products
@@ -41,7 +41,7 @@ drawDiscount();
 
 // Add event listener for discount products
 
-// frontEnd.discountList.addEventListener('click', discountOnClick);
+frontEnd.discountList.addEventListener('click', discountOnClick);
 
 // Modal footer
 
