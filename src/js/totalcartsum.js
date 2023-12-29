@@ -41,7 +41,7 @@ async function totalCartSum() {
             <div class="cart-product-card">
             <div class="cart-product-name-container">
               <h3 class="cart-product-name">${product.name}</h3>
-              <button data-productId="${product._id}" type="button" class="cart-product-delete-btn">
+              <button data-productId="${product._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
               <svg class="cart-icon-close" width="18" height="18">
                     <use href="${closeIcon}"></use>
                     </svg>
@@ -71,6 +71,28 @@ async function totalCartSum() {
     frontEnd.cartEmptyContainer.style.display = 'none';
     frontEnd.cartContainer.innerHTML = productsToDraw.join('');
     frontEnd.totalCartSum.textContent = 'Sum: $' + cartSum.toFixed(2);
+  }
+
+  if ('products' in cart && cart.products.length) {
+    document
+      .querySelector('.js-cart-prod-del')
+      .addEventListener('click', event => {
+        const frontEnd = new refsAPI();
+        const btn = event.target.closest('.js-cart-prod-del');
+        const id = btn.dataset.productid;
+
+        const prodIdx = cart.products.findIndex(
+          product => product.productId === id
+        );
+        if (prodIdx !== -1) {
+          cart.products.splice(prodIdx, 1);
+        }
+
+        localStorageApi.saveCart(cart);
+        totalCartSum();
+        console.log(frontEnd);
+        frontEnd.cartEmptyContainer.style.display = 'block';
+      });
   }
 }
 
