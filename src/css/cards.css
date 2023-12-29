@@ -1,39 +1,39 @@
-.popular-products-box {
-}
-.cards-title {
+
+/* .cards-title {
     color: var(--primary-black-color);
 font-family: Neue Montreal;
 font-size: 24px;
 font-style: normal;
 font-weight: 500;
-line-height: 28px; /* 116.667% */
-}
-.cards-box {
+line-height: 28px; 
+} */
+
+/* .cards-box {
     width: 335px;
 height: 98px;
 flex-shrink: 0;
 border-radius: 10px;
 background-color: var(--secondary-white-color);
-}
+} */
 
-.cards-list {
+/* .cards-list {
 }
 .cards-item {
-}
-.photo-card {
+} */
+/* .photo-card {
     width: 74px;
 height: 74px;
 flex-shrink: 0;
 border-radius: 10px;
 background: var(--primary-white-color);
-}
-.cards__image {
+} */
+/* .cards__image {
 
 }
 .info {
     display: flex;
-}
-.info-title {
+} */
+/* .info-title {
 }
 .info-text {
     color: rgba(0, 0, 0, 0.3);
@@ -41,16 +41,16 @@ font-family: Neue Montreal;
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
-line-height: 14px; /* 116.667% */
-}
-.info-span {
+line-height: 14px; 
+} */
+/* .info-span {
     color: var(--primary-black-color);
 font-family: Neue Montreal;
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
-line-height: 14px; /* 116.667% */
+line-height: 14px; 
 }
 .info-wraper {
     display: flex;
-}
+} */
