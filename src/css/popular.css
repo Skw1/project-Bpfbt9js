@@ -1,4 +1,7 @@
 .popular-products-box {
+  display: flex;
+  flex-wrap: wrap;
+  
     width: 335px;
     margin-left: auto;
     margin-bottom: 80px;
@@ -16,9 +19,13 @@
   ul li:last-child {
     margin-bottom: 0;
   }
+  .cards-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
   .cards-item {
     padding: 12px;
-    max-width: 335px;
+    width: 335px;
     flex-shrink: 0;
     border-radius: 10px;
     background-color: var(--secondary-white-color);
@@ -109,20 +116,20 @@
     border: none;
     color: var(--primary-green-color);
   }
-    @media (min-width: 768px){
+  /* ===================================================== */
+    @media (min-width: 768px)and (max-width:1439px){
       .popular-products-box{      
   width: 563px;
-  margin-left: 32px;
-  margin-right: auto;
+  margin-left:0;
+  margin-right: 0;
   margin-bottom: 64px;
       }
       .cards-list{
-        display: flex;
+      
         width: 563px;
-        align-items: flex-start;
-        align-content: flex-start;
+       
         gap: 13px;
-        flex-wrap: wrap;
+        
       }
       .cards-item{
         width: 275px;
@@ -140,15 +147,10 @@ line-height: 1.2; /* 120% */
     @media (min-width:1440px) {
       .popular-products-box{
         width: 275px;
-        margin-left: auto;
-        margin-bottom: 40px;
+                margin-bottom: 40px;
       }
       .cards-list{
         width: 275px;
-        display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 13px;
       }
       .cards-item{
         width: 275px;
