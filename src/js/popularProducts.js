@@ -13,54 +13,38 @@ let checkBtn;
 
 async function renderPopular() {
   frontEndPopular = new refsAPI();
-// console.log(frontEndPopular.PopularList);
-
   frontEndPopular.PopularList.innerHTML = '';
   popularProducts = await fetchAPI.popular();
-  // console.log("popularProducts",popularProducts);
-  // ----------------
   render();
 }
+
 function addProduct(event) {
   const product = event.target.closest('.cards-item');
-  // console.log(product);
   product_Id = product.dataset.productid;
   checkBtn[`btn1${product_Id}`].style.display = 'none';
   checkBtn[`check${product_Id}`].style.display = 'flex';
   buyProduct(product_Id);
-
-  //   console.log(product_Id);
 }
-// -----------------------------------------------------------------------
+
 function handleModall(event) {
-
-  let timerId = setInterval(function(){
-  addCheck()
-  addCheckBasket()
+  let timerId = setInterval(function () {
+    addCheck();
+    addCheckBasket();
   }, 1000);
-
-setTimeout(function(){
-  clearInterval(timerId);
+  setTimeout(function () {
+    clearInterval(timerId);
   }, 10000);
 
   if (event.target.classList.contains('js-btn')) {
-    addProduct(event);   
-    
+    addProduct(event);
     return;
   }
   if (!event.target.classList.contains('js-btn')) {
-    // const product = event.target.closest('.cards-item');
-    // product_Id = product.dataset.id;
-    // console.log(product_Id);
     getProductModal(event, '.cards-item');
-
-    // alert();
     return;
   }
 }
-//  ================================================
-// localStorage.clear()
-// //   ---------------------------------------------------------
+
 export function createMarcup(arr) {
   return arr
     .map(
@@ -94,24 +78,21 @@ export function createMarcup(arr) {
                         <use href="${checkedIcon}"></use>
                     </svg></div>
                </li>    
-               
-    
+                  
 `
     )
     .join('');
 }
-// // ---------------------------------------------------------------------
+
 async function render() {
   try {
     const data = popularProducts;
-    //   console.log('render', data);
     frontEndPopular.PopularList.insertAdjacentHTML(
       'beforeend',
       createMarcup(data)
     );
     checkBtn = new refsAPI();
-    // console.log(checkBtn);
-    addCheck()
+    addCheck();
     return await data;
   } catch (error) {
     console.log(error.message);
@@ -119,31 +100,20 @@ async function render() {
 }
 function addCheck() {
   let Mycart = localStorageApi.loadCart();
-  // console.log("Mycart",Mycart.products);
-  // console.log('vvvvvvvvvv');
-  //get saved products id
   const productsInCart = [];
   if ('products' in Mycart) {
     Mycart = Mycart.products;
     Mycart.forEach(product => productsInCart.push(product.productId));
   }
-  
   const productsList = [];
   popularProducts.forEach(product => {
     if (productsInCart.includes(product._id)) {
       checkBtn[`btn1${product._id}`].style.display = 'none';
       checkBtn[`check${product._id}`].style.display = 'flex';
-    }else{
+    } else {
       checkBtn[`check${product._id}`].style.display = 'none';
       checkBtn[`btn1${product._id}`].style.display = 'flex';
-
     }
   });
-  
 }
-//   ---------------------------------------------------------
 export { renderPopular, handleModall, addCheck };
-// ----------------------------для main.js---------------
-//         import { renderPopular,handleModall } from './js/popularProducts.js';
-// renderPopular()
-//  frontEnd.PopularList.addEventListener('click', handleModall)
