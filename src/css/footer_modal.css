@@ -110,6 +110,21 @@ body.show-modal .modal {
   text-align: center;
 }
 
+.modal__food-tomatto {
+  margin: 40px auto 20px auto;
+}
+.modal__title--wrap-success {
+  margin: 0 auto 20px auto;
+}
+.modal__title--success {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+.modal__description--success {
+  padding-bottom: 60px;
+}
+
 @media screen and (min-width: 768px) {
   .modal__title--wrap {
     width: 245px;
@@ -120,5 +135,15 @@ body.show-modal .modal {
   }
   .modal__description {
     padding: 0 20px;
+  }
+  .modal__title--success {
+    font-size: 32px;
+  }
+  .modal__description--wrap-success {
+    padding: 0;
+    width: 100%;
+  }
+  .modal__description--success {
+    padding-bottom: 80px;
   }
 }

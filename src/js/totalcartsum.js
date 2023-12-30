@@ -3,6 +3,7 @@ import fetchApi from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
 import closeIcon from '../img/icons.svg#close-icon';
 import { drawHeaderCartNumber } from './discount.js';
+import ModalFilter from './modal/ModalFilter.js';
 
 async function totalCartSum() {
   let cartIsEmpty = true;
@@ -112,7 +113,32 @@ async function checkout(event) {
           localStorageApi.deleteCart();
           drawHeaderCartNumber();
           totalCartSum();
-          alert(message.message);
+
+          ModalFilter._modal.innerHTML = `<button class="modal-btn" data-action="close-modal">
+          <svg class="modal-btn-icon">
+            <use href="${closeIcon}"></use>
+          </svg>
+        </button>
+        <div class="modal-inner">
+          <img
+            class="modal__food-tomatto"
+            src="../img/tomatto.png"
+            alt="Кошик з фруктамі"
+          />
+          <div class="modal__title--wrap-success">
+            <p class="modal__title--success">ORDER SUCCESS</p>
+          </div>
+          <div class="modal__description--wrap modal__description--wrap-success">
+            <p class="modal__description modal__description--success">
+              Thank you for shopping at Food Boutique. Your order has been
+              received and is now being freshly prepared just for you! Get ready
+              to indulge in nourishing goodness, delivered right to your doorstep.
+              We're thrilled to be part of your journey to better health and
+              happiness.
+            </p>
+          </div>
+        </div>`;
+          ModalFilter.open();
         } catch (error) {
           alert('Check email!');
         }
