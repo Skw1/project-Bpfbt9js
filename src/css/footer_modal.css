@@ -70,15 +70,15 @@ body.show-modal .modal {
 
 .modal-btn {
   position: relative;
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   top: 14px;
-  left: calc(100% - 34px);
+  left: calc(100% - 28px - 14px);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: var(--primary-green-color);
+  background-color: var(--primary-white-color);
 }
 
 .modal-btn-icon {

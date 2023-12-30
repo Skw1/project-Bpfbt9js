@@ -113,12 +113,8 @@ async function checkout(event) {
           localStorageApi.deleteCart();
           drawHeaderCartNumber();
           totalCartSum();
-
-          ModalFilter._modal.innerHTML = `<button class="modal-btn" data-action="close-modal">
-          <svg class="modal-btn-icon">
-            <use href="${closeIcon}"></use>
-          </svg>
-        </button>
+          ModalFilter._modalImg.style.display = 'none';
+          ModalFilter._modal.innerHTML = `
         <div class="modal-inner">
           <img
             class="modal__food-tomatto"

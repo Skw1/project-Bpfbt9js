@@ -1,5 +1,5 @@
 import fetchApi from './fetchApi'; //Підключив функцію запитів на сервер
-import Icon from '/img/icons.svg#close-icon';
+
 import ModalFilter from './modal/ModalFilter';
 
 // *****Змінні на модалці*****
@@ -55,12 +55,9 @@ export async function postEmail(params) {
   await fetchApi
     .subscribe(email)
     .then(responce => {
+      ModalFilter._modalImg.style.display = 'block';
       ModalFilter._modal.innerHTML = `
-        <button class="modal-btn" data-action="close-modal">
-          <svg class="modal-btn-icon" >
-            <use href="${Icon}"></use>
-          </svg>
-        </button>
+        
           <div class="modal__title--wrap">
           <p class="modal__title">
             Thanks for subscribing for
@@ -75,24 +72,16 @@ export async function postEmail(params) {
             surprises.
           </p>
         </div>
-        <img
-          class="modal__food-basket"
-          src="./img/Rectangle 2.png"
-          alt="Кошик з фруктамі"
-        />
-      </div>
+        
             `;
       ModalFilter.open();
       form.reset();
     })
 
     .catch(error => {
+      ModalFilter._modalImg.style.display = 'none';
       ModalFilter._modal.innerHTML = `
-      <button class="modal-btn " data-action="close-modal">
-        <svg class="modal-btn-icon" >
-          <use href="${Icon}"></use>
-        </svg>
-      </button>
+      
       <div class="modal__title--wrap">
         <p class="modal__title">
           This

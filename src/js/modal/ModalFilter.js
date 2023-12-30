@@ -1,10 +1,10 @@
 // ---------------------Функція відкриття та закриття модального вікна--------------------------
 
 export default {
-  _closeModalBtn: document.querySelector('[data-action="close-modal"]'),
+  _closeModalBtn: document.querySelector('.js-close-modal'),
   _backdrop: document.querySelector('.js-backdrop'),
   _modalImg: document.querySelector('.modal__food-basket'),
-  _modal: document.querySelector('.modal'),
+  _modal: document.querySelector('.modal-inner'),
   ESC_KEY_CODE: 'Escape',
   open: function open() {
     window.addEventListener('keydown', this.esc.bind(this));
