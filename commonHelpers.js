@@ -1,4 +1,4 @@
-import{r as l,l as n,f as p,c as y,d as u,a as C,p as v}from"./assets/footer-modal-cd104327.js";import"./assets/vendor-7ba42fd8.js";async function i(){let r=!0;const e=new l;console.log(e),e.bigCartNumber.textContent="CART (0)";var s=[],c=0;const a=n.loadCart();if("products"in a){const o=await Promise.all(a.products.map(t=>p.product(t.productId)));o.forEach(t=>{r=!1,c=c+t.price*a.products[o.indexOf(t)].amount,s.push(`
+import{r as l,l as c,f as u,c as h,d as m,M as d,a as v,p as C}from"./assets/footer-modal-10b4b4e5.js";import"./assets/vendor-7ba42fd8.js";async function i(){let s=!0;const e=new l;console.log(e),e.bigCartNumber.textContent="CART (0)";var r=[],o=0;const a=c.loadCart();if("products"in a){const n=await Promise.all(a.products.map(t=>u.product(t.productId)));n.forEach(t=>{s=!1,o=o+t.price*a.products[n.indexOf(t)].amount,r.push(`
             
             <li class="cart-product" data-productId="${t._id}">
             <div class="cart-product-img">
@@ -13,7 +13,7 @@ import{r as l,l as n,f as p,c as y,d as u,a as C,p as v}from"./assets/footer-mod
               <h3 class="cart-product-name">${t.name}</h3>
               <button data-productId="${t._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
               <svg class="cart-icon-close" width="18" height="18">
-                    <use href="${y}"></use>
+                    <use href="${h}"></use>
                     </svg>
               </button>
             </div>
@@ -29,5 +29,24 @@ import{r as l,l as n,f as p,c as y,d as u,a as C,p as v}from"./assets/footer-mod
                   <p class="cart-product-price">$${t.price}</p>
             </div>
           </li>
-          `)}),e.bigCartNumber.textContent="CART ("+a.products.length+")"}r?(e.deleteAllBtn.style.display="none",e.cartEmptyContainer.style.display="block",e.totalCartSum.textContent="Sum: $0",e.cartContainer.innerHTML=""):(e.deleteAllBtn.style.display="block",e.cartEmptyContainer.style.display="none",e.cartContainer.innerHTML=s.join(""),e.totalCartSum.textContent="Sum: $"+c.toFixed(2)),"products"in a&&a.products.length&&document.querySelector(".js-cart-prod-del").addEventListener("click",o=>{const t=new l,f=o.target.closest(".js-cart-prod-del").dataset.productid,d=a.products.findIndex(g=>g.productId===f);d!==-1&&a.products.splice(d,1),n.saveCart(a),i(),console.log(t),t.cartEmptyContainer.style.display="block"})}async function h(r){r.preventDefault();const e=new l,s=n.loadCart();if(e.cartEmail.value.trim().length!==0)if("products"in s)if(s.products.length!==0)try{s.email=e.cartEmail.value.trim();const c=await p.order(s);n.deleteCart(),u(),i(),alert(c.message)}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}u();i();const m=new l;m.buttonCheckout.addEventListener("click",h);C.addEventListener("submit",v);m.deleteAllBtn.addEventListener("click",r=>{console.log(r.target.classList.contains("js-delete-all")),r.target.classList.contains("js-delete-all")&&(n.deleteCart(),i())});
+          `)}),e.bigCartNumber.textContent="CART ("+a.products.length+")"}s?(e.deleteAllBtn.style.display="none",e.cartEmptyContainer.style.display="block",e.totalCartSum.textContent="Sum: $0",e.cartContainer.innerHTML=""):(e.deleteAllBtn.style.display="block",e.cartEmptyContainer.style.display="none",e.cartContainer.innerHTML=r.join(""),e.totalCartSum.textContent="Sum: $"+o.toFixed(2)),"products"in a&&a.products.length&&document.querySelector(".js-cart-prod-del").addEventListener("click",n=>{const t=new l,y=n.target.closest(".js-cart-prod-del").dataset.productid,p=a.products.findIndex(f=>f.productId===y);p!==-1&&a.products.splice(p,1),c.saveCart(a),i(),console.log(t),t.cartEmptyContainer.style.display="block"})}async function b(s){s.preventDefault();const e=new l,r=c.loadCart();if(e.cartEmail.value.trim().length!==0)if("products"in r)if(r.products.length!==0)try{r.email=e.cartEmail.value.trim();const o=await u.order(r);c.deleteCart(),m(),i(),d._modalImg.style.display="none",d._modal.innerHTML=`
+        <div class="modal-inner">
+          <img
+            class="modal__food-tomatto"
+            src="../img/tomatto.png"
+            alt="Кошик з фруктамі"
+          />
+          <div class="modal__title--wrap-success">
+            <p class="modal__title--success">ORDER SUCCESS</p>
+          </div>
+          <div class="modal__description--wrap modal__description--wrap-success">
+            <p class="modal__description modal__description--success">
+              Thank you for shopping at Food Boutique. Your order has been
+              received and is now being freshly prepared just for you! Get ready
+              to indulge in nourishing goodness, delivered right to your doorstep.
+              We're thrilled to be part of your journey to better health and
+              happiness.
+            </p>
+          </div>
+        </div>`,d.open()}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}m();i();const g=new l;g.buttonCheckout.addEventListener("click",b);v.addEventListener("submit",C);g.deleteAllBtn.addEventListener("click",s=>{console.log(s.target.classList.contains("js-delete-all")),s.target.classList.contains("js-delete-all")&&(c.deleteCart(),i())});
 //# sourceMappingURL=commonHelpers.js.map
