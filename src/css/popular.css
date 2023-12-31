@@ -121,7 +121,7 @@
     background-color: var(--primary-green-color);
   }
   .basket-icon-svg {
-    fill: currentColor;
+    fill: var(--primary-green-color);
   }
   .popular-products-btn:hover .basket-icon-svg,
   .popular-products-btn:focus .basket-icon-svg {
