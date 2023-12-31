@@ -4,6 +4,7 @@ import localStorageApi from './localStorageApi.js';
 import closeIcon from '../img/icons.svg#close-icon';
 import { drawHeaderCartNumber } from './discount.js';
 import ModalFilter from './modal/ModalFilter.js';
+import tomattoIcon from '../img/tomatto.png';
 
 async function totalCartSum() {
   let cartIsEmpty = true;
@@ -123,7 +124,7 @@ async function checkout(event) {
         <div class="modal-inner">
           <img
             class="modal__food-tomatto"
-            src="../img/tomatto.png"
+            src="${tomattoIcon}"
             alt="Кошик з фруктамі"
           />
           <div class="modal__title--wrap-success">
