@@ -11,131 +11,138 @@
     <load ="partials/header.html" />
 
     <main>
-      <section class="container cart-total-container">
-        <h1 class="visually-hidden">Section</h1>
-        <div class="cart-container">
-          <span class="wrapper-cart-icon">
-            <svg class="shopping-cart-icon" width="18" height="18">
-              <use href="./img/icons.svg#shopping-cart-icon"></use>
-            </svg>
-          </span>
-          <h2
-            class="cart-title js-object"
-            data-jsname="bigCartNumber"
-            id="cart-id"
-          >
-            CART (0)
-          </h2>
-        </div>
-        <div
-          class="cart-products-order-container js-object"
-          data-jsname="cartEmptyContainer"
-        >
-          <div class="cart-empty-product">
-            <picture>
-              <source
-                media="(min-width: 1440px)"
-                srcset="
-                  ./img/empty-basket@1x.png 1x,
-                  ./img/empty-basket@2x.png 2x
-                "
-              />
-              <source
-                media="(min-width: 768px)"
-                srcset="
-                  ./img/empty-basket@1x.png 1x,
-                  ./img/empty-basket@1x.png 2x
-                "
-              />
-
-              <source
-                media="(max-width: 767px)"
-                srcset="
-                  ./img/empty-basket@1x.png 1x,
-                  ./img/empty-basket@1x.png 2x
-                "
-              />
-              <img
-                src="./img/empty-basket@1x.png"
-                alt="empty cart"
-                class="cart-epmpty-img"
-              />
-            </picture>
-
-            <p class="cart-empty-title">
-              Your basket is <span class="cart-empty-item"> empty...</span>
-            </p>
-            <p class="cart-empty-text">
-              Go to the main page to select your favorite products and add them
-              to the cart.
-            </p>
-          </div>
-        </div>
-
-        <div class="cart-product-container">
-          <div
-            class="cart-delete-all js-delete-all js-object"
-            data-jsname="deleteAllBtn"
-          >
-            <button type="button" class="cart-delete-button js-delete-all">
-              Delete All
-              <span class="cart-close-icon js-delete-all">
-                <svg
-                  class="cart-icon-close js-delete-all"
-                  width="24"
-                  height="24"
-                >
-                  <use href="${closeIcon}"></use>
-                </svg>
-              </span>
-            </button>
-          </div>
-
-          <ul class="cart-products-list" js-object></ul>
-        </div>
-
-        <div class="total-order-div">
-          <h2 class="total-order-title">your order</h2>
-          <ul
-            class="cart-products-list js-object"
-            data-jsname="cartContainer"
-          ></ul>
-          <div class="total-count-calc">
-            <div class="total-count-calc-title">Total</div>
-            <div
-              class="total-count-calc-sum js-object"
-              data-jsname="totalCartSum"
+      <section class="cart-section">
+        <div class="container cart-total-container">
+          <!-- Title -->
+          <h1 class="visually-hidden">Section</h1>
+          <div class="cart-container">
+            <span class="wrapper-cart-icon">
+              <svg class="shopping-cart-icon" width="18" height="18">
+                <use href="./img/icons.svg#shopping-cart-icon"></use>
+              </svg>
+            </span>
+            <h2
+              class="cart-title js-object"
+              data-jsname="bigCartNumber"
+              id="cart-id"
             >
-              Sum:$12.95
+              CART (0)
+            </h2>
+          </div>
+          <!-- Empty basket -->
+          <div
+            class="cart-products-order-container js-object"
+            data-jsname="cartEmptyContainer"
+          >
+            <div class="cart-empty-product">
+              <picture>
+                <source
+                  media="(min-width: 1440px)"
+                  srcset="
+                    ./img/empty-basket@1x.png 1x,
+                    ./img/empty-basket@2x.png 2x
+                  "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./img/empty-basket@1x.png 1x,
+                    ./img/empty-basket@1x.png 2x
+                  "
+                />
+
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./img/empty-basket@1x.png 1x,
+                    ./img/empty-basket@1x.png 2x
+                  "
+                />
+                <img
+                  src="./img/empty-basket@1x.png"
+                  alt="empty cart"
+                  class="cart-epmpty-img"
+                />
+              </picture>
+
+              <p class="cart-empty-title">
+                Your basket is <span class="cart-empty-item"> empty...</span>
+              </p>
+              <p class="cart-empty-text">
+                Go to the main page to select your favorite products and add
+                them to the cart.
+              </p>
             </div>
           </div>
+          <!-- Ful basket -->
+          <div class="">
+            <div class="cart-product-container">
+              <div
+                class="cart-delete-all js-delete-all js-object"
+                data-jsname="deleteAllBtn"
+              >
+                <button type="button" class="cart-delete-button js-delete-all">
+                  Delete all
+                  <span class="cart-close-icon js-delete-all">
+                    <svg
+                      class="cart-icon-close js-delete-all"
+                      width="24"
+                      height="24"
+                    >
+                      <use href="./img/icons.svg#close-icon"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <!-- List of products -->
+              <ul
+                class="cart-products-list js-object"
+                data-jsname="cartContainer"
+              ></ul>
+            </div>
+            <!-- Your order  -->
+            <div class="cart-product-container">
+              <h2 class="order-title">your order</h2>
 
-          <form
-            class="total-order-submit-form"
-            name="email_form"
-            novalidate
-            autocomplete="on"
-            action="submit"
-          >
-            <label class="total-order-email-div">
-              <input
-                class="total-order-input js-object"
-                type="email"
-                name="user-email"
-                id="user-email"
-                placeholder="Enter your email"
-                data-jsname="cartEmail"
-              />
-              <span class="email-span">Mail:</span>
-            </label>
-            <button
-              class="total-order-btn js-object"
-              data-jsname="buttonCheckout"
-              type="submit"
-            >
-              Checkout
-            </button>
-          </form>
+              <div class="order-container">
+                <p class="order-text">Total</p>
+                <p class="order-text-sum">
+                  Sum<span
+                    class="order-total-sum js-object"
+                    data-jsname="totalCartSum"
+                    >${12.95}</span
+                  >
+                </p>
+              </div>
+
+              <form
+                class="order-form-checkout"
+                name="email_form"
+                novalidate
+                autocomplete="on"
+                action="submit"
+              >
+                <label class="order-form-lable">
+                  <span class="order-text-span">Mail:</span>
+                  <input
+                    class="order-form-input js-object"
+                    type="email"
+                    name="user-email"
+                    id="user-email"
+                    placeholder="Enter your email"
+                    data-jsname="cartEmail"
+                  />
+                </label>
+                <button
+                  class="order-checkout-button js-object"
+                  data-jsname="buttonCheckout"
+                  type="submit"
+                >
+                  Checkout
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>
