@@ -6,6 +6,7 @@ import { getProductModal } from './modalProduct.js';
 import { buyProduct } from './discount.js';
 import cartIcon from '../img/icons.svg#discount-cart';
 import checkedIcon from '../img/icons.svg#discount-checked';
+import arrow from '../img/icons.svg#arrow'
 let frontEndPopular;
 let popularProducts;
 let product_Id;
@@ -116,4 +117,40 @@ function addCheck() {
     }
   });
 }
-export { renderPopular, handleModall, addCheck };
+function createScrollButton() {
+  let button;
+  
+  window.onscroll = function() {
+      if (!button) {
+          button = document.createElement("button");
+          button.innerHTML = button.innerHTML = `<svg class="" width="16" height="16"><use href="${arrow}"</use></svg>`;
+          button.classList.add("scrollBtn");
+          document.body.appendChild(button);
+
+          button.style.animation = "flashing 1s infinite"; 
+          button.onclick = function() {
+              document.documentElement.scrollTop = 0;
+              button.style.display = "none";
+          };
+      }
+
+      window.onscroll = function() {
+          if (document.documentElement.scrollTop === 0) {
+              button.style.display = "none";
+          } else {
+              button.style.display = "flex";
+          }
+
+          var pageHeight = document.documentElement.scrollHeight;
+          var windowHeight = window.innerHeight;
+          var scrollPosition = document.documentElement.scrollTop;
+
+          if (scrollPosition > (pageHeight / 6 - windowHeight / 6)) {
+              button.style.visibility = "visible";
+          } else {
+              button.style.visibility = "hidden";
+          }
+      };
+  };
+}
+export { renderPopular, handleModall, addCheck, createScrollButton };
