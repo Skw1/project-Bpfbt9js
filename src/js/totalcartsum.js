@@ -31,7 +31,7 @@ async function totalCartSum() {
       // console.log(typeof cart.products[products.indexOf(product)].amount);
       productsToDraw.push(`
             
-            <li class="cart-product" data-productId="${product._id}">
+          <li class="cart-product" data-productId="${product._id}">
             <div class="cart-product-img">
               <img class="card-img"
                 src="${product.img}"
@@ -40,16 +40,16 @@ async function totalCartSum() {
             </div>
 
             <div class="cart-product-card">
-            <div class="cart-product-name-container">
-              <h3 class="cart-product-name">${product.name}</h3>
-              <button data-productId="${product._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
-              <svg class="cart-icon-close" width="18" height="18">
-                    <use href="${closeIcon}"></use>
+              <div class="cart-product-name-container">
+                <h3 class="cart-product-name">${product.name}</h3>
+                <button data-productId="${product._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
+                <svg class="cart-icon-close" width="18" height="18">
+                    <use href="${closeIcon}#close-icon"></use>
                     </svg>
-              </button>
-            </div>
+                </button>
+              </div>
 
-            <div class="cart-product-info">
+                <div class="cart-product-info">
                   <p class="cart-category-title">
                     Category:
                     <span class="cart-category-name">${product.category}</span>
@@ -57,9 +57,14 @@ async function totalCartSum() {
                   <p class="cart-product-size">
                     Size: <span class="cart-product-size-value">${product.size}</span>
                   </p>
-                  <p class="cart-product-price">$${product.price}</p>
+                </div>
+                  <div class="cart-product-price" >
+                    <span class="cart-product-span">$${product.price}</span>
+                  </div>
+                
             </div>
           </li>
+          <hr class=""divider>
           `);
     });
     frontEnd.bigCartNumber.textContent = 'CART (' + cart.products.length + ')';
@@ -67,13 +72,13 @@ async function totalCartSum() {
   if (cartIsEmpty) {
     frontEnd.deleteAllBtn.style.display = 'none';
     frontEnd.cartEmptyContainer.style.display = 'block';
-    frontEnd.totalCartSum.textContent = 'Sum: $0';
+    frontEnd.totalCartSum.textContent = '$0';
     frontEnd.cartContainer.innerHTML = '';
   } else {
     frontEnd.deleteAllBtn.style.display = 'block';
     frontEnd.cartEmptyContainer.style.display = 'none';
     frontEnd.cartContainer.innerHTML = productsToDraw.join('');
-    frontEnd.totalCartSum.textContent = 'Sum: $' + cartSum.toFixed(2);
+    frontEnd.totalCartSum.textContent = '$' + cartSum.toFixed(2);
   }
 
   // delete one product
