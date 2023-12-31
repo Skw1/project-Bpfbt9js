@@ -1,5 +1,6 @@
 import fetchAPI from './fetchApi.js';
 import {onCardClick, renderCards, errHide, renderSearchedCards,} from './renderProductList.js'
+import  {addPagination}  from './pagination.js';
 
 const dropdownMenu = document.querySelector('#dropdownMenu');
 const inputText = document.querySelector('#input-filter')
@@ -103,7 +104,7 @@ async function cardsCreate(event) {
             filter = {keyword: inputTextHolder};
         }
         else{
-            filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_'), keyword: inputTextHolder}
+            filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_'), keyword: inputTextHolder,}
         }
     }
     const data = await fetchAPI.products(filter);
@@ -114,7 +115,8 @@ async function cardsCreate(event) {
     else{
         errHide.style.display = 'none'
     }
-    return renderSearchedCards(data)
+    return (addPagination(data.perPage * data.totalPages, data.perPage, data.page), 
+    renderSearchedCards(data))
 }
 
 
