@@ -4,11 +4,11 @@ import localStorageApi from './localStorageApi.js';
 import closeIcon from '../img/icons.svg#close-icon';
 import { drawHeaderCartNumber } from './discount.js';
 import ModalFilter from './modal/ModalFilter.js';
+import tomattoIcon from '../img/tomatto.png';
 
 async function totalCartSum() {
   let cartIsEmpty = true;
   const frontEnd = new refsAPI();
-  console.log(frontEnd);
   frontEnd.bigCartNumber.textContent = 'CART (0)';
   var productsToDraw = [];
   var cartSum = 0;
@@ -43,8 +43,8 @@ async function totalCartSum() {
               <div class="cart-product-name-container">
                 <h3 class="cart-product-name">${product.name}</h3>
                 <button data-productId="${product._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
-                <svg class="cart-icon-close" width="18" height="18">
-                    <use href="${closeIcon}#close-icon"></use>
+                <svg class="cart-icon-close js-cart-prod-del" data-productId="${product._id}" width="18" height="18">
+                    <use class="js-cart-prod-del" data-productId="${product._id}" href="${closeIcon}#close-icon"></use>
                     </svg>
                 </button>
               </div>
@@ -80,6 +80,7 @@ async function totalCartSum() {
     frontEnd.cartContainer.innerHTML = productsToDraw.join('');
     frontEnd.totalCartSum.textContent = '$' + cartSum.toFixed(2);
   }
+
 
   // delete one product
   // if ('products' in cart && cart.products.length) {
@@ -120,6 +121,7 @@ async function totalCartSum() {
       }
     }
   });
+
 }
 
 async function checkout(event) {
@@ -140,7 +142,7 @@ async function checkout(event) {
         <div class="modal-inner">
           <img
             class="modal__food-tomatto"
-            src="../img/tomatto.png"
+            src="${tomattoIcon}"
             alt="Кошик з фруктамі"
           />
           <div class="modal__title--wrap-success">

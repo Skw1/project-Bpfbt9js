@@ -121,7 +121,7 @@
     background-color: var(--primary-green-color);
   }
   .basket-icon-svg {
-    fill: var(--primary-green-color);
+    fill: currentColor;
   }
   .popular-products-btn:hover .basket-icon-svg,
   .popular-products-btn:focus .basket-icon-svg {
@@ -186,3 +186,19 @@ line-height: 1.2; /* 120% */
         width: 275px;
       }
     }
+.scrollBtn{ background-color: brown;
+  position: fixed;
+    left: 5%;
+    transform: translateX(-50%);
+    top: 50%;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+}
+@keyframes flashing {
+  0% { color: blue; }
+  50% { color: gold; }
+  100% { color: blue; }
+}
+  
