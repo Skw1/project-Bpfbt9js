@@ -1,4 +1,4 @@
-import{r as l,l as c,f as u,c as v,d as m,M as d,a as h,p as C}from"./assets/footer-modal-1f170b31.js";import"./assets/vendor-7ba42fd8.js";async function i(){let s=!0;const e=new l;console.log(e),e.bigCartNumber.textContent="CART (0)";var r=[],o=0;const a=c.loadCart();if("products"in a){const n=await Promise.all(a.products.map(t=>u.product(t.productId)));n.forEach(t=>{s=!1,o=o+t.price*a.products[n.indexOf(t)].amount,r.push(`
+import{r as l,l as c,f as u,c as v,d as m,M as i,a as h,p as C}from"./assets/footer-modal-1f170b31.js";import"./assets/vendor-7ba42fd8.js";const b="/project-Bpfbt9js/assets/tomatto-a27bffcd.png";async function d(){let s=!0;const e=new l;console.log(e),e.bigCartNumber.textContent="CART (0)";var r=[],o=0;const a=c.loadCart();if("products"in a){const n=await Promise.all(a.products.map(t=>u.product(t.productId)));n.forEach(t=>{s=!1,o=o+t.price*a.products[n.indexOf(t)].amount,r.push(`
             
           <li class="cart-product" data-productId="${t._id}">
             <div class="cart-product-img">
@@ -34,11 +34,11 @@ import{r as l,l as c,f as u,c as v,d as m,M as d,a as h,p as C}from"./assets/foo
             </div>
           </li>
           <hr class=""divider>
-          `)}),e.bigCartNumber.textContent="CART ("+a.products.length+")"}s?(e.deleteAllBtn.style.display="none",e.cartEmptyContainer.style.display="block",e.totalCartSum.textContent="$0",e.cartContainer.innerHTML=""):(e.deleteAllBtn.style.display="block",e.cartEmptyContainer.style.display="none",e.cartContainer.innerHTML=r.join(""),e.totalCartSum.textContent="$"+o.toFixed(2)),"products"in a&&a.products.length&&document.querySelector(".js-cart-prod-del").addEventListener("click",n=>{const t=new l,y=n.target.closest(".js-cart-prod-del").dataset.productid,p=a.products.findIndex(f=>f.productId===y);p!==-1&&a.products.splice(p,1),c.saveCart(a),i(),console.log(t),t.cartEmptyContainer.style.display="block"})}async function b(s){s.preventDefault();const e=new l,r=c.loadCart();if(e.cartEmail.value.trim().length!==0)if("products"in r)if(r.products.length!==0)try{r.email=e.cartEmail.value.trim();const o=await u.order(r);c.deleteCart(),m(),i(),d._modalImg.style.display="none",d._modal.innerHTML=`
+          `)}),e.bigCartNumber.textContent="CART ("+a.products.length+")"}s?(e.deleteAllBtn.style.display="none",e.cartEmptyContainer.style.display="block",e.totalCartSum.textContent="$0",e.cartContainer.innerHTML=""):(e.deleteAllBtn.style.display="block",e.cartEmptyContainer.style.display="none",e.cartContainer.innerHTML=r.join(""),e.totalCartSum.textContent="$"+o.toFixed(2)),"products"in a&&a.products.length&&document.querySelector(".js-cart-prod-del").addEventListener("click",n=>{const t=new l,f=n.target.closest(".js-cart-prod-del").dataset.productid,p=a.products.findIndex(g=>g.productId===f);p!==-1&&a.products.splice(p,1),c.saveCart(a),d(),console.log(t),t.cartEmptyContainer.style.display="block"})}async function E(s){s.preventDefault();const e=new l,r=c.loadCart();if(e.cartEmail.value.trim().length!==0)if("products"in r)if(r.products.length!==0)try{r.email=e.cartEmail.value.trim();const o=await u.order(r);c.deleteCart(),m(),d(),i._modalImg.style.display="none",i._modal.innerHTML=`
         <div class="modal-inner">
           <img
             class="modal__food-tomatto"
-            src="../img/tomatto.png"
+            src="${b}"
             alt="Кошик з фруктамі"
           />
           <div class="modal__title--wrap-success">
@@ -53,5 +53,5 @@ import{r as l,l as c,f as u,c as v,d as m,M as d,a as h,p as C}from"./assets/foo
               happiness.
             </p>
           </div>
-        </div>`,d.open()}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}m();i();const g=new l;g.buttonCheckout.addEventListener("click",b);h.addEventListener("submit",C);g.deleteAllBtn.addEventListener("click",s=>{console.log(s.target.classList.contains("js-delete-all")),s.target.classList.contains("js-delete-all")&&(c.deleteCart(),i())});
+        </div>`,i.open()}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}m();d();const y=new l;y.buttonCheckout.addEventListener("click",E);h.addEventListener("submit",C);y.deleteAllBtn.addEventListener("click",s=>{console.log(s.target.classList.contains("js-delete-all")),s.target.classList.contains("js-delete-all")&&(c.deleteCart(),d())});
 //# sourceMappingURL=commonHelpers.js.map
