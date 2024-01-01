@@ -75,25 +75,24 @@
             </div>
           </div>
           <!-- Ful basket -->
-          <div class="">
+          <div
+            class="cart-box js-delete-all js-object"
+            data-jsname="deleteAllBtn"
+          >
             <div class="cart-product-container">
-              <div
-                class="cart-delete-all js-delete-all js-object"
-                data-jsname="deleteAllBtn"
-              >
-                <button type="button" class="cart-delete-button js-delete-all">
-                  Delete all
-                  <span class="cart-close-icon js-delete-all">
-                    <svg
-                      class="cart-icon-close js-delete-all"
-                      width="24"
-                      height="24"
-                    >
-                      <use href="./img/icons.svg#close-icon"></use>
-                    </svg>
-                  </span>
-                </button>
-              </div>
+              <button type="button" class="cart-delete-button js-delete-all">
+                Delete all
+                <span class="cart-close-icon js-delete-all">
+                  <svg
+                    class="cart-icon-close js-delete-all"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="./img/icons.svg#close-icon"></use>
+                  </svg>
+                </span>
+              </button>
+
               <!-- List of products -->
               <ul
                 class="cart-products-list js-object"
@@ -101,7 +100,7 @@
               ></ul>
             </div>
             <!-- Your order  -->
-            <div class="cart-product-container">
+            <div class="cart-order-container">
               <h2 class="order-title">your order</h2>
 
               <div class="order-container">

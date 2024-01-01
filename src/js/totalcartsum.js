@@ -64,45 +64,62 @@ async function totalCartSum() {
                 
             </div>
           </li>
-          <hr class=""divider>
+          <hr class="divider">
           `);
     });
     frontEnd.bigCartNumber.textContent = 'CART (' + cart.products.length + ')';
   }
   if (cartIsEmpty) {
     frontEnd.deleteAllBtn.style.display = 'none';
-    frontEnd.cartEmptyContainer.style.display = 'block';
+    frontEnd.cartEmptyContainer.style.display = 'flex';
     frontEnd.totalCartSum.textContent = '$0';
     frontEnd.cartContainer.innerHTML = '';
   } else {
-    frontEnd.deleteAllBtn.style.display = 'block';
+    frontEnd.deleteAllBtn.style.display = 'flex';
     frontEnd.cartEmptyContainer.style.display = 'none';
     frontEnd.cartContainer.innerHTML = productsToDraw.join('');
     frontEnd.totalCartSum.textContent = '$' + cartSum.toFixed(2);
   }
 
   // delete one product
-  if ('products' in cart && cart.products.length) {
-    document
-      .querySelector('.js-cart-prod-del')
-      .addEventListener('click', event => {
-        const frontEnd = new refsAPI();
-        const btn = event.target.closest('.js-cart-prod-del');
-        const id = btn.dataset.productid;
+  // if ('products' in cart && cart.products.length) {
+  //   document
+  //     .querySelector('.js-cart-prod-del')
+  //     .addEventListener('click', event => {
+  //       const frontEnd = new refsAPI();
+  //       const btn = event.target.closest('.js-cart-prod-del');
+  //       const id = btn.dataset.productid;
 
-        const prodIdx = cart.products.findIndex(
-          product => product.productId === id
-        );
-        if (prodIdx !== -1) {
-          cart.products.splice(prodIdx, 1);
-        }
+  //       const prodIdx = cart.products.findIndex(
+  //         product => product.productId === id
+  //       );
+  //       if (prodIdx !== -1) {
+  //         cart.products.splice(prodIdx, 1);
+  //       }
 
+  //       localStorageApi.saveCart(cart);
+  //       totalCartSum();
+  //       console.log(frontEnd);
+  //       frontEnd.cartEmptyContainer.style.display = 'block';
+  //     });
+  // }
+
+  // delete one product
+  frontEnd.cartContainer.addEventListener('click', event => {
+    const btn = event.target.closest('.js-cart-prod-del');
+    if (btn) {
+      const id = btn.dataset.productid;
+      const prodIdx = cart.products.findIndex(
+        product => product.productId === id
+      );
+
+      if (prodIdx !== -1) {
+        cart.products.splice(prodIdx, 1);
         localStorageApi.saveCart(cart);
         totalCartSum();
-        console.log(frontEnd);
-        frontEnd.cartEmptyContainer.style.display = 'block';
-      });
-  }
+      }
+    }
+  });
 }
 
 async function checkout(event) {
