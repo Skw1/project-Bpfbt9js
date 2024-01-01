@@ -1,7 +1,7 @@
 import refsAPI from './refs.js';
 import fetchApi from './fetchApi.js';
 import localStorageApi from './localStorageApi.js';
-import closeIcon from '../img/icons.svg#close-icon';
+import closeIcon from './img/icons.svg#close-icon';
 import { drawHeaderCartNumber } from './discount.js';
 import ModalFilter from './modal/ModalFilter.js';
 import tomattoIcon from '../img/tomatto.png';
