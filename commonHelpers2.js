@@ -1,4 +1,4 @@
-import{r as y,b as I,g as P,f as m,l as L,e as v,h as $,d as J,i as z,j as D,a as F,p as U}from"./assets/footer-modal-ca5ec455.js";import{P as V}from"./assets/vendor-f89adc3e.js";const C=document.querySelector(".error");new y;let r,w;async function E(t){document.querySelector(".product_card-list").innerHTML="",t.results.map(e=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",T(e)))}function G(t){if(t.target.classList.contains("product_card-item")||t.target!==t.currentTarget){let e=setInterval(function(){j(),k()},1e3);if(setTimeout(function(){clearInterval(e)},1e4),t.target.nodeName==="use"||t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"){const s=t.target.closest(".product_card-item").dataset.productid;I(s),r[`btn2${s}`].style.display="none",r[`check1${s}`].style.display="flex";return}P(t,".product_card-item");return}}function T(t){const{category:e,img:s,name:a,popularity:p,price:i,size:d,_id:n,is10PercentOff:q}=t;return q?`
+import{r as y,b as x,g as E,f as m,l as T,e as w,h as S,d as D,i as F,j as U,a as V,p as G}from"./assets/footer-modal-83666b88.js";import{P as R}from"./assets/vendor-f89adc3e.js";const P=document.querySelector(".error");new y;let r,j;async function M(e){document.querySelector(".product_card-list").innerHTML="",e.results.map(t=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",N(t)))}function Y(e){if(e.target.classList.contains("product_card-item")||e.target!==e.currentTarget){let t=setInterval(function(){C(),L()},1e3);if(setTimeout(function(){clearInterval(t)},1e4),e.target.nodeName==="use"||e.target.nodeName==="BUTTON"||e.target.nodeName==="svg"){const s=e.target.closest(".product_card-item").dataset.productid;x(s),r[`btn2${s}`].style.display="none",r[`check1${s}`].style.display="flex";return}E(e,".product_card-item");return}}function N(e){const{category:t,img:s,name:a,popularity:u,price:h,size:b,_id:n,is10PercentOff:z}=e;return z?`
   <li class="product_card-item js-object" id=${n} data-productId="${n}" >
 
   <svg class="discount-icon" id=${n}>
@@ -9,25 +9,25 @@ import{r as y,b as I,g as P,f as m,l as L,e as v,h as $,d as J,i as z,j as D,a a
         <h2 class="product_card-name">${a}</h2>
         <div class="product_card-info">
             <p class="info-text">
-                Category:<span class="info-span">${e}</span>
+                Category:<span class="info-span">${t}</span>
             </p>
             <p class="info-text">
-                Size:<span class="info-span">${d}</span>
+                Size:<span class="info-span">${b}</span>
             </p>
             <p class="info-text">
-                Popularity:<span class="info-span">${p}</span>
+                Popularity:<span class="info-span">${u}</span>
             </p>
         </div>
         <div class="product_card-bottom">
-        <p class="product-curd-price">$${i}</p>
+        <p class="product-curd-price">$${h}</p>
          <button id="${n}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn2${n}"  type="button">
                     <svg class="card_buy-icon-svg js-btn "   width="18" height="18">
-                        <use class="js-btn" href="${v}"></use>
+                        <use class="js-btn" href="${w}"></use>
                     </svg>
                 </button>
                 <div id="${n}" class="check js-object" data-jsname="check1${n}" >
                 <svg  class="check-icon-svg  discount-buy " width="18" height="18">
-                        <use href="${$}"></use>
+                        <use href="${S}"></use>
                     </svg></div>
         </div>
         </div>
@@ -40,59 +40,59 @@ import{r as y,b as I,g as P,f as m,l as L,e as v,h as $,d as J,i as z,j as D,a a
         <h2 class="product_card-name">${a}</h2>
         <div class="product_card-info">
             <p class="info-text">
-                Category:<span class="info-span">${e}</span>
+                Category:<span class="info-span">${t}</span>
             </p>
             <p class="info-text">
-                Size:<span class="info-span">${d}</span>
+                Size:<span class="info-span">${b}</span>
             </p>
             <p class="info-text">
-                Popularity:<span class="info-span">${p}</span>
+                Popularity:<span class="info-span">${u}</span>
             </p>
         </div>
         <div class="product_card-bottom">
-        <p class="product-curd-price">$${i}</p>
+        <p class="product-curd-price">$${h}</p>
         
         <button id="${n}" class="card_buy-btn js-btn discount-buy js-object" data-jsname="btn2${n}"  type="button">
                     <svg class="card_buy-icon-svg js-btn "   width="18" height="18">
-                        <use class="js-btn" href="${v}"></use>
+                        <use class="js-btn" href="${w}"></use>
                     </svg>
                 </button>
                 <div id="${n}" class="check js-object" data-jsname="check1${n}" >
                 <svg  class="check-icon-svg  discount-buy " width="18" height="18">
-                        <use href="${$}"></use>
+                        <use href="${S}"></use>
                     </svg></div>
         </div>
         </div>
-    </li>`}async function R(){w=await m.products(),w.results.map(t=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",T(t))),r=new y,j()}function j(){let t=L.loadCart();const e=[];"products"in t&&(t=t.products,t.forEach(s=>e.push(s.productId))),w.results.forEach(s=>{e.includes(s._id)?(r[`btn2${s._id}`].style.display="none",r[`check1${s._id}`].style.display="flex"):(r[`check1${s._id}`].style.display="none",r[`btn2${s._id}`].style.display="flex")})}const Y="/project-Bpfbt9js/assets/icons-5c405266.svg#arrow";let _,S,b,l;async function K(){_=new y,_.PopularList.innerHTML="",S=await m.popular(),Z()}function Q(t){b=t.target.closest(".cards-item").dataset.productid,l[`btn1${b}`].style.display="none",l[`check${b}`].style.display="flex",I(b)}function W(t){let e=setInterval(function(){k(),j()},1e3);if(setTimeout(function(){clearInterval(e)},1e4),t.target.classList.contains("js-btn")){Q(t);return}if(!t.target.classList.contains("js-btn")){P(t,".cards-item");return}}function X(t){return t.map(({_id:e,img:s,name:a,category:p,size:i,popularity:d})=>` 
-    <li class ="cards-item" data-productid="${e}" >
-        <div id ="${e}" class="photo-card">
+    </li>`}async function K(){j=await m.products(),j.results.map(e=>document.querySelector(".product_card-list").insertAdjacentHTML("beforeend",N(e))),r=new y,C()}function C(){let e=T.loadCart();const t=[];"products"in e&&(e=e.products,e.forEach(s=>t.push(s.productId))),j.results.forEach(s=>{t.includes(s._id)?(r[`btn2${s._id}`].style.display="none",r[`check1${s._id}`].style.display="flex"):(r[`check1${s._id}`].style.display="none",r[`btn2${s._id}`].style.display="flex")})}const Q="/project-Bpfbt9js/assets/icons-5c405266.svg#arrow";let k,I,v,i;async function W(){k=new y,k.PopularList.innerHTML="",I=await m.popular(),te()}function X(e){v=e.target.closest(".cards-item").dataset.productid,i[`btn1${v}`].style.display="none",i[`check${v}`].style.display="flex",x(v)}function Z(e){let t=setInterval(function(){L(),C()},1e3);if(setTimeout(function(){clearInterval(t)},1e4),e.target.classList.contains("js-btn")){X(e);return}if(!e.target.classList.contains("js-btn")){E(e,".cards-item");return}}function ee(e){return e.map(({_id:t,img:s,name:a,category:u,size:h,popularity:b})=>` 
+    <li class ="cards-item" data-productid="${t}" >
+        <div id ="${t}" class="photo-card">
                     <img class = "cards__image" src="${s}" alt="${a}" loading="lazy" />
                  
             </div> 
             <div class=" discount-show">
                     <h3 class="info-title">${a}</h3>      
                     <p class="info-text">
-                        Category:<span class="info-span">${p}</span>
+                        Category:<span class="info-span">${u}</span>
                     </p>
                     <wraper class="info-wraper">
                         <p class="info-text">
-                            Size:<span class="info-span">${i}</span>
+                            Size:<span class="info-span">${h}</span>
                         </p>
                         <p class="info-text">
-                            Popularity:<span class="info-span">${d}</span>
+                            Popularity:<span class="info-span">${b}</span>
                         </p>
                     </wraper>
                </div>
-               <button id="${e}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${e}"  type="button">
+               <button id="${t}" class="popular-products-btn js-btn discount-buy js-object" data-jsname="btn1${t}"  type="button">
                     <svg class="basket-icon-svg js-btn "   width="12" height="12">
-                        <use class="js-btn" href="${v}"></use>
+                        <use class="js-btn" href="${w}"></use>
                     </svg>
                 </button>
-                <div id="${e}" class="check-btn js-object js-btn" data-jsname="check${e}" >
+                <div id="${t}" class="check-btn js-object js-btn" data-jsname="check${t}" >
                 <svg  class="check-icon-svg  discount-buy  js-btn" width="12" height="12">
-                        <use href="${$}"></use>
+                        <use href="${S}"></use>
                     </svg></div>
                </li>    
                   
-`).join("")}async function Z(){try{const t=S;return _.PopularList.insertAdjacentHTML("beforeend",X(t)),l=new y,k(),await t}catch(t){console.log(t.message)}}function k(){let t=L.loadCart();const e=[];"products"in t&&(t=t.products,t.forEach(s=>e.push(s.productId))),S.forEach(s=>{e.includes(s._id)?(l[`btn1${s._id}`].style.display="none",l[`check${s._id}`].style.display="flex"):(l[`check${s._id}`].style.display="none",l[`btn1${s._id}`].style.display="flex")})}function tt(){let t;window.onscroll=function(){t||(t=document.createElement("button"),t.innerHTML=t.innerHTML=`<svg class="" width="16" height="16"><use href="${Y}"</use></svg>`,t.classList.add("scrollBtn"),document.body.appendChild(t),t.style.animation="flashing 1s infinite",t.onclick=function(){document.documentElement.scrollTop=0,t.style.display="none"}),window.onscroll=function(){document.documentElement.scrollTop===0?t.style.display="none":t.style.display="flex";var e=document.documentElement.scrollHeight,s=window.innerHeight,a=document.documentElement.scrollTop;a>e/6-s/6?t.style.visibility="visible":t.style.visibility="hidden"}}}let x={};const et=document.getElementById("pagination");function st(t,e,s){const a={totalItems:t,itemsPerPage:e,visiblePages:5,page:s,centerAlign:!1,template:{page:'<a href="#" class="tui-page-btn">{{page}}</a>',currentPage:'<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',moveButton:i=>({first:'<a href="#" class="tui-page-btn tui-first"><<</a>',last:'<a href="#" class="tui-page-btn tui-last">>></a>',prev:'<a href="#" class="tui-page-btn tui-prev"><</a>',next:'<a href="#" class="tui-page-btn tui-next">></a>'})[i],disabledMoveButton:i=>({first:'<span class="tui-page-btn tui-first tui-is-disabled"><<</span>',last:'<span class="tui-page-btn tui-last tui-is-disabled">>></span>',prev:'<span class="tui-page-btn tui-prev tui-is-disabled"><</span>',next:'<span class="tui-page-btn tui-next tui-is-disabled">></span>'})[i],moreButton:'<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">...</a>'}};new V(et,a).on("afterMove",at)}async function at(t){const e=t.page;var s=JSON.parse(localStorage.getItem("filters"))||{};s.page=e,x={keyword:JSON.parse(localStorage.getItem("keyword")),category:JSON.parse(localStorage.getItem("category").replace(" ","_").replace("/","&").replace(" ","_")),page:s.page};const a=await m.products(x);return E(a)}const u=document.querySelector("#dropdownMenu"),M=document.querySelector("#input-filter"),nt=document.querySelector("#filterButt"),f=document.querySelector(".category-content"),ct=document.querySelector(".dropdown-toggle"),h="keyword",B="category";let o=JSON.parse(localStorage.getItem(h)),c=JSON.parse(localStorage.getItem(B)),g={};function N(){(o||c)&&(M.value=o,f.textContent=c)}async function A(){let e=(await m.categories()).map(s=>s.replace("_"," ").replace("&","/").replace("_"," "));e.push("Show all"),c!==null?f.textContent=c:f.textContent="Categories",u.innerHTML="",e.forEach(async s=>{const a=document.createElement("div");a.className="dropdown-item",a.textContent=s,a.onclick=async function(){c=s,localStorage.setItem(B,JSON.stringify(c)),H()},u.appendChild(a)})}async function H(){u.style.display=u.style.display==="flex"?"none":"flex",c!==null?f.textContent=c:f.textContent="Categories",setTimeout(function(){u.style.opacity=u.style.opacity==="1"?"0":"1"},10)}function it(t){const e=t.target.value;e?localStorage.setItem(h,JSON.stringify(e)):localStorage.setItem(h,JSON.stringify(null))}async function ot(t){t.preventDefault(),o==""?o=null:o=JSON.parse(localStorage.getItem(h)),o==null?c.replace(" ","_").replace("/","&").replace(" ","_")=="Show_all"?g={}:g={category:c.replace(" ","_").replace("/","&").replace(" ","_")}:c.replace(" ","_").replace("/","&").replace(" ","_")=="Show_all"?g={keyword:o}:g={category:c.replace(" ","_").replace("/","&").replace(" ","_"),keyword:o};const e=await m.products(g);return e.results.length===0?C.style.display="flex":C.style.display="none",st(e.perPage*e.totalPages,e.perPage,e.page),E(e)}N();A();const O=new y;J();R();document.querySelector(".product_card-list").addEventListener("click",G);K();O.PopularList.addEventListener("click",W);z();A();N();O.discountList.addEventListener("click",D);ct.addEventListener("click",H);M.addEventListener("input",it);nt.addEventListener("click",ot);F.addEventListener("submit",U);tt();
+`).join("")}async function te(){try{const e=I;return k.PopularList.insertAdjacentHTML("beforeend",ee(e)),i=new y,L(),await e}catch(e){console.log(e.message)}}function L(){let e=T.loadCart();const t=[];"products"in e&&(e=e.products,e.forEach(s=>t.push(s.productId))),I.forEach(s=>{t.includes(s._id)?(i[`btn1${s._id}`].style.display="none",i[`check${s._id}`].style.display="flex"):(i[`check${s._id}`].style.display="none",i[`btn1${s._id}`].style.display="flex")})}function se(){let e;window.onscroll=function(){e||(e=document.createElement("button"),e.innerHTML=e.innerHTML=`<svg class="" width="16" height="16"><use href="${Q}"</use></svg>`,e.classList.add("scrollBtn"),document.body.appendChild(e),e.style.animation="flashing 1s infinite",e.onclick=function(){document.documentElement.scrollTop=0,e.style.display="none"}),window.onscroll=function(){document.documentElement.scrollTop===0?e.style.display="none":e.style.display="flex";var t=document.documentElement.scrollHeight,s=window.innerHeight,a=document.documentElement.scrollTop;a>t/6-s/6?e.style.visibility="visible":e.style.visibility="hidden"}}}let l=JSON.parse(localStorage.getItem("keyword")),$=JSON.parse(localStorage.getItem("category")),d={};const ae=document.getElementById("pagination");function ne(e,t,s){const a={totalItems:e,itemsPerPage:t,visiblePages:5,page:s,centerAlign:!0};new R(ae,a).on("afterMove",ce)}async function ce(e){const t=e.page;var s=JSON.parse(localStorage.getItem("filters"))||{};s.page=t,l==""?l=null:l=JSON.parse(localStorage.getItem("keyword")),l==null?$.replace(" ","_").replace("/","&").replace(" ","_")=="Show_all"?d={page:s.page}:d={category:$.replace(" ","_").replace("/","&").replace(" ","_"),page:s.page}:$.replace(" ","_").replace("/","&").replace(" ","_")=="Show_all"?d={keyword:l,page:s.page}:d={category:$.replace(" ","_").replace("/","&").replace(" ","_"),keyword:l,page:s.page},console.log(d);const a=await m.products(d);return M(a)}const p=document.querySelector("#dropdownMenu"),H=document.querySelector("#input-filter"),oe=document.querySelector("#filterButt"),f=document.querySelector(".category-content"),re=document.querySelector(".dropdown-toggle"),_="keyword",O="category";let o=JSON.parse(localStorage.getItem(_)),c=JSON.parse(localStorage.getItem(O)),g={};function A(){(o||c)&&(H.value=o,f.textContent=c)}async function q(){let t=(await m.categories()).map(s=>s.replace("_"," ").replace("&","/").replace("_"," "));t.push("Show all"),c!==null?f.textContent=c:f.textContent="Categories",p.innerHTML="",t.forEach(async s=>{const a=document.createElement("div");a.className="dropdown-item",a.textContent=s,a.onclick=async function(){c=s,localStorage.setItem(O,JSON.stringify(c)),J()},p.appendChild(a)})}async function J(){p.style.display=p.style.display==="flex"?"none":"flex",c!==null?f.textContent=c:f.textContent="Categories",setTimeout(function(){p.style.opacity=p.style.opacity==="1"?"0":"1"},10)}function ie(e){const t=e.target.value;t?localStorage.setItem(_,JSON.stringify(t)):localStorage.setItem(_,JSON.stringify(null))}async function le(e){e.preventDefault(),o==""?o=null:o=JSON.parse(localStorage.getItem(_)),o==null?c.replace(" ","_").replace("/","&").replace(" ","_")=="Show_all"?g={}:g={category:c.replace(" ","_").replace("/","&").replace(" ","_")}:c.replace(" ","_").replace("/","&").replace(" ","_")=="Show_all"?g={keyword:o}:g={category:c.replace(" ","_").replace("/","&").replace(" ","_"),keyword:o};const t=await m.products(g);return t.results.length===0?P.style.display="flex":P.style.display="none",ne(t.perPage*t.totalPages,t.perPage,t.page),M(t)}A();q();const B=new y;D();K();document.querySelector(".product_card-list").addEventListener("click",Y);W();B.PopularList.addEventListener("click",Z);F();q();A();B.discountList.addEventListener("click",U);re.addEventListener("click",J);H.addEventListener("input",ie);oe.addEventListener("click",le);V.addEventListener("submit",G);se();
 //# sourceMappingURL=commonHelpers2.js.map
