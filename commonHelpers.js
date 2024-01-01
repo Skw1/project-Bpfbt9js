@@ -1,4 +1,4 @@
-import{r as l,l as o,f as m,c as y,d as f,M as n,a as C,p as h}from"./assets/footer-modal-dc986a11.js";import"./assets/vendor-f89adc3e.js";const _="/project-Bpfbt9js/assets/tomatto-a27bffcd.png";async function d(){let e=!0;const t=new l;t.bigCartNumber.textContent="CART (0)";var s=[],c=0;const r=o.loadCart();if("products"in r){const i=await Promise.all(r.products.map(a=>m.product(a.productId)));i.forEach(a=>{e=!1,c=c+a.price*r.products[i.indexOf(a)].amount,s.push(`
+import{r as l,l as o,f as m,c as y,d as f,M as i,a as g,p as h}from"./assets/footer-modal-c45740fe.js";import"./assets/vendor-f89adc3e.js";const _="/project-Bpfbt9js/assets/tomatto-a27bffcd.png";async function d(){let e=!0;const t=new l;t.bigCartNumber.textContent="CART (0)";var s=[],c=0;const r=o.loadCart();if("products"in r){const n=await Promise.all(r.products.map(a=>m.product(a.productId)));n.forEach(a=>{e=!1,c=c+a.price*r.products[n.indexOf(a)].amount,s.push(`
             
           <li class="cart-product" data-productId="${a._id}">
             <div class="cart-product-img">
@@ -33,8 +33,8 @@ import{r as l,l as o,f as m,c as y,d as f,M as n,a as C,p as h}from"./assets/foo
                 
             </div>
           </li>
-          <hr class="divider">
-          `)}),t.bigCartNumber.textContent="CART ("+r.products.length+")"}e?(t.deleteAllBtn.style.display="none",t.cartEmptyContainer.style.display="flex",t.totalCartSum.textContent="$0",t.cartContainer.innerHTML=""):(t.deleteAllBtn.style.display="flex",t.cartEmptyContainer.style.display="none",t.cartContainer.innerHTML=s.join(""),t.totalCartSum.textContent="$"+c.toFixed(2)),t.cartContainer.addEventListener("click",i=>{const a=i.target.closest(".js-cart-prod-del");if(a){const v=a.dataset.productid,u=r.products.findIndex(g=>g.productId===v);u!==-1&&(r.products.splice(u,1),o.saveCart(r),d())}})}async function b(e){e.preventDefault();const t=new l,s=o.loadCart();if(t.cartEmail.value.trim().length!==0)if("products"in s)if(s.products.length!==0)try{s.email=t.cartEmail.value.trim();const c=await m.order(s);o.deleteCart(),f(),d(),n._modalImg.style.display="none",n._modal.innerHTML=`
+          <div class="divider"></div>
+          `)}),t.bigCartNumber.textContent="CART ("+r.products.length+")"}e?(t.deleteAllBtn.style.display="none",t.cartEmptyContainer.style.display="flex",t.totalCartSum.textContent="$0",t.cartContainer.innerHTML=""):(t.deleteAllBtn.style.display="flex",t.cartEmptyContainer.style.display="none",t.cartContainer.innerHTML=s.join(""),t.totalCartSum.textContent="$"+c.toFixed(2)),t.cartContainer.addEventListener("click",n=>{const a=n.target.closest(".js-cart-prod-del");if(a){const v=a.dataset.productid,u=r.products.findIndex(C=>C.productId===v);u!==-1&&(r.products.splice(u,1),o.saveCart(r),d())}})}async function b(e){e.preventDefault();const t=new l,s=o.loadCart();if(t.cartEmail.value.trim().length!==0)if("products"in s)if(s.products.length!==0)try{s.email=t.cartEmail.value.trim();const c=await m.order(s);o.deleteCart(),f(),d(),i._modalImg.style.display="none",i._modal.innerHTML=`
         <div class="modal-inner">
           <img
             class="modal__food-tomatto"
@@ -53,5 +53,5 @@ import{r as l,l as o,f as m,c as y,d as f,M as n,a as C,p as h}from"./assets/foo
               happiness.
             </p>
           </div>
-        </div>`,n.open()}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}f();d();const p=new l;p.buttonCheckout.addEventListener("click",b);C.addEventListener("submit",h);p.deleteAllBtn.addEventListener("click",e=>{e.target.classList.contains("js-delete-all")&&(o.deleteCart(),d())});p.cartContainer.addEventListener("click",e=>{let t=o.loadCart();if(e.target.classList.contains("js-cart-prod-del")){const s=e.target.dataset.productid,c=t.products.findIndex(r=>r.productId===s);c!==-1&&t.products.splice(c,1),o.saveCart(t),d()}});
+        </div>`,i.open()}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}f();d();const p=new l,E=document.querySelector(".cart-amount");p.buttonCheckout.addEventListener("click",b);g.addEventListener("submit",h);p.deleteAllBtn.addEventListener("click",e=>{e.target.classList.contains("js-delete-all")&&(o.deleteCart(),d(),E.textContent="CART (0)")});p.cartContainer.addEventListener("click",e=>{let t=o.loadCart();if(e.target.classList.contains("js-cart-prod-del")){const s=e.target.dataset.productid,c=t.products.findIndex(r=>r.productId===s);c!==-1&&t.products.splice(c,1),o.saveCart(t),d()}});
 //# sourceMappingURL=commonHelpers.js.map
