@@ -4,27 +4,6 @@ import { onBasicLightbox } from './modalClose.js';
 import closeIcon from '../img/icons.svg#close-icon';
 import shoppingCartIcon from '../img/icons.svg#shopping-cart-icon';
 
-// функція getProductModal(event, jsClass) викликається при кліку на картку
-// event - івент колбек функції при кліку на картку
-
-// cards.addEventListener("click", handleClick); //слухач на контейнер з лішками
-
-// function handleClick(event) {
-//   if (event.target === event.currentTarget) {
-//     return;
-//   }
-//   if (event.target.classList.contains("basket")) {
-//     // сюди потрібно прописати додавання продукту в Localstorage по id
-//     // console.log("you clicked basket");
-//   } else {
-//     // console.log("you clicked product");
-//     getProductModal(event, ".js-product-item");
-//   }
-// }
-
-// jsClass - класс лішки, наприклад `<li data-productId="${_id}" class="item js-product-item">
-// в лішці обовязково має бути дата атрибут data-productId="${_id}"
-
 async function getProductModal(event, jsClass) {
   const currentProduct = event.target.closest(jsClass);
   const id = currentProduct.dataset.productid;
