@@ -1,14 +1,17 @@
-import  Pagination  from 'tui-pagination';
+import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import {onCardClick, renderCards, errHide, renderSearchedCards,} from './renderProductList.js'
+import '/css/pagination-style.css';
+import {
+  onCardClick,
+  renderCards,
+  errHide,
+  renderSearchedCards,
+} from './renderProductList.js';
 import fetchAPI from './fetchApi.js';
-
 
 let inputTextHolder = JSON.parse(localStorage.getItem('keyword'));
 let itemCategory = JSON.parse(localStorage.getItem('category'));
 let filter = {};
-
-
 
 const container = document.getElementById('pagination');
 export function addPagination(totalItems, itemsPerPage, currentPage) {
@@ -44,15 +47,13 @@ export function addPagination(totalItems, itemsPerPage, currentPage) {
   };
 
   const pagination = new Pagination(container, options);
-  pagination.on('afterMove', createPagin)
-
-
+  pagination.on('afterMove', createPagin);
 }
 export function deletePagination() {
   container.innerHTML = '';
 }
 
-async function createPagin (event) {
+async function createPagin(event) {
   const currentPage = event.page;
   var filters = JSON.parse(localStorage.getItem('filters')) || {};
   filters.page = currentPage;
@@ -61,31 +62,45 @@ async function createPagin (event) {
   //   category : JSON.parse(localStorage.getItem('category').replace(' ', '_').replace('/', '&').replace(' ', '_')),
   //   page: filters.page
   //   }
-  if (inputTextHolder == "") {
+  if (inputTextHolder == '') {
     inputTextHolder = null;
-} else {
+  } else {
     inputTextHolder = JSON.parse(localStorage.getItem('keyword'));
-}
+  }
 
-if(inputTextHolder == null){
-    if(itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_') == 'Show_all'){
-        filter = {page: filters.page};
+  if (inputTextHolder == null) {
+    if (
+      itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_') ==
+      'Show_all'
+    ) {
+      filter = { page: filters.page };
+    } else {
+      filter = {
+        category: itemCategory
+          .replace(' ', '_')
+          .replace('/', '&')
+          .replace(' ', '_'),
+        page: filters.page,
+      };
     }
-    else{
-        filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_'), page: filters.page}
+  } else {
+    if (
+      itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_') ==
+      'Show_all'
+    ) {
+      filter = { keyword: inputTextHolder, page: filters.page };
+    } else {
+      filter = {
+        category: itemCategory
+          .replace(' ', '_')
+          .replace('/', '&')
+          .replace(' ', '_'),
+        keyword: inputTextHolder,
+        page: filters.page,
+      };
     }
-    
-}
-else{
-    if(itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_') == 'Show_all'){
-        filter = {keyword: inputTextHolder, page: filters.page};
-    }
-    else{
-        filter = {category: itemCategory.replace(' ', '_').replace('/', '&').replace(' ', '_'), keyword: inputTextHolder, page: filters.page}
-    }
-}
-    console.log(filter)
-  const data = await fetchAPI.products(filter)
+  }
+  console.log(filter);
+  const data = await fetchAPI.products(filter);
   return renderSearchedCards(data);
-
-};
+}
