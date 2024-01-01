@@ -8,8 +8,8 @@
     
     <script type="module" crossorigin src="/project-Bpfbt9js/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/project-Bpfbt9js/assets/vendor-f89adc3e.js">
-    <link rel="modulepreload" crossorigin href="/project-Bpfbt9js/assets/footer-modal-83666b88.js">
-    <link rel="stylesheet" href="/project-Bpfbt9js/assets/footer-modal-74c3771c.css">
+    <link rel="modulepreload" crossorigin href="/project-Bpfbt9js/assets/footer-modal-dc986a11.js">
+    <link rel="stylesheet" href="/project-Bpfbt9js/assets/footer-modal-24bf9595.css">
     <link rel="stylesheet" href="/project-Bpfbt9js/assets/vendor-b342527d.css">
   </head>
   <body>
@@ -108,25 +108,24 @@
             </div>
           </div>
           <!-- Ful basket -->
-          <div class="">
+          <div
+            class="cart-box js-delete-all js-object"
+            data-jsname="deleteAllBtn"
+          >
             <div class="cart-product-container">
-              <div
-                class="cart-delete-all js-delete-all js-object"
-                data-jsname="deleteAllBtn"
-              >
-                <button type="button" class="cart-delete-button js-delete-all">
-                  Delete all
-                  <span class="cart-close-icon js-delete-all">
-                    <svg
-                      class="cart-icon-close js-delete-all"
-                      width="24"
-                      height="24"
-                    >
-                      <use href="/project-Bpfbt9js/assets/icons-5c405266.svg#close-icon"></use>
-                    </svg>
-                  </span>
-                </button>
-              </div>
+              <button type="button" class="cart-delete-button js-delete-all">
+                Delete all
+                <span class="cart-close-icon js-delete-all">
+                  <svg
+                    class="cart-icon-close js-delete-all"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="/project-Bpfbt9js/assets/icons-5c405266.svg#close-icon"></use>
+                  </svg>
+                </span>
+              </button>
+
               <!-- List of products -->
               <ul
                 class="cart-products-list js-object"
@@ -134,7 +133,7 @@
               ></ul>
             </div>
             <!-- Your order  -->
-            <div class="cart-product-container">
+            <div class="cart-order-container">
               <h2 class="order-title">your order</h2>
 
               <div class="order-container">
