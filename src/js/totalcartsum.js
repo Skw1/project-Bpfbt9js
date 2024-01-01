@@ -64,7 +64,7 @@ async function totalCartSum() {
                 
             </div>
           </li>
-          <hr class="divider">
+          <div class="divider"></div>
           `);
     });
     frontEnd.bigCartNumber.textContent = 'CART (' + cart.products.length + ')';

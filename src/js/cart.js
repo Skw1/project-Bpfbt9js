@@ -10,7 +10,7 @@ drawHeaderCartNumber();
 totalCartSum();
 
 const frondEnd = new refsAPI();
-
+const CART = document.querySelector('.cart-amount');
 frondEnd.buttonCheckout.addEventListener('click', checkout);
 
 form.addEventListener('submit', postEmail);
@@ -21,5 +21,6 @@ frondEnd.deleteAllBtn.addEventListener('click', event => {
   if (event.target.classList.contains('js-delete-all')) {
     localStorageApi.deleteCart();
     totalCartSum();
+    CART.textContent = 'CART (0)';
   }
 });
