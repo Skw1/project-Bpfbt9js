@@ -28,7 +28,7 @@
 .tui-pagination .tui-next,
 .tui-pagination .tui-first,
 .tui-pagination .tui-prev {
-  background-color: aliceblue;
+  background-color: #fafafa;
 }
 .tui-pagination .tui-first-child.tui-is-selected {
   border-left: none;

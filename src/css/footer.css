@@ -189,7 +189,6 @@
 /* Медіа від 768 */
 
 @media screen and (min-width: 768px) {
-
   .footer-content-wrap {
     justify-content: space-between;
     display: flex;
@@ -256,14 +255,6 @@
   .footer-policy-wrap {
     display: flex;
     justify-content: space-between;
-  }
-  .modal {
-    max-width: 490px;
-    min-height: 308px;
-  }
-  .modal-inner {
-    max-width: 349px;
-    margin: 0 auto;
   }
 }
 
