@@ -1,3 +1,4 @@
+import debounce from 'debounce';
 import { buyProduct, setCheckedIcon } from './discount.js';
 import fetchAPI from './fetchApi.js';
 import { getProductModal } from './modalProduct.js';
@@ -8,12 +9,15 @@ import cartIcon from '../img/icons.svg#discount-cart';
 import checkedIcon from '../img/icons.svg#discount-checked';
 
 const errHide = document.querySelector('.error');
-
+let page 
 let frontEndPop = new refsAPI();
 let checkBtn
 let productListApi
 // console.log(frontEndPop.cardsList);
 // console.log(frontEndPop.PopularList);
+
+let filter = {
+        limit : null}
 
 async function renderSearchedCards(data) {
   document.querySelector('.product_card-list').innerHTML = ''; 
@@ -50,7 +54,8 @@ function onCardClick(e) {
     return
   }
   
-}
+};
+// 
 function handleMarkup(data) {
   const { category, img, name, popularity, price, size, _id, is10PercentOff } = data;
 
@@ -126,10 +131,25 @@ function handleMarkup(data) {
     </li>`
 };
 
-async function renderCards() {
-   productListApi = await fetchAPI.products();
+function handleViewportChange() {
+  let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  
+  if (viewportWidth >= 1440) {
+    filter = {
+        limit : 9}
+  } else {
+    filter = {
+        limit : 6}
+  }
+};
 
+// window.addEventListener('resize', debounce(handleViewportChange, 300));
+
+async function renderCards() {
+   handleViewportChange();
+  productListApi = await fetchAPI.products(filter);
   productListApi.results.map(item => {
+   
     return document.querySelector('.product_card-list').insertAdjacentHTML('beforeend', handleMarkup(item));
   }
   )
@@ -160,5 +180,5 @@ function addCheckBasket(){
     }})
   
 }
-export{onCardClick, renderCards, errHide, renderSearchedCards,addCheckBasket};
+export{onCardClick, renderCards, errHide, renderSearchedCards,addCheckBasket, handleViewportChange};
 
