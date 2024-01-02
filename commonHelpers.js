@@ -1,4 +1,4 @@
-import{r as l,l as o,f as m,c as y,d as f,M as i,a as g,p as h}from"./assets/footer-modal-c45740fe.js";import"./assets/vendor-f89adc3e.js";const _="/project-Bpfbt9js/assets/tomatto-a27bffcd.png";async function d(){let e=!0;const t=new l;t.bigCartNumber.textContent="CART (0)";var s=[],c=0;const r=o.loadCart();if("products"in r){const n=await Promise.all(r.products.map(a=>m.product(a.productId)));n.forEach(a=>{e=!1,c=c+a.price*r.products[n.indexOf(a)].amount,s.push(`
+import{r as l,l as o,f as m,c as y,d as f,M as i,a as g,p as h}from"./assets/footer-modal-33d558f1.js";import"./assets/vendor-f89adc3e.js";const _="/project-Bpfbt9js/assets/tomatto-a27bffcd.png";async function d(){let e=!0;const t=new l;t.bigCartNumber.textContent="CART (0)";var s=[],c=0;const r=o.loadCart();if("products"in r){const n=await Promise.all(r.products.map(a=>m.product(a.productId)));n.forEach(a=>{e=!1,c=c+a.price*r.products[n.indexOf(a)].amount,s.push(`
             
           <li class="cart-product" data-productId="${a._id}">
             <div class="cart-product-img">
