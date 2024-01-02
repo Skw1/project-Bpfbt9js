@@ -6,7 +6,7 @@
   border: none;
 }
 .tui-page-btn:not(:last-child) {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
@@ -16,6 +16,7 @@
   background-color: #6d8434;
   background: #6d8434;
   border-color: #6d8434;
+  padding: 8px 8px;
 }
 .tui-pagination .tui-is-selected:hover {
   background-color: #89b026;
