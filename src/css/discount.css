@@ -12,7 +12,7 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px; /* 116.667% */
+  line-height: 1.17;
   margin-bottom: 20px;
 }
 
@@ -59,7 +59,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 111.111% */
+  line-height: 1.11;
 }
 
 .discount-description-price {
@@ -75,7 +75,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 111.111% */
+  line-height: 1.11;
 }
 
 .discount-icon-box {
@@ -116,7 +116,7 @@
 
   .discount-header {
     font-size: 28px;
-    line-height: 32px; /* 114.286% */
+    line-height: 1.14;
   }
 
   .discount-list {
@@ -130,12 +130,12 @@
 
   .discount-title {
     font-size: 20px;
-    line-height: 24px; /* 120% */
+    line-height: 1.2;
   }
 
   .discount-price {
     font-size: 20px;
-    line-height: 24px; /* 120% */
+    line-height: 1.2;
   }
 }
 
