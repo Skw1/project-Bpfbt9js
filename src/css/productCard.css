@@ -114,8 +114,12 @@
   }
 }
 
+.product_card-container{
+}
+
 @media screen and (min-width: 768px) {
   .product_card-container {
+    width: 704px;
     max-width: 738px;
     margin: 0 auto;
   }
@@ -140,7 +144,9 @@
 
 @media screen and (min-width: 1440px) {
   .product_card-container {
+    width: 925px;
     max-width: 1240px;
+    margin-right: 40px;
   }
   .product_card-name {
     font-size: 20px;
