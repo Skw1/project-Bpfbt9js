@@ -17,6 +17,8 @@
   background: #6d8434;
   border-color: #6d8434;
   padding: 7px 5px;
+  margin: 0;
+  transition: background-color var(--transition-function);
 }
 .tui-pagination .tui-is-selected:hover {
   background-color: #89b026;
@@ -29,6 +31,7 @@
 .tui-pagination .tui-first,
 .tui-pagination .tui-prev {
   background-color: #fafafa;
+  transition: background-color var(--transition-function);
 }
 .tui-pagination .tui-first-child.tui-is-selected {
   border-left: none;
