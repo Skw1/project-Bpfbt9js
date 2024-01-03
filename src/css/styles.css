@@ -15,11 +15,14 @@
 
 .desktop-card-div {
   display: block;
+  margin-bottom: 80px;
 }
+
 
 @media screen and (min-width: 1440px) {
   .desktop-card-div {
     display: flex;
+    justify-content: center;
     margin-bottom: 40px;
   }
 
