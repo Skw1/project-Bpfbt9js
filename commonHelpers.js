@@ -13,7 +13,7 @@ import{r as l,l as c,f as m,c as C,d as f,M as i,a as y,p as h}from"./assets/foo
                 <h3 class="cart-product-name">${a.name}</h3>
                 <button data-productId="${a._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
                 <svg class="cart-icon-close js-cart-prod-del" data-productId="${a._id}" width="18" height="18">
-                    <use class="js-cart-prod-del" data-productId="${a._id}" href="${C}#close-icon"></use>
+                    <use class="js-cart-prod-del" data-productId="${a._id}" href="${C}"></use>
                     </svg>
                 </button>
               </div>
