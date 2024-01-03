@@ -1,5 +1,4 @@
 @import url('./footer_modal.css');
-/* Дефолтний контейнер */
 
 /* .footer-container {
   width: 100%;
@@ -186,6 +185,14 @@
   text-decoration: underline;
 }
 
+/* Медіа до 768 */
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    max-width: 375px;
+  }
+}
+
 /* Медіа від 768 */
 
 @media screen and (min-width: 768px) {
@@ -261,6 +268,9 @@
 /* Медіа від 1440*/
 
 @media screen and (min-width: 1440px) {
+  .footer-container {
+    max-width: 1440px;
+  }
   .footer-content-wrap {
     margin-bottom: 128px;
   }
