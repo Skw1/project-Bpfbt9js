@@ -79,6 +79,9 @@
   .cart-empty-product {
     padding: 150px 526px;
   }
+  .cart-section {
+    margin-bottom: 100px;
+  }
 }
 .cart-epmpty-img {
   display: flex;
@@ -194,8 +197,8 @@
   width: 100%;
   position: relative;
   padding-right: 5px;
-  max-height: 520px;
-  overflow: scroll;
+  max-height: 550px;
+  overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
