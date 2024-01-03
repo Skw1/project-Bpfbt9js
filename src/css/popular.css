@@ -113,7 +113,7 @@
     height: 20px;
     padding: 4px;
     border-radius: 50%;
-    background-color: var(--primary-white-color);
+    background-color: var(--primary-green-color);
     color: var(--primary-green-color);
     transition: background-color, var(--transition-function);
   }
