@@ -21,29 +21,6 @@ export function addPagination(totalItems, itemsPerPage, currentPage) {
     visiblePages: 5,
     page: currentPage,
     centerAlign: true,
-    // template: {
-    //   page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-    //   currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-    //   moveButton: (type) => {
-    //     const moveButtonTemplates = {
-    //       first: '<a href="#" class="tui-page-btn tui-first"><<</a>',
-    //       last: '<a href="#" class="tui-page-btn tui-last">>></a>',
-    //       prev: '<a href="#" class="tui-page-btn tui-prev"><</a>',
-    //       next: '<a href="#" class="tui-page-btn tui-next">></a>'
-    //     };
-    //     return moveButtonTemplates[type];
-    //   },
-    //   disabledMoveButton: (type) => {
-    //     const disabledMoveButtonTemplates = {
-    //       first: '<span class="tui-page-btn tui-first tui-is-disabled"><<</span>',
-    //       last: '<span class="tui-page-btn tui-last tui-is-disabled">>></span>',
-    //       prev: '<span class="tui-page-btn tui-prev tui-is-disabled"><</span>',
-    //       next: '<span class="tui-page-btn tui-next tui-is-disabled">></span>'
-    //     };
-    //     return disabledMoveButtonTemplates[type];
-    //   },
-    //   moreButton: '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">...</a>'
-    // }
   };
 
   const pagination = new Pagination(container, options);

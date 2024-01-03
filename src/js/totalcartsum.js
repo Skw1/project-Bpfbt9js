@@ -5,6 +5,7 @@ import closeIcon from '../img/icons.svg#close-icon';
 import { drawHeaderCartNumber } from './discount.js';
 import ModalFilter from './modal/ModalFilter.js';
 import tomattoIcon from '../img/tomatto.png';
+import shadowIcon from '../img/icons.svg#shadow-icon';
 
 async function totalCartSum() {
   let cartIsEmpty = true;
@@ -81,7 +82,6 @@ async function totalCartSum() {
     frontEnd.totalCartSum.textContent = '$' + cartSum.toFixed(2);
   }
 
-
   // delete one product
   // if ('products' in cart && cart.products.length) {
   //   document
@@ -121,7 +121,6 @@ async function totalCartSum() {
       }
     }
   });
-
 }
 
 async function checkout(event) {
@@ -140,11 +139,17 @@ async function checkout(event) {
           ModalFilter._modalImg.style.display = 'none';
           ModalFilter._modal.innerHTML = `
         <div class="modal-inner">
-          <img
-            class="modal__food-tomatto"
-            src="${tomattoIcon}"
-            alt="Кошик з фруктамі"
-          />
+          <div class="moal__food-tomatto--wrap">
+          <svg class="moal__food-tomatto--shadow">
+          <use href="${shadowIcon}"></use>
+        </svg>
+            <img
+              class="modal__food-tomatto"
+              src="${tomattoIcon}"
+              alt="Кошик з фруктамі"
+            />
+            
+          </div>
           <div class="modal__title--wrap-success">
             <p class="modal__title--success">ORDER SUCCESS</p>
           </div>
