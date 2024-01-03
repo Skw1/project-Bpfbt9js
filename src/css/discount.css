@@ -7,7 +7,8 @@
 
 .discount-header {
   color: var(--primary-black-color);
-  font-family: Neue Montreal;
+  /* font-family: Neue Montreal; */
+  font-family: 'NeueMontreal-medium', sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;

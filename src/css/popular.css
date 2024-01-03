@@ -31,9 +31,10 @@
   .cards-title {
     margin-bottom: 20px;
     color: var(--primary-black-color);
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 500;
     line-height: 1.17; /* 116.667% */
+    font-family: 'NeueMontreal-medium', sans-serif;
   }
   
   ul li:last-child {
