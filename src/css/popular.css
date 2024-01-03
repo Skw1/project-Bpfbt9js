@@ -164,8 +164,23 @@ ul li:last-child {
     gap: 13px;
     justify-content: flex-start;
   }
+
   .cards-item {
     width: 275px;
+
+  .popular-products-btn {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: var(--primary-green-color);
+    color: var(--primary-green-color);
+    transition: background-color, var(--transition-function);
+
   }
   .cards-item {
     margin-bottom: 0px;
