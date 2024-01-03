@@ -45,7 +45,7 @@ async function totalCartSum() {
                 <h3 class="cart-product-name">${product.name}</h3>
                 <button data-productId="${product._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
                 <svg class="cart-icon-close js-cart-prod-del" data-productId="${product._id}" width="18" height="18">
-                    <use class="js-cart-prod-del" data-productId="${product._id}" href="${closeIcon}#close-icon"></use>
+                    <use class="js-cart-prod-del" data-productId="${product._id}" href="${closeIcon}"></use>
                     </svg>
                 </button>
               </div>
