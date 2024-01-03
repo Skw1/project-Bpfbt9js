@@ -137,6 +137,9 @@ function handleViewportChange() {
   if (viewportWidth >= 1440) {
     filter = {
         limit : 9}
+  } else if (viewportWidth  < 1440 && viewportWidth > 768) {
+    filter = {
+        limit : 8}
   } else {
     filter = {
         limit : 6}
