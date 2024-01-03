@@ -3,7 +3,7 @@ import refsAPI from './js/refs.js';
 const frontEnd = new refsAPI();
 
 import {drawDiscount, discountOnClick, drawHeaderCartNumber} from './js/discount.js';
-import { renderPopular,handleModall,createScrollButton } from './js/popularProducts.js';
+import { renderPopular,handleModall } from './js/popularProducts.js';
 
 import { form } from './js/footer-modal.js';
 import { postEmail } from './js/footer-modal.js';
@@ -15,7 +15,7 @@ import {checkAndFillFormFields, createDropdownList, cardsCreate, inputPush, togg
 
 handleViewportChange();
 
-window.addEventListener('resize', debounce(handleViewportChange, 300));
+// window.addEventListener('resize', debounce(handleViewportChange, 300));
 // Draw Header Cart Number
 drawHeaderCartNumber();
 
@@ -62,4 +62,4 @@ buttonForm.addEventListener('click', cardsCreate);
 // Modal footer
 form.addEventListener('submit', postEmail);
 
-createScrollButton()
+
