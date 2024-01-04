@@ -67,7 +67,7 @@
   cursor: pointer;
   transition: color 0.3s ease;
   color: rgba(1, 1, 1, 0.5);
-  font-family: 'NeueMontreal-thinner';
+  font-family: 'NeueMontreal-regular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -90,7 +90,7 @@
 
 .filter-txt {
   color: rgba(1, 1, 1, 0.3);
-  font-family: 'NeueMontreal-thinner';
+  font-family: 'NeueMontreal-regular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -220,19 +220,6 @@
   .filter-div {
     width: 269px;
     margin: 0;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1439.98px) {
-  .filter-form-div {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
-@media screen and (min-width: 1441px) {
-  .filter-form-div {
-    display: flex;
-    justify-content: space-around;
   }
 }
 
