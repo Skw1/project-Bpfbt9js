@@ -61,10 +61,6 @@ function handleMarkup(data) {
   if (is10PercentOff) {
     return `
   <li class="product_card-item js-object" id=${_id} data-productId="${_id}" >
-
-  <svg class="discount-icon" id=${_id}>
-   <use href="icon.svg#discount-icon"></use>
- </svg>
        <div class="product_card-wrapper">
         <div class="card-img-wrapper"><img src="${img}" alt="${name}" class="product_card-image"></div>
         <h2 class="product_card-name">${name}</h2>
