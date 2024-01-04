@@ -1,4 +1,4 @@
-import{r as i,l as n,f as p,c as y,d as u,M as d,a as f,p as g}from"./assets/footer-modal-7f5e354d.js";import"./assets/vendor-f89adc3e.js";const C="/project-Bpfbt9js/assets/tomatto-a27bffcd.png",v="/project-Bpfbt9js/assets/icons-5c405266.svg#shadow-icon";async function m(){let a=!0;const t=new i;t.bigCartNumber.textContent="CART (0)";var s=[],o=0;const c=n.loadCart();if("products"in c){const l=await Promise.all(c.products.map(e=>p.product(e.productId)));l.forEach(e=>{a=!1,o=o+e.price*c.products[l.indexOf(e)].amount,s.push(`
+import{r as i,l as n,f as p,c as y,d as u,M as d,a as f,p as g}from"./assets/footer-modal-73fce1d4.js";import"./assets/vendor-f89adc3e.js";const C="/project-Bpfbt9js/assets/tomatto-a27bffcd.png",v="/project-Bpfbt9js/assets/icons-5c405266.svg#shadow-icon";async function m(){let a=!0;const t=new i;t.bigCartNumber.textContent="CART (0)";var s=[],o=0;const c=n.loadCart();if("products"in c){const l=await Promise.all(c.products.map(e=>p.product(e.productId)));l.forEach(e=>{a=!1,o=o+e.price*c.products[l.indexOf(e)].amount,s.push(`
             
           <li class="cart-product" data-productId="${e._id}">
             <div class="cart-product-img">
