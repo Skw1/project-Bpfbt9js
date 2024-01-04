@@ -17,12 +17,6 @@
     font-weight: normal;
     font-style: normal;
   }
-  @font-face {
-    font-family: 'NeueMontreal-thinner';
-    src:  url('../fonts/NeueMontreal-Regular.otf') ;       
-    font-weight: 400;
-    font-style: normal;
-  }
 
 body{
     font-family: 'NeueMontreal-medium', sans-serif;
@@ -34,17 +28,20 @@ body{
 .container{
     margin: 0 auto;
     padding: 0 20px;
+    max-width: 335px;
     
 }
 
 @media screen and (min-width:768px){
     .container{
         padding: 0 32px;
+        max-width: 768px;
         
     }
 }
 @media screen and (min-width:1440px){
     .container{
         padding: 0 100px;
+        max-width: 1440px;
     }
 }

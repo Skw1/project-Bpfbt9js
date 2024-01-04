@@ -193,6 +193,9 @@
 /* Медіа від 768 */
 
 @media screen and (min-width: 768px) {
+  .footer-container {
+    max-width: 768px;
+  }
   .footer-content-wrap {
     justify-content: space-between;
     display: flex;
