@@ -1,7 +1,12 @@
 /* Section-cart */
 .cart-total-container {
   box-sizing: content-box;
+  
 }
+@media screen and (max-width: 768px) {
+  .cart-total-container {
+   padding: 0 10px 0 20px;
+  }}
 @media screen and (min-width: 768px) {
   .cart-total-container {
     display: flex;
@@ -166,7 +171,7 @@
   display: flex;
   position: relative;
   width: 100%;
-  padding-right: 10px;
+ 
 }
 
 .cart-delete-button {
