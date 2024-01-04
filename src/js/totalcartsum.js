@@ -81,46 +81,6 @@ async function totalCartSum() {
     frontEnd.cartContainer.innerHTML = productsToDraw.join('');
     frontEnd.totalCartSum.textContent = '$' + cartSum.toFixed(2);
   }
-
-  // delete one product
-  // if ('products' in cart && cart.products.length) {
-  //   document
-  //     .querySelector('.js-cart-prod-del')
-  //     .addEventListener('click', event => {
-  //       const frontEnd = new refsAPI();
-  //       const btn = event.target.closest('.js-cart-prod-del');
-  //       const id = btn.dataset.productid;
-
-  //       const prodIdx = cart.products.findIndex(
-  //         product => product.productId === id
-  //       );
-  //       if (prodIdx !== -1) {
-  //         cart.products.splice(prodIdx, 1);
-  //       }
-
-  //       localStorageApi.saveCart(cart);
-  //       totalCartSum();
-  //       console.log(frontEnd);
-  //       frontEnd.cartEmptyContainer.style.display = 'block';
-  //     });
-  // }
-
-  // delete one product
-  frontEnd.cartContainer.addEventListener('click', event => {
-    const btn = event.target.closest('.js-cart-prod-del');
-    if (btn) {
-      const id = btn.dataset.productid;
-      const prodIdx = cart.products.findIndex(
-        product => product.productId === id
-      );
-
-      if (prodIdx !== -1) {
-        cart.products.splice(prodIdx, 1);
-        localStorageApi.saveCart(cart);
-        totalCartSum();
-      }
-    }
-  });
 }
 
 async function checkout(event) {
