@@ -1,19 +1,19 @@
-import{r as l,l as c,f as m,c as C,d as f,M as i,a as y,p as h}from"./assets/footer-modal-4bd1a897.js";import"./assets/vendor-f89adc3e.js";const _="/project-Bpfbt9js/assets/tomatto-a27bffcd.png",b="/project-Bpfbt9js/assets/icons-5c405266.svg#shadow-icon";async function d(){let e=!0;const t=new l;t.bigCartNumber.textContent="CART (0)";var s=[],o=0;const r=c.loadCart();if("products"in r){const n=await Promise.all(r.products.map(a=>m.product(a.productId)));n.forEach(a=>{e=!1,o=o+a.price*r.products[n.indexOf(a)].amount,s.push(`
+import{r as i,l as n,f as p,c as y,d as u,M as d,a as f,p as g}from"./assets/footer-modal-0d854c6a.js";import"./assets/vendor-f89adc3e.js";const C="/project-Bpfbt9js/assets/tomatto-a27bffcd.png",v="/project-Bpfbt9js/assets/icons-5c405266.svg#shadow-icon";async function m(){let a=!0;const t=new i;t.bigCartNumber.textContent="CART (0)";var s=[],o=0;const c=n.loadCart();if("products"in c){const l=await Promise.all(c.products.map(e=>p.product(e.productId)));l.forEach(e=>{a=!1,o=o+e.price*c.products[l.indexOf(e)].amount,s.push(`
             
-          <li class="cart-product" data-productId="${a._id}">
+          <li class="cart-product" data-productId="${e._id}">
             <div class="cart-product-img">
               <img class="card-img"
-                src="${a.img}"
-                alt="${a.name}"
+                src="${e.img}"
+                alt="${e.name}"
               />
             </div>
 
             <div class="cart-product-card">
               <div class="cart-product-name-container">
-                <h3 class="cart-product-name">${a.name}</h3>
-                <button data-productId="${a._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
-                <svg class="cart-icon-close js-cart-prod-del" data-productId="${a._id}" width="18" height="18">
-                    <use class="js-cart-prod-del" data-productId="${a._id}" href="${C}"></use>
+                <h3 class="cart-product-name">${e.name}</h3>
+                <button data-productId="${e._id}" type="button" class="cart-product-delete-btn js-cart-prod-del">
+                <svg class="cart-icon-close js-cart-prod-del" data-productId="${e._id}" width="18" height="18">
+                    <use class="js-cart-prod-del" data-productId="${e._id}" href="${y}"></use>
                     </svg>
                 </button>
               </div>
@@ -21,28 +21,28 @@ import{r as l,l as c,f as m,c as C,d as f,M as i,a as y,p as h}from"./assets/foo
                 <div class="cart-product-info">
                   <p class="cart-category-title">
                     Category:
-                    <span class="cart-category-name">${a.category}</span>
+                    <span class="cart-category-name">${e.category}</span>
                   </p>
                   <p class="cart-product-size">
-                    Size: <span class="cart-product-size-value">${a.size}</span>
+                    Size: <span class="cart-product-size-value">${e.size}</span>
                   </p>
                 </div>
                   <div class="cart-product-price" >
-                    <span class="cart-product-span">$${a.price}</span>
+                    <span class="cart-product-span">$${e.price}</span>
                   </div>
                 
             </div>
           </li>
           <div class="divider"></div>
-          `)}),t.bigCartNumber.textContent="CART ("+r.products.length+")"}e?(t.deleteAllBtn.style.display="none",t.cartEmptyContainer.style.display="flex",t.totalCartSum.textContent="$0",t.cartContainer.innerHTML=""):(t.deleteAllBtn.style.display="flex",t.cartEmptyContainer.style.display="none",t.cartContainer.innerHTML=s.join(""),t.totalCartSum.textContent="$"+o.toFixed(2)),t.cartContainer.addEventListener("click",n=>{const a=n.target.closest(".js-cart-prod-del");if(a){const v=a.dataset.productid,u=r.products.findIndex(g=>g.productId===v);u!==-1&&(r.products.splice(u,1),c.saveCart(r),d())}})}async function I(e){e.preventDefault();const t=new l,s=c.loadCart();if(t.cartEmail.value.trim().length!==0)if("products"in s)if(s.products.length!==0)try{s.email=t.cartEmail.value.trim();const o=await m.order(s);c.deleteCart(),f(),d(),i._modalImg.style.display="none",i._modal.innerHTML=`
+          `)}),t.bigCartNumber.textContent="CART ("+c.products.length+")"}a?(t.deleteAllBtn.style.display="none",t.cartEmptyContainer.style.display="flex",t.totalCartSum.textContent="$0",t.cartContainer.innerHTML=""):(t.deleteAllBtn.style.display="flex",t.cartEmptyContainer.style.display="none",t.cartContainer.innerHTML=s.join(""),t.totalCartSum.textContent="$"+o.toFixed(2))}async function h(a){a.preventDefault();const t=new i,s=n.loadCart();if(t.cartEmail.value.trim().length!==0)if("products"in s)if(s.products.length!==0)try{s.email=t.cartEmail.value.trim();const o=await p.order(s);n.deleteCart(),u(),m(),d._modalImg.style.display="none",d._modal.innerHTML=`
         <div class="modal-inner">
           <div class="moal__food-tomatto--wrap">
           <svg class="moal__food-tomatto--shadow">
-          <use href="${b}"></use>
+          <use href="${v}"></use>
         </svg>
             <img
               class="modal__food-tomatto"
-              src="${_}"
+              src="${C}"
               alt="Кошик з фруктамі"
             />
             
@@ -59,5 +59,5 @@ import{r as l,l as c,f as m,c as C,d as f,M as i,a as y,p as h}from"./assets/foo
               happiness.
             </p>
           </div>
-        </div>`,i.open()}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}f();d();const p=new l,E=document.querySelector(".cart-amount");p.buttonCheckout.addEventListener("click",I);y.addEventListener("submit",h);p.deleteAllBtn.addEventListener("click",e=>{e.target.classList.contains("js-delete-all")&&(c.deleteCart(),d(),E.textContent="CART (0)")});p.cartContainer.addEventListener("click",e=>{let t=c.loadCart();if(e.target.classList.contains("js-cart-prod-del")){const s=e.target.dataset.productid,o=t.products.findIndex(r=>r.productId===s);o!==-1&&t.products.splice(o,1),c.saveCart(t),d()}});
+        </div>`,d.open()}catch{alert("Check email!")}else alert("empty cart2!");else alert("empty cart1!");else alert("empty email!")}u();m();const r=new i,_=document.querySelector(".cart-amount");r.buttonCheckout.addEventListener("click",h);f.addEventListener("submit",g);r.deleteAllBtn.addEventListener("click",a=>{a.target.classList.contains("js-delete-all")&&(n.deleteCart(),r.deleteAllBtn.style.display="none",r.cartEmptyContainer.style.display="flex",_.textContent="CART (0)",r.bigCartNumber.textContent="CART (0)")});r.cartContainer.addEventListener("click",a=>{if(!a.target.classList.contains("js-cart-prod-del"))return;let t=n.loadCart();const s=a.target.closest(".cart-product");console.log(s);const o=a.target.dataset.productid;console.log(o);const c=t.products.findIndex(l=>l.productId===o);c!==-1&&(t.products.splice(c,1),n.saveCart(t),s.style.display="none",r.bigCartNumber.textContent=`CART (${t.products.length})`),t.products.length||(r.deleteAllBtn.style.display="none",r.cartEmptyContainer.style.display="flex")});
 //# sourceMappingURL=commonHelpers.js.map
