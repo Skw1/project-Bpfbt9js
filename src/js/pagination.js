@@ -9,10 +9,6 @@ import {
 } from './renderProductList.js';
 import fetchAPI from './fetchApi.js';
 
-let inputTextHolder = JSON.parse(localStorage.getItem('keyword'));
-let itemCategory = JSON.parse(localStorage.getItem('category'));
-let filter = {};
-
 const container = document.getElementById('pagination');
 export function addPagination(totalItems, itemsPerPage, currentPage) {
   const options = {
@@ -32,9 +28,12 @@ export function deletePagination() {
 
 async function createPagin(event) {
   const currentPage = event.page;
+  let inputTextHolder = JSON.parse(localStorage.getItem('keyword'));
+  let itemCategory = JSON.parse(localStorage.getItem('category'));
+  let filter = {};
   var filters = JSON.parse(localStorage.getItem('filters')) || {};
   filters.page = currentPage;
-  
+
   if (inputTextHolder == '') {
     inputTextHolder = null;
   } else {
