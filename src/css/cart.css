@@ -67,7 +67,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 48px 120px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: auto;
 }
 @media screen and (min-width: 768px) {
   .cart-empty-product {
@@ -77,7 +79,6 @@
 
 @media screen and (min-width: 1440px) {
   .cart-empty-product {
-    padding: 150px 526px;
   }
   .cart-section {
     margin-bottom: 100px;
