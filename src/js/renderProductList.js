@@ -13,8 +13,7 @@ let page
 let frontEndPop = new refsAPI();
 let checkBtn
 let productListApi
-// console.log(frontEndPop.cardsList);
-// console.log(frontEndPop.PopularList);
+
 
 let filter = {
         limit : null}
@@ -41,9 +40,9 @@ function onCardClick(e) {
     if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
   
       const cardId = e.target.closest('.product_card-item').dataset.productid;
-      // console.log(cardId)
+      
       buyProduct(cardId)
-      // setCheckedIcon(cardId, 'shoppingCartIcon')
+      
       checkBtn[`btn2${cardId}`].style.display = 'none';
       checkBtn[`check1${cardId}`].style.display = 'flex';
       return;
@@ -146,7 +145,7 @@ function handleViewportChange() {
   }
 };
 
-// window.addEventListener('resize', debounce(handleViewportChange, 300));
+
 
 async function renderCards() {
    handleViewportChange();
@@ -157,20 +156,18 @@ async function renderCards() {
   }
   )
   checkBtn = new refsAPI();
-  // console.log(checkBtn);
+
   addCheckBasket()
 };
 function addCheckBasket(){
   let Mycart = localStorageApi.loadCart();
-  // console.log("Mycart",Mycart.products);
-  // console.log('vvvvvvvvvv');
-  //get saved products id
+ 
   const productsInCart = [];
   if ('products' in Mycart) {
     Mycart = Mycart.products;
     Mycart.forEach(product => productsInCart.push(product.productId));
   }
-  // console.log(productListApi.results);
+
   const productsList = [];
   productListApi.results.forEach(product => {
     if (productsInCart.includes(product._id)) {

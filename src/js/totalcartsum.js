@@ -29,7 +29,6 @@ async function totalCartSum() {
       cartSum =
         cartSum +
         product.price * cart.products[products.indexOf(product)].amount;
-      // console.log(typeof cart.products[products.indexOf(product)].amount);
       productsToDraw.push(`
             
           <li class="cart-product" data-productId="${product._id}">

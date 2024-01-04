@@ -34,11 +34,7 @@ async function createPagin(event) {
   const currentPage = event.page;
   var filters = JSON.parse(localStorage.getItem('filters')) || {};
   filters.page = currentPage;
-  //  filter = {
-  //   keyword : JSON.parse(localStorage.getItem('keyword')),
-  //   category : JSON.parse(localStorage.getItem('category').replace(' ', '_').replace('/', '&').replace(' ', '_')),
-  //   page: filters.page
-  //   }
+  
   if (inputTextHolder == '') {
     inputTextHolder = null;
   } else {

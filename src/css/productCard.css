@@ -19,10 +19,7 @@
   cursor: pointer;
 }
 
-/* .product_card-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-} */
+
 
 .card-img-wrapper {
   width: 295px;
@@ -36,8 +33,7 @@
   width: 140px;
   height: 140px;
 
-  /* margin-left: auto;
-  margin-right: auto; */
+  
 }
 
 .card_buy-logo-icon {
@@ -69,7 +65,7 @@
 .product_card-price {
   color: var(--primary-black-color);
 
-  font-family: 'Neue Montreal';
+  font-family: 'NeueMontreal-medium';
   font-size: 18px;
   font-style: normal;
   font-weight: 500;

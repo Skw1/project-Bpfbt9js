@@ -10,12 +10,10 @@ import { postEmail } from './js/footer-modal.js';
 import {onCardClick, renderCards, renderSearchedCards, handleViewportChange} from './js/renderProductList.js';
 import {checkAndFillFormFields, createDropdownList, cardsCreate, inputPush, toggleDropdown,  buttonCategory, inputText, buttonForm} from './js/filter.js';
 
-//get DOM tree
-// const frontEnd = new refsAPI();
+
 
 handleViewportChange();
 
-// window.addEventListener('resize', debounce(handleViewportChange, 300));
 // Draw Header Cart Number
 drawHeaderCartNumber();
 

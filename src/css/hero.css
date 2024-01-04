@@ -34,19 +34,7 @@
 	line-height: 18px; /* 128.571% */
 }
 
-/* old version */
 
-/* .hero-big-image{
-	border-radius: 30px;
-
-	width: 335px;
-	height: 480px;
-
-	margin-bottom: 64px;
-	object-fit: cover;
-} */
-
-/* new version */
 
 .hero-big-image-div{
 	width: 100%;
