@@ -9,54 +9,63 @@ import cartIcon from '../img/icons.svg#discount-cart';
 import checkedIcon from '../img/icons.svg#discount-checked';
 
 const errHide = document.querySelector('.error');
-let page 
+let page;
 let frontEndPop = new refsAPI();
-let checkBtn
-let productListApi
-
+let checkBtn;
+let productListApi;
 
 let filter = {
-        limit : null}
-
-async function renderSearchedCards(data) {
-  document.querySelector('.product_card-list').innerHTML = ''; 
-  data.results.map(item => {
-    return document.querySelector('.product_card-list').insertAdjacentHTML('beforeend', handleMarkup(item));
-  }
-  )
+  limit: null,
 };
 
+async function renderSearchedCards(data) {
+  document.querySelector('.product_card-list').innerHTML = '';
+  data.results.map(item => {
+    return document
+      .querySelector('.product_card-list')
+      .insertAdjacentHTML('beforeend', handleMarkup(item));
+  });
+  checkBtn = new refsAPI();
+  productListApi = data;
+  addCheckBasket();
+}
+
 function onCardClick(e) {
-  
-  if (e.target.classList.contains('product_card-item') || e.target !== e.currentTarget) {
-    let timerId = setInterval(function(){
-      addCheckBasket()
-      addCheck()
-      }, 1000);
-    
-    setTimeout(function(){
+  if (
+    e.target.classList.contains('product_card-item') ||
+    e.target !== e.currentTarget
+  ) {
+    let timerId = setInterval(function () {
+      addCheckBasket();
+      addCheck();
+    }, 1000);
+
+    setTimeout(function () {
       clearInterval(timerId);
-      }, 10000);
-    if (e.target.nodeName === "use" || e.target.nodeName === "BUTTON" || e.target.nodeName === "svg") {
-  
+    }, 10000);
+    if (
+      e.target.nodeName === 'use' ||
+      e.target.nodeName === 'BUTTON' ||
+      e.target.nodeName === 'svg'
+    ) {
       const cardId = e.target.closest('.product_card-item').dataset.productid;
-      
-      buyProduct(cardId)
-      
+
+      buyProduct(cardId);
+
       checkBtn[`btn2${cardId}`].style.display = 'none';
       checkBtn[`check1${cardId}`].style.display = 'flex';
       return;
     }
-  
+
     getProductModal(e, '.product_card-item');
 
-    return
+    return;
   }
-  
-};
-// 
+}
+//
 function handleMarkup(data) {
-  const { category, img, name, popularity, price, size, _id, is10PercentOff } = data;
+  const { category, img, name, popularity, price, size, _id, is10PercentOff } =
+    data;
 
   if (is10PercentOff) {
     return `
@@ -89,9 +98,9 @@ function handleMarkup(data) {
         </div>
         </div>
     </li>
-  `
+  `;
   }
-  
+
   return `
   <li class="product_card-item js-object" id=${_id} data-productId="${_id}" >
 
@@ -123,41 +132,42 @@ function handleMarkup(data) {
                     </svg></div>
         </div>
         </div>
-    </li>`
-};
+    </li>`;
+}
 
 function handleViewportChange() {
   let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-  
+
   if (viewportWidth >= 1440) {
     filter = {
-        limit : 9}
-  } else if (viewportWidth  < 1440 && viewportWidth > 768) {
+      limit: 9,
+    };
+  } else if (viewportWidth < 1440 && viewportWidth > 768) {
     filter = {
-        limit : 8}
+      limit: 8,
+    };
   } else {
     filter = {
-        limit : 6}
+      limit: 6,
+    };
   }
-};
-
-
+}
 
 async function renderCards() {
-   handleViewportChange();
+  handleViewportChange();
   productListApi = await fetchAPI.products(filter);
   productListApi.results.map(item => {
-   
-    return document.querySelector('.product_card-list').insertAdjacentHTML('beforeend', handleMarkup(item));
-  }
-  )
+    return document
+      .querySelector('.product_card-list')
+      .insertAdjacentHTML('beforeend', handleMarkup(item));
+  });
   checkBtn = new refsAPI();
 
-  addCheckBasket()
-};
-function addCheckBasket(){
+  addCheckBasket();
+}
+function addCheckBasket() {
   let Mycart = localStorageApi.loadCart();
- 
+
   const productsInCart = [];
   if ('products' in Mycart) {
     Mycart = Mycart.products;
@@ -169,12 +179,17 @@ function addCheckBasket(){
     if (productsInCart.includes(product._id)) {
       checkBtn[`btn2${product._id}`].style.display = 'none';
       checkBtn[`check1${product._id}`].style.display = 'flex';
-    }else{
+    } else {
       checkBtn[`check1${product._id}`].style.display = 'none';
       checkBtn[`btn2${product._id}`].style.display = 'flex';
-  
-    }})
-  
+    }
+  });
 }
-export{onCardClick, renderCards, errHide, renderSearchedCards,addCheckBasket, handleViewportChange};
-
+export {
+  onCardClick,
+  renderCards,
+  errHide,
+  renderSearchedCards,
+  addCheckBasket,
+  handleViewportChange,
+};
