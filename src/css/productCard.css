@@ -48,7 +48,8 @@
 
 .product_card-info {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
   margin-bottom: 40px;
 }
 
@@ -173,7 +174,8 @@
   }
   .product_card-info {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }
 .check {
