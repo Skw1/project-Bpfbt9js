@@ -67,7 +67,7 @@
   cursor: pointer;
   transition: color 0.3s ease;
   color: rgba(1, 1, 1, 0.5);
-  font-family: 'NeueMontreal-thinner';
+  font-family: 'NeueMontreal-regular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -90,7 +90,7 @@
 
 .filter-txt {
   color: rgba(1, 1, 1, 0.3);
-  font-family: 'NeueMontreal-thinner';
+  font-family: 'NeueMontreal-regular';
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
