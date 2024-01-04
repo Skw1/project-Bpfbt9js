@@ -365,11 +365,26 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  width: 335px;
+  width: 290px;
   border-radius: 8px;
   background: rgba(109, 132, 52, 0.05);
   padding: 14px 18px;
 }
+
+@media screen and (min-width: 375px) {
+  
+  .order-container{
+  width: 335px;
+  }
+  .order-form-input {
+    width: 335px;
+  }
+  .order-checkout-button{
+    width: 335px;
+  }
+}
+
+
 @media screen and (min-width: 768px) {
   .order-container {
     width: 590px;
@@ -441,9 +456,10 @@
   padding: 12px 12px 12px 60px;
   border-radius: 30px;
   border: 1px solid rgba(1, 1, 1, 0.3);
-  width: 335px;
+  width: 290px;
   background-color: var(--primary-white-color);
 }
+
 @media screen and (min-width: 768px) {
   .order-form-input {
     width: 359px;
@@ -468,7 +484,7 @@
   }
 }
 .order-checkout-button {
-  width: 335px;
+  width: 290px;
   display: flex;
   padding: 12px 28px;
   justify-content: center;
